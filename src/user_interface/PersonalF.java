@@ -303,6 +303,9 @@ public void actionPerformed(ActionEvent arg0) {
 		Button btn_procesar = new Button("PROCESAR");
 		btn_procesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Operaciones obj=new Operaciones();
+				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
+				
 			}
 			
 			
