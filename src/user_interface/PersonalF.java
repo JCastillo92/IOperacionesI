@@ -69,6 +69,10 @@ public class PersonalF extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//INICIALIZO ARRAYS
+		array1 = new ArrayList<String>();
+		array2 = new ArrayList<String>();
+		
 		 CreaColumnas();
 		    CargaDatos();
 		
@@ -165,12 +169,12 @@ public class PersonalF extends JFrame {
 		panel_0.add(lblIngWalterGaibor);
 
 		JButton btnPDF = new JButton("");
-		btnPDF.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\logo.png")); 
+		btnPDF.setIcon(new ImageIcon(".\\imagenes\\logo.png")); 
 			btnPDF.setBounds(21, 11, 75, 78);
 		panel_0.add(btnPDF);
 		
 		JButton button = new JButton("");
-		button.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\principal.jpg"));
+		button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
 		button.setBounds(363, 124, 240, 229);
 		panel_0.add(button);
 		
@@ -305,7 +309,7 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\INFORMA.png"));
+		button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
 		button_1.setBounds(493, 71, 258, 242);
 		panel.add(button_1);
 		
