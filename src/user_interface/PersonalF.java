@@ -14,18 +14,24 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
-
+import java.util.*;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+import javax.swing.JTextField;
 
 public class PersonalF extends JFrame {
 
 	private JPanel contentPane;
+	public JTextField txt_alternativa;
+	private JTextField txt_criterio;
+	public JTextField txt_alt;
 
 	/**
 	 * Launch the application.
@@ -181,11 +187,118 @@ public class PersonalF extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(220, 220, 220));
-		tabbedPane.addTab("Añadir Variable", null, panel, null);
+		tabbedPane.addTab("Añadir Información", null, panel, null);
+		panel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(220, 220, 220));
-		tabbedPane.addTab("Añadir Criterios", null, panel_1, null);
+		JLabel lblIngresoDeAlternativas = new JLabel("INGRESO DE ALTERNATIVAS");
+		lblIngresoDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblIngresoDeAlternativas.setBounds(118, 24, 311, 31);
+		panel.add(lblIngresoDeAlternativas);
+		
+		JLabel lblEscribaLaAlternativa = new JLabel("Escriba la alternativa:");
+		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
+		lblEscribaLaAlternativa.setBounds(24, 66, 140, 31);
+		panel.add(lblEscribaLaAlternativa);
+		
+		txt_alternativa = new JTextField();
+		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_alternativa.setEditable(true);
+		txt_alternativa.addKeyListener(new KeyAdapter() {
+			@Override
+				 public void keyTyped(KeyEvent ke) { 
+		             char c=ke.getKeyChar(); 
+		          if(Character.isDigit(c)) { 
+		              getToolkit().beep(); 
+		              ke.consume(); 
+		              //Error.setText("Ingresa Solo Letras"); 
+		             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+		          } 
+		        } 
+					});
+		txt_alternativa.setColumns(10);
+		txt_alternativa.setBounds(163, 71, 148, 20);
+		panel.add(txt_alternativa);
+		
+		Button btn_anadir_alt = new Button("A\u00D1ADIR");
+		btn_anadir_alt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				ArrayList<String> array1 = new ArrayList<String>();
+				String alternativa = txt_alternativa.getText();
+				array1.add(alternativa);
+				
+				for(int x=0;x<array1.size();x++) {
+					  System.out.println(array1.get(x));
+					}
+						
+				
+			}
+		});
+		
+		btn_anadir_alt.setForeground(Color.WHITE);
+		btn_anadir_alt.setBackground(Color.BLACK);
+		btn_anadir_alt.setBounds(252, 102, 70, 22);
+		panel.add(btn_anadir_alt);
+		
+		txt_criterio = new JTextField();
+		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_criterio.setColumns(10);
+		txt_criterio.addKeyListener(new KeyAdapter() {
+			@Override
+				 public void keyTyped(KeyEvent ke) { 
+		             char c=ke.getKeyChar(); 
+		          if(Character.isDigit(c)) { 
+		              getToolkit().beep(); 
+		              ke.consume(); 
+		              //Error.setText("Ingresa Solo Letras"); 
+		             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+		          } 
+		        } 
+					});
+		txt_criterio.setBounds(163, 248, 148, 20);
+		panel.add(txt_criterio);
+		
+		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
+		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
+		lblEscribaElCriterio.setBounds(24, 243, 140, 31);
+		panel.add(lblEscribaElCriterio);
+		
+		JLabel lblIngresoDeCriterio = new JLabel("INGRESO DE CRITERIO");
+		lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblIngresoDeCriterio.setBounds(118, 201, 311, 31);
+		panel.add(lblIngresoDeCriterio);
+		
+		Button btn_anadir_cri = new Button("A\u00D1ADIR");
+		btn_anadir_cri.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent arg0) {
+				
+				ArrayList<String> array2 = new ArrayList<String>();
+				String criterio = txt_criterio.getText();
+				array2.add(criterio);
+				
+				for(int x=0;x<array2.size();x++) {
+					  System.out.println(array2.get(x));
+					}
+						
+				
+			}
+		});
+		btn_anadir_cri.setForeground(Color.WHITE);
+		btn_anadir_cri.setBackground(Color.BLACK);
+		btn_anadir_cri.setBounds(252, 279, 70, 22);
+		panel.add(btn_anadir_cri);
+		
+		JButton button_1 = new JButton("");
+		button_1.setBackground(new Color(224, 255, 255));
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_1.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\INFORMA.png"));
+		button_1.setBounds(493, 71, 258, 242);
+		panel.add(button_1);
+		
+		
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(220, 220, 220));
