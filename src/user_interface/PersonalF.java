@@ -32,6 +32,8 @@ public class PersonalF extends JFrame {
 	public JTextField txt_alternativa;
 	private JTextField txt_criterio;
 	public JTextField txt_alt;
+	public ArrayList<String> array1;
+	public ArrayList<String> array2;
 
 	/**
 	 * Launch the application.
@@ -223,7 +225,7 @@ public class PersonalF extends JFrame {
 		btn_anadir_alt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				ArrayList<String> array1 = new ArrayList<String>();
+
 				String alternativa = txt_alternativa.getText();
 				array1.add(alternativa);
 				
@@ -272,7 +274,7 @@ public class PersonalF extends JFrame {
 		btn_anadir_cri.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
 				
-				ArrayList<String> array2 = new ArrayList<String>();
+				
 				String criterio = txt_criterio.getText();
 				array2.add(criterio);
 				
@@ -297,6 +299,19 @@ public void actionPerformed(ActionEvent arg0) {
 		button_1.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\INFORMA.png"));
 		button_1.setBounds(493, 71, 258, 242);
 		panel.add(button_1);
+		
+		Button btn_procesar = new Button("PROCESAR");
+		btn_procesar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+			
+			
+		});
+		btn_procesar.setForeground(Color.WHITE);
+		btn_procesar.setBackground(new Color(0, 0, 255));
+		
+		btn_procesar.setBounds(362, 310, 107, 44);
+		panel.add(btn_procesar);
 		
 		
 		
