@@ -44,6 +44,7 @@ public class PersonalF extends JFrame {
 	public ArrayList<String> array2;
 	private JScrollPane scrollPane;
 	private JScrollPane scrollPane_1;
+	private List<String> lista_tabla;
 
 	/**
 	 * Launch the application.
@@ -76,7 +77,7 @@ public class PersonalF extends JFrame {
 		//INICIALIZO ARRAYS
 		array1 = new ArrayList<String>();
 		array2 = new ArrayList<String>();
-	
+		lista_tabla = new ArrayList<String>();
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(47, 52, 836, 392);
@@ -360,6 +361,17 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(10, 39, 163, 200);
 		panel_2.add(scrollPane_1);
+		
+		Button button_2 = new Button("GUARDAR");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				guardar_array();
+			}
+		});
+		button_2.setForeground(Color.WHITE);
+		button_2.setBackground(Color.BLUE);
+		button_2.setBounds(316, 295, 107, 44);
+		panel_2.add(button_2);
 		 
 		
 		JPanel panel_3 = new JPanel();
@@ -415,17 +427,38 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	  public void crearTabla(){ 
-			table = new JTable(datoColumna,titColumna);
+			table = new JTable(datoColumna,titColumna){
+				public boolean isCellEditable(int row, int column){
+				    if(row ==column ) return false;
+				    return true;
+				  }
+			};
 			 table.setShowHorizontalLines( true );
 			    table.setRowSelectionAllowed( true );
 			    table.setColumnSelectionAllowed( true );
 			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			    table.setSelectionForeground( Color.white );
-			    table.setSelectionBackground( Color.WHITE );
+			    //table.setSelectionForeground( Color.white );
+			    //table.setSelectionBackground( Color.WHITE );
 			    // Incorporamos la tabla a un panel que incorpora ya una barra
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
 			scrollPane.setViewportView(table);
+			
+			//LISTENER TABLA
+			table.addKeyListener(new KeyAdapter() {
+				@Override
+				public void keyReleased(KeyEvent e) {
+					int tam_col=table.getColumnCount();
+					int tam_fil=table.getRowCount();
+					//System.out.println(tam_col+" "+tam_fil);
+					cambiar_celdas2(tam_col, tam_fil);
+					
+					
+				}
+				
+			});
+			setear1entabla();
+			
 			}
 	  
 	  public void crearTabla2(){ 
@@ -443,5 +476,78 @@ public void actionPerformed(ActionEvent arg0) {
 			scrollPane_1.setViewportView(table_1);
 			}
 	  
-	
+	  //METODOS JHON
+	  public void cambiar_celdas2(int columnas, int filas){
+			String valor_alterado;
+			int columna_seleccionada=table.getSelectedColumn();
+			int fila_seleccionada=table.getSelectedRow();
+			System.out.println(columna_seleccionada+" "+fila_seleccionada);
+			try {
+				//table_1.getModel().addTableModelListener(table_1);
+				table.getCellEditor().stopCellEditing();
+				String valor_cambiado = String.valueOf(table.getModel().getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				//String valor_cambiado = String.valueOf(table_1.getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				System.out.println("Valor "+valor_cambiado);
+				valor_alterado=invertirString(valor_cambiado);
+				table.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			
+		}
+	  
+	  public String invertirString(String valor_tabla){
+			String valor_invertido="";
+			int posicionslash;
+			String primer_valor="",segundo_valor="";
+			try {
+				posicionslash = valor_tabla.indexOf("/");
+				System.out.println("PosSlash:"+posicionslash);
+				primer_valor = valor_tabla.substring(0, posicionslash);
+				System.out.println("PrimerPos"+primer_valor);
+				segundo_valor = valor_tabla.substring(posicionslash+1, valor_tabla.length());
+				System.out.println("Segundo valor"+" "+segundo_valor);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			valor_invertido=segundo_valor+"/"+primer_valor;
+			return valor_invertido;
+		}
+	  
+	  public void setear1entabla(){
+			int columna_seleccionada=table.getColumnCount();
+			for (int i = 0; i < columna_seleccionada; i++) {
+				System.out.println(i);
+				table.setValueAt("1/1", i, i);
+			}
+			
+		}
+	  
+	  public void guardar_array(){
+			
+			for (int i = 0; i < table.getColumnCount(); i++) {
+				for (int j = 0; j < table.getRowCount(); j++) {
+					lista_tabla.add(String.valueOf(table.getValueAt(i, j)));
+					System.out.print(String.valueOf(table.getValueAt(i, j))+" ");
+				}
+				System.out.println();
+			}
+			
+			
+		}
+	  
+		//USAR ESTE METODO PARA LAS OTRAS MATRICES DE ARRAY A TABLA
+		public void de_array_a_tabla(){
+			int mirecorredor=0;
+			for (int i = 0; i < table.getColumnCount(); i++) {
+				for (int j = 0; j < table.getRowCount(); j++) {
+					
+					//CAMBIAR EL NOMBRE DE ESTA TABLA 
+					table_1.setValueAt(lista_tabla.get(mirecorredor), j, i);
+					mirecorredor++;
+					
+				}
+			}
+		}
 }
