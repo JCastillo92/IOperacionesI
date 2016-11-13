@@ -39,8 +39,8 @@ import javax.swing.JTextField;
 public class PersonalF extends JFrame {
 
 	private JPanel contentPane;
-	public JTextField txt_alternativa;
-	private JTextField txt_criterio;
+	public JTextField txt_criterios;
+	private JTextField txt_alternativas;
 	public JTextField txt_alt;
 	public String titColumna[];
 
@@ -252,59 +252,69 @@ public class PersonalF extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblIngresoDeAlternativas = new JLabel("INGRESO DE ALTERNATIVAS");
-		lblIngresoDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		lblIngresoDeAlternativas.setBounds(118, 24, 311, 31);
+		lblIngresoDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		panel.add(lblIngresoDeAlternativas);
 		
 		JLabel lblEscribaLaAlternativa = new JLabel("Escriba la alternativa:");
-		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		lblEscribaLaAlternativa.setBounds(24, 66, 140, 31);
+		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		panel.add(lblEscribaLaAlternativa);
 		
+<<<<<<< HEAD
 		txt_alternativa = new JTextField();
 		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		txt_alternativa.setEditable(true);
 		txt_alternativa.setColumns(10);
 		txt_alternativa.setBounds(95, 148, 148, 20);
 		panel.add(txt_alternativa);
+=======
+		txt_criterios = new JTextField();
+		txt_criterios.setBounds(156, 248, 148, 20);
+		txt_criterios.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_criterios.setEditable(true);
+		txt_criterios.setColumns(10);
+		panel.add(txt_criterios);
+>>>>>>> 907eddbf500e0b24693766355837aeb545f91564
 		
-		Button btn_anadir_alt = new Button("A\u00D1ADIR");
-		btn_anadir_alt.addActionListener(new ActionListener() {
+		Button btn_anadir_crite = new Button("A\u00D1ADIR");
+		btn_anadir_crite.setBounds(252, 280, 70, 22);
+		btn_anadir_crite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
 		            ReproducirSonido("imagenes/sound.wav");
-		            if(!txt_alternativa.getText().equals("")){
-				String alternativa = txt_alternativa.getText();
+		            if(!txt_criterios.getText().equals("")){
+				String alternativa = txt_criterios.getText();
 				array1.add(alternativa);
 				
 				for(int x=0;x<array1.size();x++) {
 					  System.out.println(array1.get(x));
 					}
 						
-				txt_alternativa.setText("");
-				txt_alternativa.requestFocus();
+				txt_criterios.setText("");
+				txt_criterios.requestFocus();
 							
 				System.out.println("Paso");
 					
 				}else{
 					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
 			         
-					txt_alternativa.requestFocus();
+					txt_criterios.requestFocus();
 					System.out.println("no valido ... esta vacio");
 				}
 			}
 		});
 		
-		btn_anadir_alt.setForeground(Color.WHITE);
-		btn_anadir_alt.setBackground(Color.BLACK);
-		btn_anadir_alt.setBounds(252, 280, 70, 22);
-		panel.add(btn_anadir_alt);
+		btn_anadir_crite.setForeground(Color.WHITE);
+		btn_anadir_crite.setBackground(Color.BLACK);
+		panel.add(btn_anadir_crite);
 		
-		txt_criterio = new JTextField();
-		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 13));
-		txt_criterio.setColumns(10);
-		txt_criterio.addKeyListener(new KeyAdapter() {
+		txt_alternativas = new JTextField();
+		txt_alternativas.setBounds(156, 71, 148, 20);
+		txt_alternativas.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_alternativas.setColumns(10);
+		txt_alternativas.addKeyListener(new KeyAdapter() {
 			@Override
 				 public void keyTyped(KeyEvent ke) { 
 		             char c=ke.getKeyChar(); 
@@ -316,59 +326,56 @@ public class PersonalF extends JFrame {
 		          } 
 		        } 
 					});
-
-		txt_criterio.setBounds(174, 71, 148, 20);
-		
-		txt_criterio.setBounds(163, 248, 148, 20);
-		panel.add(txt_criterio);
+		panel.add(txt_alternativas);
 		
 		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
-		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		lblEscribaElCriterio.setBounds(24, 243, 140, 31);
+		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		panel.add(lblEscribaElCriterio);
 		
 		JLabel lblIngresoDeCriterio = new JLabel("INGRESO DE CRITERIO");
-		lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		lblIngresoDeCriterio.setBounds(118, 201, 311, 31);
+		lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		panel.add(lblIngresoDeCriterio);
 		
-		Button btn_anadir_cri = new Button("A\u00D1ADIR");
-		btn_anadir_cri.addActionListener(new ActionListener() {
+		Button btn_anadir_alter = new Button("A\u00D1ADIR");
+		btn_anadir_alter.setBounds(252, 97, 70, 22);
+		btn_anadir_alter.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
 				
 				ReproducirSonido("imagenes/sound.wav");
-				if(!txt_criterio.getText().equals("")){
-				String criterio = txt_criterio.getText();
+				if(!txt_alternativas.getText().equals("")){
+				String criterio = txt_alternativas.getText();
 				array2.add(criterio);
 				
 				for(int x=0;x<array2.size();x++) {
 					  System.out.println(array2.get(x));
 					}
 						
-				txt_criterio.setText("");
-				txt_criterio.requestFocus();
+				txt_alternativas.setText("");
+				txt_alternativas.requestFocus();
 				}else{
 					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-					txt_criterio.requestFocus();
+					txt_alternativas.requestFocus();
 				}
 			}
 		});
-		btn_anadir_cri.setForeground(Color.WHITE);
-		btn_anadir_cri.setBackground(Color.BLACK);
-		btn_anadir_cri.setBounds(252, 97, 70, 22);
-		panel.add(btn_anadir_cri);
+		btn_anadir_alter.setForeground(Color.WHITE);
+		btn_anadir_alter.setBackground(Color.BLACK);
+		panel.add(btn_anadir_alter);
 		
 		JButton button_1 = new JButton("");
+		button_1.setBounds(493, 71, 258, 242);
 		button_1.setBackground(new Color(224, 255, 255));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
-		button_1.setBounds(493, 71, 258, 242);
 		panel.add(button_1);
 		
 		Button btn_procesar = new Button("PROCESAR");
+		btn_procesar.setBounds(362, 310, 107, 44);
 		btn_procesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ReproducirSonido("imagenes/sound2.wav");
@@ -390,8 +397,6 @@ public void actionPerformed(ActionEvent arg0) {
 		});
 		btn_procesar.setForeground(Color.WHITE);
 		btn_procesar.setBackground(new Color(0, 0, 255));
-		
-		btn_procesar.setBounds(362, 310, 107, 44);
 		panel.add(btn_procesar);
 		
 		
@@ -483,6 +488,11 @@ public void actionPerformed(ActionEvent arg0) {
 				 
 				 table_k6 = new JTable();
 				 scrollPane_5.setViewportView(table_k6);
+				 
+				 JButton button_3 = new JButton("");
+				 button_3.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
+				 button_3.setBounds(365, 122, 75, 78);
+				 panel_3.add(button_3);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(220, 220, 220));
@@ -872,5 +882,4 @@ for(int s=0;s<vector.length;s++){
 		         System.out.println("Error al reproducir el sonido.");
 		       }
 		     }
-		 
 }

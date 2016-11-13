@@ -135,6 +135,10 @@ public class Operaciones{
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
+<<<<<<< HEAD
 //		obj.matriz_principal();
+=======
+		//obj.matriz_principal();
+>>>>>>> 907eddbf500e0b24693766355837aeb545f91564
 	}
 }
