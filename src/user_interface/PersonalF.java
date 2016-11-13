@@ -359,8 +359,6 @@ public void actionPerformed(ActionEvent arg0) {
 				    crearTabla();
 				 crearTabla2();
 				// de_array_a_tabla();
-				 Operaciones obj=new Operaciones();
-				 obj.recibo_tamano_SOLO_criterio(table.getColumnCount(), table.getRowCount());
 			}
 			
 			
@@ -589,7 +587,7 @@ public void actionPerformed(ActionEvent arg0) {
 				System.out.println();
 			}
 			Operaciones obj=new Operaciones();
-			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()));
+			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
 			
 		}
 	  

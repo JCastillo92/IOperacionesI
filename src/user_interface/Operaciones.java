@@ -19,18 +19,14 @@ public class Operaciones{
 			};
 	*/
 	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void recibo_tamano_SOLO_criterio(int a,int b){
-		Criterio_size=a;
-		Alternativas_size=b;
-	}
-	double[] vector_suma_filas=null;
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////// P    R    O    C     E    S   O/////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void matriz_principal(double[][] A){
+	public void matriz_principal(double[][] A, int cri, int alt){
+		Criterio_size=cri;
+		Alternativas_size=alt;
 		
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
@@ -66,7 +62,7 @@ public class Operaciones{
 	
 	public void suma_filas(double[][] suma_filas){
 		//debo recibir aqui la matriz
-		
+		double[] vector_suma_filas=new double[Alternativas_size];
 		for (int i = 0; i < suma_filas.length; i++) {
 			double acumula_suma=0;
 			for (int j = 0; j < suma_filas[i].length; j++) {
