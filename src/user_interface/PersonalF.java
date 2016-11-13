@@ -6,8 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -32,6 +34,12 @@ public class PersonalF extends JFrame {
 	public JTextField txt_alternativa;
 	private JTextField txt_criterio;
 	public JTextField txt_alt;
+	public String titColumna[];
+	  public String datoColumna[][];
+	 private JTable table;
+	 private JTable table_1;
+	public ArrayList<String> array1;
+	public ArrayList<String> array2;
 
 	/**
 	 * Launch the application.
@@ -60,6 +68,13 @@ public class PersonalF extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		//INICIALIZO ARRAYS
+		array1 = new ArrayList<String>();
+		array2 = new ArrayList<String>();
+		
+		 CreaColumnas();
+		    CargaDatos();
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(47, 52, 836, 392);
@@ -152,14 +167,14 @@ public class PersonalF extends JFrame {
 		lblIngWalterGaibor.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
 		lblIngWalterGaibor.setBounds(33, 308, 126, 16);
 		panel_0.add(lblIngWalterGaibor);
-		
+
 		JButton btnPDF = new JButton("");
-		btnPDF.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\logo.png")); 
+		btnPDF.setIcon(new ImageIcon(".\\imagenes\\logo.png")); 
 			btnPDF.setBounds(21, 11, 75, 78);
 		panel_0.add(btnPDF);
 		
 		JButton button = new JButton("");
-		button.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\principal.jpg"));
+		button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
 		button.setBounds(363, 124, 240, 229);
 		panel_0.add(button);
 		
@@ -223,7 +238,7 @@ public class PersonalF extends JFrame {
 		btn_anadir_alt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				ArrayList<String> array1 = new ArrayList<String>();
+
 				String alternativa = txt_alternativa.getText();
 				array1.add(alternativa);
 				
@@ -272,7 +287,7 @@ public class PersonalF extends JFrame {
 		btn_anadir_cri.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
 				
-				ArrayList<String> array2 = new ArrayList<String>();
+				
 				String criterio = txt_criterio.getText();
 				array2.add(criterio);
 				
@@ -294,15 +309,64 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setIcon(new ImageIcon("Z:\\ECLIPSE\\IOperacionesI\\imagenes\\INFORMA.png"));
+		button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
 		button_1.setBounds(493, 71, 258, 242);
 		panel.add(button_1);
+		
+		Button btn_procesar = new Button("PROCESAR");
+		btn_procesar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Operaciones obj=new Operaciones();
+				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
+				
+			}
+			
+			
+		});
+		btn_procesar.setForeground(Color.WHITE);
+		btn_procesar.setBackground(new Color(0, 0, 255));
+		
+		btn_procesar.setBounds(362, 310, 107, 44);
+		panel.add(btn_procesar);
 		
 		
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(220, 220, 220));
 		tabbedPane.addTab("Tabla C", null, panel_2, null);
+		panel_2.setLayout(null);
+		
+		JLabel lblTablaCriterios = new JLabel("Tabla Criterios");
+		lblTablaCriterios.setBounds(302, 11, 69, 14);
+		panel_2.add(lblTablaCriterios);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(203, 39, 550, 200);
+		panel_2.add(scrollPane);
+		
+		table = new JTable(datoColumna,titColumna);
+		 table.setShowHorizontalLines( true );
+		    table.setRowSelectionAllowed( true );
+		    table.setColumnSelectionAllowed( true );
+		    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+		    table.setSelectionForeground( Color.white );
+		    table.setSelectionBackground( Color.WHITE );
+		    // Incorporamos la tabla a un panel que incorpora ya una barra
+		    // de desplazamiento, para que la visibilidad de la tabla sea
+		    // automática
+		scrollPane.setViewportView(table);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 39, 163, 200);
+		panel_2.add(scrollPane_1);
+		
+		table_1 = new JTable();
+		scrollPane_1.setViewportView(table_1);
+		
+		
+		
+		
+		    
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(220, 220, 220));
@@ -314,4 +378,33 @@ public void actionPerformed(ActionEvent arg0) {
 		
 	
 	}
+	public void CreaColumnas() {
+		  ArrayList<String> Columna = new ArrayList<String>();
+		  
+	    titColumna = new String[4];
+	    
+	    for( int i=0; i < 4; i++ ) {
+	      titColumna[i] = "Carrito: "+i;
+	    }
+	  }
+	
+	public void CreaColumnas2() {
+		  ArrayList<String> Columna = new ArrayList<String>();
+	    titColumna = new String[4];
+	    
+	    for( int i=0; i < 4; i++ ) {
+	      titColumna[i] = "Carrito: "+i;
+	    }
+	  }
+	  
+	  // Creamos los datos para cada uno de los elementos de la tabla
+	  public void CargaDatos() {
+	    datoColumna = new String[4][4];
+	    
+	    for( int iY=0; iY < 4; iY++ ) {
+	      for( int iX=0; iX < 4; iX++ ) {
+		datoColumna[iY][iX] = "";
+	      }
+	    }
+	  }
 }
