@@ -18,6 +18,8 @@ public class Operaciones{
 			{2.0, 	1.0, 		4.0},
 			{0.33, 0.25, 	1.0}
 			};
+	
+	//borrar el numero tres 3 y poner Criterio_size
 	double[] vector_suma_criterios=new double[3];
 	
 	public void recibo_tamano_criterio_alternativa(int a,int b){
@@ -61,14 +63,17 @@ public class Operaciones{
 			}
 			System.out.println();
 		}
+		
+		suma_filas(multiplicacion_criterios);
 	}//fin metodo matriz principal
 	
-	public void suma_filas(){
+	public void suma_filas(double[][] suma_filas){
 		//debo recibir aqui la matriz
-		for (int i = 0; i < multiplicacion_criterios.length; i++) {
+		
+		for (int i = 0; i < suma_filas.length; i++) {
 			double acumula_suma=0;
-			for (int j = 0; j < multiplicacion_criterios[i].length; j++) {
-				acumula_suma+=multiplicacion_criterios[i][j];
+			for (int j = 0; j < suma_filas[i].length; j++) {
+				acumula_suma+=suma_filas[i][j];
 			}
 			vector_suma_criterios[i]=acumula_suma;
 		}
@@ -83,6 +88,6 @@ public class Operaciones{
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
 		obj.matriz_principal();
-		obj.suma_filas();
+		
 	}
 }
