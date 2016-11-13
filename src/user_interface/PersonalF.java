@@ -384,7 +384,7 @@ public void actionPerformed(ActionEvent arg0) {
 				
 				System.out.println(array1.size());
 				
-				 CreaColumnas();
+				CreaColumnas();
 				    CargaDatos();
 				    
 				    CreaColumnas2();
