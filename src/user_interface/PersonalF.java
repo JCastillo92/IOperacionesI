@@ -296,7 +296,7 @@ public void actionPerformed(ActionEvent arg0) {
 					  System.out.println(array2.get(x));
 					}
 						
-				
+				txt_criterio.setText("");
 			}
 		});
 		btn_anadir_cri.setForeground(Color.WHITE);
