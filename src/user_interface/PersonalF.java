@@ -471,11 +471,11 @@ public void actionPerformed(ActionEvent arg0) {
 		  int arr2 = array1.size(); 
 	    datoColumna = new String[arr2][arr2];
 	    
-	    for( int iY=0; iY < arr2; iY++ ) {
+	   /* for( int iY=0; iY < arr2; iY++ ) {
 	      for( int iX=0; iX < arr2; iX++ ) {
 		datoColumna[iY][iX] = "";
 	      }
-	    }
+	    }*/
 	  }
 	  
 	  public void CargaDatos2() {
