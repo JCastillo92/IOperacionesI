@@ -1,7 +1,14 @@
 package user_interface;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 public class Operaciones{
-	//PersonalF obj =new PersonalF();
+	PersonalF obj =new PersonalF();
+	JTable Tabla_Matriz_Cuadrada;
+	private String[] vector={"MODELO","TIPO","MARCA","PRECIO"};
+	private String[][] matriz={};
+	private DefaultTableModel mod=new DefaultTableModel(matriz,vector);
 	//aqui abajo veo el tamano de los criterios y alternativas
 	int Criterio_size, Alternativas_size;
 	//matriz criterio x criterio
@@ -52,6 +59,8 @@ public class Operaciones{
 		int i,j;
 		for(i=0;i<multiplicacion_criterios.length;i++){
 			for(j=0;j<multiplicacion_criterios[i].length;j++){
+				String vectnew[]={""+multiplicacion_criterios[i][j]};
+				mod.addRow(vectnew);
 				System.out.print(multiplicacion_criterios[i][j]+"\t");
 			}
 			System.out.println();
@@ -71,15 +80,20 @@ public class Operaciones{
 			vector_suma_filas[i]=acumula_suma;
 		}
 		
+		
 		System.out.println("suma FILAS de la matriz cuadrada principal");
 		for (int i = 0; i < vector_suma_filas.length; i++) {
 			System.out.println(vector_suma_filas[i]);
 		}
 		
+		
+		
 	}
 
 	
-	
+	public DefaultTableModel recibirmodelo(){
+		return mod;
+	}
 	
 	
 	

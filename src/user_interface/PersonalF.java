@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
@@ -588,7 +589,7 @@ public void actionPerformed(ActionEvent arg0) {
 			}
 			Operaciones obj=new Operaciones();
 			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
-			
+			table_5.setModel(obj.recibirmodelo());
 		}
 	  
 		//USAR ESTE METODO PARA LAS OTRAS MATRICES DE ARRAY A TABLA
@@ -671,4 +672,5 @@ for(int s=0;s<vector.length;s++){
 		         System.out.println("Error al reproducir el sonido.");
 		       }
 		     }
+		 
 }
