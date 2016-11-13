@@ -18,7 +18,7 @@ public class Operaciones{
 			{2.0, 	1.0, 		4.0},
 			{0.33, 0.25, 	1.0}
 			};
-	double[] vector_suma_criterios=new double[Criterio_size];	
+	double[] vector_suma_criterios=new double[3];
 	
 	public void recibo_tamano_criterio_alternativa(int a,int b){
 		Criterio_size=a;
@@ -53,6 +53,7 @@ public class Operaciones{
 			  }//y
 			}//x
 		
+		System.out.println("matriz cuadrada CRITERIOS principal");
 		int i,j;
 		for(i=0;i<multiplicacion_criterios.length;i++){
 			for(j=0;j<multiplicacion_criterios[i].length;j++){
@@ -64,15 +65,24 @@ public class Operaciones{
 	
 	public void suma_filas(){
 		//debo recibir aqui la matriz
-		for (int i = 0; i < A.length; i++) {
-			for (int j = 0; j < A[i].length; j++) {
-				vector_suma_criterios[i]+=A[i][j];
+		for (int i = 0; i < multiplicacion_criterios.length; i++) {
+			double acumula_suma=0;
+			for (int j = 0; j < multiplicacion_criterios[i].length; j++) {
+				acumula_suma+=multiplicacion_criterios[i][j];
 			}
+			vector_suma_criterios[i]=acumula_suma;
 		}
+		
+		System.out.println("aqui abajo esta la suma dela matriz cuadrada principal");
+		for (int i = 0; i < vector_suma_criterios.length; i++) {
+			System.out.println(vector_suma_criterios[i]);
+		}
+		
 	}
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
 		obj.matriz_principal();
+		obj.suma_filas();
 	}
 }
