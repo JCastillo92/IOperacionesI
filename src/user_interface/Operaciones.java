@@ -18,7 +18,7 @@ public class Operaciones{
 			{0.33, 0.25, 	1.0}
 			};
 	*/
-	double[] vector_suma_filas=new double[Criterio_size];
+	double[] vector_suma_filas=new double[Alternativas_size];
 
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,6 +85,15 @@ public class Operaciones{
 		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void Solucion_final(){
 		//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
 		
@@ -114,24 +123,4 @@ public class Operaciones{
 				}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args){
-		Operaciones obj=new Operaciones();
-//		obj.matriz_principal();
-	}
 }
