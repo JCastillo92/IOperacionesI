@@ -18,14 +18,11 @@ public class Operaciones{
 			{0.33, 0.25, 	1.0}
 			};
 	*/
-	double[] vector_suma_filas=new double[Criterio_size];
+	double[] vector_suma_filas=new double[Alternativas_size];
 
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////R      E      C     I      B      I     R//////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void recibo_tamano_criterio_alternativa(int a,int b){
+	public void recibo_tamano_SOLO_criterio(int a,int b){
 		Criterio_size=a;
 		Alternativas_size=b;
 	}
@@ -35,6 +32,7 @@ public class Operaciones{
 	/////////////////////////////////// P    R    O    C     E    S   O/////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void matriz_principal(double[][] A){
+		
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
 
@@ -85,6 +83,15 @@ public class Operaciones{
 		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void Solucion_final(){
 		//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
 		
@@ -114,24 +121,4 @@ public class Operaciones{
 				}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args){
-		Operaciones obj=new Operaciones();
-//		obj.matriz_principal();
-	}
 }

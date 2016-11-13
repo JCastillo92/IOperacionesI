@@ -36,7 +36,7 @@ import java.awt.SystemColor;
 import javax.swing.JTextField;
 
 public class PersonalF extends JFrame {
-
+	Operaciones obj=new Operaciones();
 	private JPanel contentPane;
 	public JTextField txt_alternativa;
 	private JTextField txt_criterio;
@@ -346,10 +346,6 @@ public void actionPerformed(ActionEvent arg0) {
 		btn_procesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ReproducirSonido("imagenes/sound2.wav");
-				
-				Operaciones obj=new Operaciones();
-				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
-				
 				System.out.println(array1.size());
 				
 				 CreaColumnas();
@@ -360,7 +356,8 @@ public void actionPerformed(ActionEvent arg0) {
 				    crearTabla();
 				 crearTabla2();
 				// de_array_a_tabla();
-				 
+				
+				 obj.recibo_tamano_SOLO_criterio(table.getColumnCount(), table.getRowCount());
 			}
 			
 			
@@ -588,8 +585,7 @@ public void actionPerformed(ActionEvent arg0) {
 				}
 				System.out.println();
 			}
-			Operaciones obj=new Operaciones();
-			obj.recibo_tamano_criterio_alternativa(table.getColumnCount(), table.getRowCount());
+			
 			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()));
 			
 		}
