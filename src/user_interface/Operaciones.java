@@ -20,8 +20,13 @@ public class Operaciones{
 			};
 	
 	//borrar el numero tres 3 y poner Criterio_size
-	double[] vector_suma_criterios=new double[3];
+	double[] vector_suma_filas=new double[3];
+
 	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////R      E      C     I      B      I     R//////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void recibo_tamano_criterio_alternativa(int a,int b){
 		Criterio_size=a;
 		Alternativas_size=b;
@@ -34,6 +39,12 @@ public class Operaciones{
 		
 	}//fin void matriz_vv
 	
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////// P    R    O    C     E    S   O/////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void matriz_principal(){
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
@@ -75,19 +86,63 @@ public class Operaciones{
 			for (int j = 0; j < suma_filas[i].length; j++) {
 				acumula_suma+=suma_filas[i][j];
 			}
-			vector_suma_criterios[i]=acumula_suma;
+			vector_suma_filas[i]=acumula_suma;
 		}
 		
 		System.out.println("suma FILAS de la matriz cuadrada principal");
-		for (int i = 0; i < vector_suma_criterios.length; i++) {
-			System.out.println(vector_suma_criterios[i]);
+		for (int i = 0; i < vector_suma_filas.length; i++) {
+			System.out.println(vector_suma_filas[i]);
 		}
 		
 	}
+
+	public void Solucion_final(){
+		//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
+		
+		//MATRIZ FINAL FxC AxC
+				double[][] Matriz_Alt_Crite={
+						{0.11, 	0.37,	 0.20},
+						{0.26, 	0.29,	 0.20},
+						{0.05, 	0.07,	 0.40},
+						{0.58, 	0.26,	 0.20}
+						};
+				
+				double[] Vector_criterios={0.32, 0.56, 0.12};
+				
+				//borrar donde esta el 4 poner el tamano de ALTERNATIAS
+				double[] Vector_respuesta_tamanoALT=new double[4];
+				
+				for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
+					double acum=0;
+					for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
+						acum=acum+Matriz_Alt_Crite[i][j]*Vector_criterios[j];
+					}
+					Vector_respuesta_tamanoALT[i]=acum;
+				}
+				
+				for (int i = 0; i < Vector_respuesta_tamanoALT.length; i++) {
+					System.out.println(Vector_respuesta_tamanoALT[i]);
+				}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
 		obj.matriz_principal();
-		
 	}
 }
