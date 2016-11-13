@@ -1,6 +1,5 @@
 package user_interface;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.sound.sampled.AudioInputStream;
@@ -13,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JLabel;
@@ -20,7 +20,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.util.*;
 
 import javax.swing.SwingConstants;
@@ -30,7 +29,6 @@ import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
@@ -71,8 +69,10 @@ public class PersonalF extends JFrame {
 	private JTable table_2;
 	private JTable table_3;
 	private JTable table_4;
+
 	private JTable table_k5;
 	private JTable table_k6;
+	private JTable table_5;
 
 	/**
 	 * Launch the application.
@@ -205,6 +205,12 @@ public class PersonalF extends JFrame {
 		panel_0.add(btnPDF);
 		
 		JButton button = new JButton("");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			
+			}
+		});
 		button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
 		button.setBounds(363, 124, 240, 229);
 		panel_0.add(button);
@@ -229,6 +235,15 @@ public class PersonalF extends JFrame {
 		lblProcess.setBackground(Color.LIGHT_GRAY);
 		lblProcess.setBounds(651, 231, 170, 43);
 		panel_0.add(lblProcess);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
+		btnNewButton.setBounds(717, -8, 114, 97);
+		panel_0.add(btnNewButton);
 		
 		
 		JPanel panel = new JPanel();
@@ -259,7 +274,7 @@ public class PersonalF extends JFrame {
 				
 				
 		            ReproducirSonido("imagenes/sound.wav");
-		       
+		            if(!txt_alternativa.getText().equals("")){
 				String alternativa = txt_alternativa.getText();
 				array1.add(alternativa);
 				
@@ -268,6 +283,16 @@ public class PersonalF extends JFrame {
 					}
 						
 				txt_alternativa.setText("");
+				txt_alternativa.requestFocus();
+							
+				System.out.println("Paso");
+					
+				}else{
+					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+			         
+					txt_alternativa.requestFocus();
+					System.out.println("no valido ... esta vacio");
+				}
 			}
 		});
 		
@@ -291,7 +316,10 @@ public class PersonalF extends JFrame {
 		          } 
 		        } 
 					});
+
 		txt_criterio.setBounds(174, 71, 148, 20);
+		
+		txt_criterio.setBounds(163, 248, 148, 20);
 		panel.add(txt_criterio);
 		
 		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
@@ -309,7 +337,7 @@ public class PersonalF extends JFrame {
 public void actionPerformed(ActionEvent arg0) {
 				
 				ReproducirSonido("imagenes/sound.wav");
-    
+				if(!txt_criterio.getText().equals("")){
 				String criterio = txt_criterio.getText();
 				array2.add(criterio);
 				
@@ -318,6 +346,11 @@ public void actionPerformed(ActionEvent arg0) {
 					}
 						
 				txt_criterio.setText("");
+				txt_criterio.requestFocus();
+				}else{
+					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+					txt_criterio.requestFocus();
+				}
 			}
 		});
 		btn_anadir_cri.setForeground(Color.WHITE);
@@ -340,8 +373,7 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent e) {
 				ReproducirSonido("imagenes/sound2.wav");
 				
-				Operaciones obj=new Operaciones();
-				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
+				
 				
 				System.out.println(array1.size());
 				
@@ -370,7 +402,11 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_2.setLayout(null);
 		
 		scrollPane = new JScrollPane();
+
 		scrollPane.setBounds(194, 39, 550, 200);
+		scrollPane.setBounds(203, 39, 550, 200);
+		scrollPane.setBackground(Color.DARK_GRAY);
+
 		panel_2.add(scrollPane);
 		
 		
@@ -383,6 +419,7 @@ public void actionPerformed(ActionEvent arg0) {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				guardar_array();
+
 			CargaDatos1();
 			CreaColumnas1();
 			crearTabla3();
@@ -450,11 +487,15 @@ public void actionPerformed(ActionEvent arg0) {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(220, 220, 220));
 		tabbedPane.addTab("Matriz Cuadrada", null, panel_4, null);
+		panel_4.setLayout(null);
+		
+		table_5 = new JTable();
+		table_5.setBounds(58, 27, 650, 250);
+		panel_4.add(table_5);
 		
 	
 	}
 	public void CreaColumnas() {
-		  ArrayList<String> Columna = new ArrayList<String>();
 		 int arr = array1.size(); 
 	    titColumna = new String[arr];
 	    
@@ -474,8 +515,6 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	public void CreaColumnas2() {
-		 int arr = array1.size(); 
-		  ArrayList<String> Columna = new ArrayList<String>();
 	    titColumna2 = new String[1];
 	    
 	    for( int i=0; i < 1; i++ ) {
@@ -487,12 +526,6 @@ public void actionPerformed(ActionEvent arg0) {
 	  public void CargaDatos() {
 		  int arr2 = array1.size(); 
 	    datoColumna = new String[arr2][arr2];
-	    
-	    for( int iY=0; iY < arr2; iY++ ) {
-	      for( int iX=0; iX < arr2; iX++ ) {
-		datoColumna[iY][iX] = "";
-	      }
-	    }
 	  }
 	  
 	  public void CargaDatos1() {
@@ -720,6 +753,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 		}
 	  
+	  
 	  public void guardar_array(){
 		  ReproducirSonido("imagenes/sound2.wav");
 			for (int i = 0; i < table.getColumnCount(); i++) {
@@ -729,8 +763,10 @@ public void actionPerformed(ActionEvent arg0) {
 				}
 				System.out.println();
 			}
-			
-	//	de_array_a_tabla();
+
+			Operaciones obj=new Operaciones();
+			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
+			table_5.setModel(obj.recibirmodelo());
 		}
 	  
 		//USAR ESTE METODO PARA LAS OTRAS MATRICES DE ARRAY A TABLA
@@ -777,11 +813,7 @@ public void actionPerformed(ActionEvent arg0) {
 		}
 		
 public double[][] valore_real1( int filas,int columnas){
-			
-			
-
 			ArrayList<Double> numeros1 = new ArrayList<Double>();
-
 			
 			double a = 0;
 			char[] c;
@@ -789,31 +821,21 @@ public double[][] valore_real1( int filas,int columnas){
 			double n1,n2;
 
 			for(int p=0;p<lista_tabla.size();p++){
-				
 				c = lista_tabla.get(p).toCharArray();
-				
-				
-
 				n1=Double.parseDouble(String.valueOf(c[0]));
-
 				n2=Double.parseDouble(String.valueOf(c[2]));
 				a= (n1/n2);
 			numeros1.add(a);
-
 				}
 			//System.out.println(numeros1);
 			int y,k,w;
 			w=0;
 			for( y=0;y<m.length;y++){
-				
 				for( k=0;k<m[y].length;k++){
-			m[y][k]=numeros1.get(w);
-			w=w+1;
-
+					m[y][k]=numeros1.get(w);
+					w=w+1;
 				}
-
 			}
-			
 			return m;
 		}
 
@@ -851,4 +873,5 @@ for(int s=0;s<vector.length;s++){
 		         System.out.println("Error al reproducir el sonido.");
 		       }
 		     }
+		 
 }

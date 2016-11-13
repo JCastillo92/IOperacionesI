@@ -1,9 +1,14 @@
 package user_interface;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 public class Operaciones{
-	//las de aqui abajo solo se siguen agregando
-	double[][] matriz_ponderacion= new double[1][2];
-	
+	PersonalF obj =new PersonalF();
+	JTable Tabla_Matriz_Cuadrada;
+	private String[] vector={"MODELO","TIPO","MARCA","PRECIO"};
+	private String[][] matriz={};
+	private DefaultTableModel mod=new DefaultTableModel(matriz,vector);
 	//aqui abajo veo el tamano de los criterios y alternativas
 	int Criterio_size, Alternativas_size;
 	//matriz criterio x criterio
@@ -13,39 +18,23 @@ public class Operaciones{
 	
 	//double[][] A= new double[Criterio_size][Criterio_size];
 	//borrar todo el double de aqui abajo
-	double[][] A={
+	
+	/*double[][] A={
 			{1.0, 	0.5,	 3.0},
 			{2.0, 	1.0, 		4.0},
 			{0.33, 0.25, 	1.0}
 			};
-	
-	//borrar el numero tres 3 y poner Criterio_size
-	double[] vector_suma_filas=new double[3];
-
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////R      E      C     I      B      I     R//////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void recibo_tamano_criterio_alternativa(int a,int b){
-		Criterio_size=a;
-		Alternativas_size=b;
-		
-		//borrar la linea de aqui abajo
-		Criterio_size=3;
-	}
-	public void recibo_principal_filas_columnas(double[][] recibo_matriz){
-
-		
-	}//fin void matriz_vv
-	
+	*/
 	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////// P    R    O    C     E    S   O/////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void matriz_principal(){
+	public void matriz_principal(double[][] A, int cri, int alt){
+		Criterio_size=cri;
+		Alternativas_size=alt;
+		
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
 
@@ -70,6 +59,8 @@ public class Operaciones{
 		int i,j;
 		for(i=0;i<multiplicacion_criterios.length;i++){
 			for(j=0;j<multiplicacion_criterios[i].length;j++){
+				String vectnew[]={""+multiplicacion_criterios[i][j]};
+				mod.addRow(vectnew);
 				System.out.print(multiplicacion_criterios[i][j]+"\t");
 			}
 			System.out.println();
@@ -80,7 +71,7 @@ public class Operaciones{
 	
 	public void suma_filas(double[][] suma_filas){
 		//debo recibir aqui la matriz
-		
+		double[] vector_suma_filas=new double[Alternativas_size];
 		for (int i = 0; i < suma_filas.length; i++) {
 			double acumula_suma=0;
 			for (int j = 0; j < suma_filas[i].length; j++) {
@@ -89,13 +80,27 @@ public class Operaciones{
 			vector_suma_filas[i]=acumula_suma;
 		}
 		
+		
 		System.out.println("suma FILAS de la matriz cuadrada principal");
 		for (int i = 0; i < vector_suma_filas.length; i++) {
 			System.out.println(vector_suma_filas[i]);
 		}
 		
+		
+		
 	}
 
+	
+	public DefaultTableModel recibirmodelo(){
+		return mod;
+	}
+	
+	
+	
+	
+	
+	
+	
 	public void Solucion_final(){
 		//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
 		
@@ -125,10 +130,13 @@ public class Operaciones{
 				}
 	}
 	
+<<<<<<< HEAD
 	
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
 		obj.matriz_principal();
 	}
+=======
+>>>>>>> d5e067367b922e8a47a4beb59cb5a8ff4ee6a15c
 }
