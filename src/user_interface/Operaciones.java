@@ -1,6 +1,8 @@
 package user_interface;
 
 public class Operaciones{
+	PersonalF obj =new PersonalF();
+	
 	//las de aqui abajo solo se siguen agregando
 	double[][] matriz_ponderacion= new double[1][2];
 	
@@ -12,13 +14,15 @@ public class Operaciones{
 	double[][] multiplicacion_criterios=null;
 	
 	//double[][] A= new double[Criterio_size][Criterio_size];
+	double[][] A=obj.valore_real1(Criterio_size, Criterio_size);
 	//borrar todo el double de aqui abajo
-	double[][] A={
+	
+	/*double[][] A={
 			{1.0, 	0.5,	 3.0},
 			{2.0, 	1.0, 		4.0},
 			{0.33, 0.25, 	1.0}
 			};
-	
+	*/
 	//borrar el numero tres 3 y poner Criterio_size
 	double[] vector_suma_filas=new double[3];
 
@@ -34,12 +38,6 @@ public class Operaciones{
 		//borrar la linea de aqui abajo
 		Criterio_size=3;
 	}
-	public void recibo_principal_filas_columnas(double[][] recibo_matriz){
-
-		
-	}//fin void matriz_vv
-	
-	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,6 +1,5 @@
 package user_interface;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.sound.sampled.AudioInputStream;
@@ -20,7 +19,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.util.*;
 
 import javax.swing.SwingConstants;
@@ -30,7 +28,6 @@ import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
@@ -585,11 +582,7 @@ public void actionPerformed(ActionEvent arg0) {
 	
 		
 public double[][] valore_real1( int filas,int columnas){
-			
-			
-
 			ArrayList<Double> numeros1 = new ArrayList<Double>();
-
 			
 			double a = 0;
 			char[] c;
@@ -597,31 +590,21 @@ public double[][] valore_real1( int filas,int columnas){
 			double n1,n2;
 
 			for(int p=0;p<lista_tabla.size();p++){
-				
 				c = lista_tabla.get(p).toCharArray();
-				
-				
-
 				n1=Double.parseDouble(String.valueOf(c[0]));
-
 				n2=Double.parseDouble(String.valueOf(c[2]));
 				a= (n1/n2);
 			numeros1.add(a);
-
 				}
 			//System.out.println(numeros1);
 			int y,k,w;
 			w=0;
 			for( y=0;y<m.length;y++){
-				
 				for( k=0;k<m[y].length;k++){
-			m[y][k]=numeros1.get(w);
-			w=w+1;
-
+					m[y][k]=numeros1.get(w);
+					w=w+1;
 				}
-
 			}
-			
 			return m;
 		}
 
