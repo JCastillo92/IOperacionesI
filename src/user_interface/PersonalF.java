@@ -222,6 +222,15 @@ public class PersonalF extends JFrame {
 		lblProcess.setBounds(651, 231, 170, 43);
 		panel_0.add(lblProcess);
 		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
+		btnNewButton.setBounds(717, -8, 114, 97);
+		panel_0.add(btnNewButton);
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(220, 220, 220));
