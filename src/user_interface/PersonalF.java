@@ -184,6 +184,12 @@ public class PersonalF extends JFrame {
 		panel_0.add(btnPDF);
 		
 		JButton button = new JButton("");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			
+			}
+		});
 		button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
 		button.setBounds(363, 124, 240, 229);
 		panel_0.add(button);
@@ -247,6 +253,7 @@ public class PersonalF extends JFrame {
 					}
 						
 				txt_alternativa.setText("");
+				txt_alternativa.requestFocus();
 			}
 		});
 		
@@ -270,6 +277,7 @@ public class PersonalF extends JFrame {
 		          } 
 		        } 
 					});
+		
 		txt_criterio.setBounds(163, 248, 148, 20);
 		panel.add(txt_criterio);
 		
@@ -297,6 +305,7 @@ public void actionPerformed(ActionEvent arg0) {
 					}
 						
 				txt_criterio.setText("");
+				txt_criterio.requestFocus();
 			}
 		});
 		btn_anadir_cri.setForeground(Color.WHITE);
@@ -524,6 +533,7 @@ public void actionPerformed(ActionEvent arg0) {
 			}
 			
 		}
+	  
 	  
 	  public void guardar_array(){
 		  ReproducirSonido("imagenes/sound2.wav");
