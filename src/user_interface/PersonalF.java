@@ -17,8 +17,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
 import java.util.*;
+
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -26,6 +28,7 @@ import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+
 import javax.swing.JTextField;
 
 public class PersonalF extends JFrame {
@@ -42,9 +45,14 @@ public class PersonalF extends JFrame {
 	 private JTable table_1;
 	public ArrayList<String> array1;
 	public ArrayList<String> array2;
+	public ArrayList<String> numeros1;
+	
 	private JScrollPane scrollPane;
 	private JScrollPane scrollPane_1;
 	private List<String> lista_tabla;
+	private JTable table_2;
+	private JTable table_3;
+	private JTable table_4;
 
 	/**
 	 * Launch the application.
@@ -331,6 +339,8 @@ public void actionPerformed(ActionEvent arg0) {
 				    CargaDatos2();
 				    crearTabla();
 				 crearTabla2();
+				 de_array_a_tabla();
+				 
 			}
 			
 			
@@ -366,6 +376,7 @@ public void actionPerformed(ActionEvent arg0) {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				guardar_array();
+				de_array_a_tabla();
 			}
 		});
 		button_2.setForeground(Color.WHITE);
@@ -377,6 +388,22 @@ public void actionPerformed(ActionEvent arg0) {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(220, 220, 220));
 		tabbedPane.addTab("Tabla Llena", null, panel_3, null);
+		panel_3.setLayout(null);
+		
+		table_2 = new JTable();
+		table_2.setBounds(415, 5, 0, 0);
+		panel_3.add(table_2);
+		
+		table_3 = new JTable();
+		table_3.setBounds(124, 82, 350, 169);
+		
+		
+		
+		panel_3.add(table_3);
+		
+		table_4 = new JTable();
+		table_4.setBounds(27, 82, 81, 169);
+		panel_3.add(table_4);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(220, 220, 220));
@@ -544,10 +571,79 @@ public void actionPerformed(ActionEvent arg0) {
 				for (int j = 0; j < table.getRowCount(); j++) {
 					
 					//CAMBIAR EL NOMBRE DE ESTA TABLA 
-					table_1.setValueAt(lista_tabla.get(mirecorredor), j, i);
+					table_3.setValueAt(numeros1.get(mirecorredor), j, i);
 					mirecorredor++;
 					
 				}
+				
+	
 			}
 		}
+//valores reales para la matriz cuadrada
+		
+	
+		
+public double[][] valore_real1( int filas,int columnas){
+			
+			
+
+			ArrayList<Double> numeros1 = new ArrayList<Double>();
+
+			
+			double a = 0;
+			char[] c;
+			double m[][]=new double[filas][columnas];
+			double n1,n2;
+
+			for(int p=0;p<lista_tabla.size();p++){
+				
+				c = lista_tabla.get(p).toCharArray();
+				
+				
+
+				n1=Double.parseDouble(String.valueOf(c[0]));
+
+				n2=Double.parseDouble(String.valueOf(c[2]));
+				a= (n1/n2);
+			numeros1.add(a);
+
+				}
+			//System.out.println(numeros1);
+			int y,k,w;
+			w=0;
+			for( y=0;y<m.length;y++){
+				
+				for( k=0;k<m[y].length;k++){
+			m[y][k]=numeros1.get(w);
+			w=w+1;
+
+				}
+
+			}
+			
+			return m;
+		}
+
+public double [] ponderacion(double [] vector,int lon){
+	double d,acum=0;
+	double [] resp =new double[lon];
+	
+	for(int w=0;w<vector.length;w++){
+		
+		acum=acum+vector[w];	
+		
+	}
+	
+for(int s=0;s<vector.length;s++){
+
+	
+	d=Double.parseDouble(String.valueOf(vector[s]));
+
+	resp[s]=(d/acum);	
+	}
+
+	
+	return resp;
+}
+
 }
