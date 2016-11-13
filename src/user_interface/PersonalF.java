@@ -265,7 +265,7 @@ public class PersonalF extends JFrame {
 		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		txt_alternativa.setEditable(true);
 		txt_alternativa.setColumns(10);
-		txt_alternativa.setBounds(174, 248, 148, 20);
+		txt_alternativa.setBounds(95, 148, 148, 20);
 		panel.add(txt_alternativa);
 		
 		Button btn_anadir_alt = new Button("A\u00D1ADIR");
@@ -803,12 +803,11 @@ public void actionPerformed(ActionEvent arg0) {
 				n1=Double.parseDouble(String.valueOf(c[0]));
 
 				n2=Double.parseDouble(String.valueOf(c[2]));
-				a= (n1/n2);
+				a= (double)Math.round((n1/n2)*100)/100;
 			valor.add(a);
 
 				}
 
-			System.out.println(valor);
 			return valor;
 		}
 		
