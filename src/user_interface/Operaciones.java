@@ -5,10 +5,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class Operaciones{
 	PersonalF obj =new PersonalF();
-	JTable Tabla_Matriz_Cuadrada;
-	private String[] vector={"MODELO","TIPO","MARCA","PRECIO"};
-	private String[][] matriz={};
-	private DefaultTableModel mod=new DefaultTableModel(matriz,vector);
+	String[] vector=null;
+	String[][] matriz={};
+	DefaultTableModel mod=null;
+	
 	//aqui abajo veo el tamano de los criterios y alternativas
 	int Criterio_size, Alternativas_size;
 	//matriz criterio x criterio
@@ -35,6 +35,7 @@ public class Operaciones{
 		Criterio_size=cri;
 		Alternativas_size=alt;
 		
+		
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
 
@@ -57,12 +58,16 @@ public class Operaciones{
 		
 		System.out.println("matriz cuadrada CRITERIOS principal");
 		int i,j;
+		vector=new String[Criterio_size];
+		mod=new DefaultTableModel(matriz,vector);
+		
 		for(i=0;i<multiplicacion_criterios.length;i++){
+			String a[]=new String[20];
 			for(j=0;j<multiplicacion_criterios[i].length;j++){
-				String vectnew[]={""+multiplicacion_criterios[i][j]};
-				mod.addRow(vectnew);
+				a[j]=""+multiplicacion_criterios[i][j];
 				System.out.print(multiplicacion_criterios[i][j]+"\t");
 			}
+			mod.addRow(a);
 			System.out.println();
 		}
 		
@@ -94,6 +99,17 @@ public class Operaciones{
 	public DefaultTableModel recibirmodelo(){
 		return mod;
 	}
+	/*
+	public String[][] recibirmodelo(){
+		String[][] aa=new String[Criterio_size][Criterio_size];
+		for (int i = 0; i < aa.length; i++) {
+			for (int j = 0; j < aa[i].length; j++) {
+				aa[i][j]=""+multiplicacion_criterios[i][j];
+			}
+		}
+		return aa;
+	}
+	*/
 	
 	
 	

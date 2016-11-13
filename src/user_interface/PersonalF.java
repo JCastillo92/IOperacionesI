@@ -361,7 +361,7 @@ public void actionPerformed(ActionEvent arg0) {
 				
 				System.out.println(array1.size());
 				
-				 CreaColumnas();
+				CreaColumnas();
 				    CargaDatos();
 				    
 				    CreaColumnas2();
@@ -596,6 +596,8 @@ public void actionPerformed(ActionEvent arg0) {
 				}
 				System.out.println();
 			}
+			
+			
 			Operaciones obj=new Operaciones();
 			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
 			table_5.setModel(obj.recibirmodelo());
