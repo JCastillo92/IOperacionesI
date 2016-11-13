@@ -57,6 +57,7 @@ public class PersonalF extends JFrame {
 	private JTable table_2;
 	private JTable table_3;
 	private JTable table_4;
+	private JTable table_5;
 
 	/**
 	 * Launch the application.
@@ -416,6 +417,11 @@ public void actionPerformed(ActionEvent arg0) {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(220, 220, 220));
 		tabbedPane.addTab("Matriz Cuadrada", null, panel_4, null);
+		panel_4.setLayout(null);
+		
+		table_5 = new JTable();
+		table_5.setBounds(58, 27, 667, 221);
+		panel_4.add(table_5);
 		
 	
 	}
