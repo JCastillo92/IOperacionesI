@@ -447,7 +447,6 @@ public void actionPerformed(ActionEvent arg0) {
 	
 	}
 	public void CreaColumnas() {
-		  ArrayList<String> Columna = new ArrayList<String>();
 		 int arr = array1.size(); 
 	    titColumna = new String[arr];
 	    
@@ -457,8 +456,6 @@ public void actionPerformed(ActionEvent arg0) {
 	  }
 	
 	public void CreaColumnas2() {
-		 int arr = array1.size(); 
-		  ArrayList<String> Columna = new ArrayList<String>();
 	    titColumna2 = new String[1];
 	    
 	    for( int i=0; i < 1; i++ ) {
@@ -470,12 +467,6 @@ public void actionPerformed(ActionEvent arg0) {
 	  public void CargaDatos() {
 		  int arr2 = array1.size(); 
 	    datoColumna = new String[arr2][arr2];
-	    
-	   /* for( int iY=0; iY < arr2; iY++ ) {
-	      for( int iX=0; iX < arr2; iX++ ) {
-		datoColumna[iY][iX] = "";
-	      }
-	    }*/
 	  }
 	  
 	  public void CargaDatos2() {
