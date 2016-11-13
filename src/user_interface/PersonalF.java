@@ -73,6 +73,7 @@ public class PersonalF extends JFrame {
 	private JTable table_k5;
 	private JTable table_k6;
 	private JTable table_5;
+	private JScrollPane scrollPane_6;
 
 	/**
 	 * Launch the application.
@@ -423,6 +424,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 			crearTabla4();
 		crearTabla5();
+		crearTabla_5j();//jairo
 		crearTabla6();
 		//	de_array_a_tabla();
 
@@ -491,7 +493,7 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane.addTab("Matriz Cuadrada", null, panel_4, null);
 		panel_4.setLayout(null);
 		
-		JScrollPane scrollPane_6 = new JScrollPane();
+		scrollPane_6 = new JScrollPane();
 		scrollPane_6.setBounds(55, 31, 524, 220);
 		panel_4.add(scrollPane_6);
 		
@@ -573,8 +575,6 @@ public void actionPerformed(ActionEvent arg0) {
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
 			    
-				  
-				  
 			scrollPane.setViewportView(table);
 			
 			//LISTENER TABLA
@@ -585,8 +585,6 @@ public void actionPerformed(ActionEvent arg0) {
 					int tam_fil=table.getRowCount();
 					//System.out.println(tam_col+" "+tam_fil);
 					cambiar_celdas2(tam_col, tam_fil);
-					  
-					
 				}
 				
 			});
@@ -623,6 +621,20 @@ public void actionPerformed(ActionEvent arg0) {
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
 			scrollPane_4.setViewportView(table_k5);
+			}
+	  public void crearTabla_5j(){ 
+			table_5 = new JTable(datoColumna1,titColumna);
+			 table_5.setShowHorizontalLines( true );
+			    table_5.setRowSelectionAllowed( true );
+			    table_5.setColumnSelectionAllowed( true );
+				scrollPane_6.setViewportView(table_5);
+							int micorredor=0;
+							for(int y=0;y<datoColumna1.length;y++){
+								  for(int W=0;W<datoColumna1.length;W++){
+									  datoColumna1[y][W]=String.valueOf(valor().get(micorredor));
+									  micorredor++;
+								  }  
+							  }
 			}
 	  
 	
@@ -865,7 +877,6 @@ for(int s=0;s<vector.length;s++){
 	return resp;
 }
 
-		
 		// METODO SONIDO
 		 public void ReproducirSonido(String nombreSonido){
 		       try {
