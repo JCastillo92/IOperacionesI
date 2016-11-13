@@ -20,14 +20,6 @@ public class Operaciones{
 			};
 	double[] vector_suma_criterios=new double[Criterio_size];	
 	
-<<<<<<< HEAD
-	int FILAS, COLUMNAS;
-	
-	
-	
-	
-	public void matriz_vv(int F, int C){
-=======
 	public void recibo_tamano_criterio_alternativa(int a,int b){
 		Criterio_size=a;
 		Alternativas_size=b;
@@ -36,7 +28,7 @@ public class Operaciones{
 		Criterio_size=3;
 	}
 	public void recibo_principal_filas_columnas(double[][] recibo_matriz){
->>>>>>> e395b670240834d863fbffaf4bed022b8621c8b8
+
 		
 	}//fin void matriz_vv
 	
