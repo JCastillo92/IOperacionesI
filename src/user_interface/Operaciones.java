@@ -73,7 +73,7 @@ public class Operaciones{
 			vector_suma_criterios[i]=acumula_suma;
 		}
 		
-		System.out.println("aqui abajo esta la suma dela matriz cuadrada principal");
+		System.out.println("suma FILAS de la matriz cuadrada principal");
 		for (int i = 0; i < vector_suma_criterios.length; i++) {
 			System.out.println(vector_suma_criterios[i]);
 		}
