@@ -13,6 +13,9 @@ public class Operaciones {
 	
 	int FILAS, COLUMNAS;
 	
+	
+	
+	
 	public void matriz_vv(int F, int C){
 		
 		FILAS=F;
