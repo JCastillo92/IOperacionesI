@@ -260,13 +260,6 @@ public class PersonalF extends JFrame {
 		lblEscribaLaAlternativa.setBounds(24, 66, 140, 31);
 		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		panel.add(lblEscribaLaAlternativa);
-		
-		txt_alternativas = new JTextField();
-		txt_alternativas.setFont(new Font("Times New Roman", Font.ITALIC, 13));
-		txt_alternativas.setEditable(true);
-		txt_alternativas.setColumns(10);
-		txt_alternativas.setBounds(95, 148, 148, 20);
-		panel.add(txt_alternativas);
 
 
 		txt_criterios = new JTextField();
