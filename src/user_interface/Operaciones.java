@@ -14,7 +14,6 @@ public class Operaciones{
 	double[][] multiplicacion_criterios=null;
 	
 	//double[][] A= new double[Criterio_size][Criterio_size];
-	double[][] A=obj.valore_real1(Criterio_size, Criterio_size);
 	//borrar todo el double de aqui abajo
 	
 	/*double[][] A={
@@ -43,7 +42,7 @@ public class Operaciones{
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////// P    R    O    C     E    S   O/////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void matriz_principal(){
+	public void matriz_principal(double[][] A){
 		int fil_m1 = A.length;
 		int col_m1 = A[0].length;
 
@@ -141,6 +140,6 @@ public class Operaciones{
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
-		obj.matriz_principal();
+//		obj.matriz_principal();
 	}
 }

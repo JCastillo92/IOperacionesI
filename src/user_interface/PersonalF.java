@@ -569,7 +569,8 @@ public void actionPerformed(ActionEvent arg0) {
 				}
 				System.out.println();
 			}
-			
+			Operaciones obj=new Operaciones();
+			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()));
 			
 		}
 	  
