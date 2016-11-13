@@ -420,7 +420,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_4.setLayout(null);
 		
 		table_5 = new JTable();
-		table_5.setBounds(58, 27, 667, 221);
+		table_5.setBounds(58, 27, 650, 250);
 		panel_4.add(table_5);
 		
 	
@@ -576,6 +576,7 @@ public void actionPerformed(ActionEvent arg0) {
 				System.out.println();
 			}
 			Operaciones obj=new Operaciones();
+			obj.recibo_tamano_criterio_alternativa(table.getColumnCount(), table.getRowCount());
 			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()));
 			
 		}
