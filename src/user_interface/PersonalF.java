@@ -334,8 +334,8 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent e) {
 				ReproducirSonido("imagenes/sound2.wav");
 				
-				Operaciones obj=new Operaciones();
-				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
+				//Operaciones obj=new Operaciones();
+				//obj.recibo_tamano_criterio_alternativa(table.getColumnCount(), table.getRowCount());
 				
 				System.out.println(array1.size());
 				
@@ -576,8 +576,8 @@ public void actionPerformed(ActionEvent arg0) {
 				System.out.println();
 			}
 			Operaciones obj=new Operaciones();
-			obj.recibo_tamano_criterio_alternativa(table.getColumnCount(), table.getRowCount());
-			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()));
+			
+			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
 			
 		}
 	  
