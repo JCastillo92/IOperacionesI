@@ -130,13 +130,11 @@ public class Operaciones{
 				}
 	}
 	
-<<<<<<< HEAD
+
 	
 	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
-		obj.matriz_principal();
+		//obj.matriz_principal();
 	}
-=======
->>>>>>> d5e067367b922e8a47a4beb59cb5a8ff4ee6a15c
 }
