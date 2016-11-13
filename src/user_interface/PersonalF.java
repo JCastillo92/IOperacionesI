@@ -3,6 +3,11 @@ package user_interface;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +31,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 
@@ -229,18 +236,6 @@ public class PersonalF extends JFrame {
 		txt_alternativa = new JTextField();
 		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		txt_alternativa.setEditable(true);
-		txt_alternativa.addKeyListener(new KeyAdapter() {
-			@Override
-				 public void keyTyped(KeyEvent ke) { 
-		             char c=ke.getKeyChar(); 
-		          if(Character.isDigit(c)) { 
-		              getToolkit().beep(); 
-		              ke.consume(); 
-		              //Error.setText("Ingresa Solo Letras"); 
-		             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-		          } 
-		        } 
-					});
 		txt_alternativa.setColumns(10);
 		txt_alternativa.setBounds(163, 71, 148, 20);
 		panel.add(txt_alternativa);
@@ -249,7 +244,9 @@ public class PersonalF extends JFrame {
 		btn_anadir_alt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-
+				
+		            ReproducirSonido("imagenes/sound.wav");
+		       
 				String alternativa = txt_alternativa.getText();
 				array1.add(alternativa);
 				
@@ -298,7 +295,8 @@ public class PersonalF extends JFrame {
 		btn_anadir_cri.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
 				
-				
+				ReproducirSonido("imagenes/sound.wav");
+    
 				String criterio = txt_criterio.getText();
 				array2.add(criterio);
 				
@@ -306,7 +304,7 @@ public void actionPerformed(ActionEvent arg0) {
 					  System.out.println(array2.get(x));
 					}
 						
-				
+				txt_criterio.setText("");
 			}
 		});
 		btn_anadir_cri.setForeground(Color.WHITE);
@@ -327,6 +325,8 @@ public void actionPerformed(ActionEvent arg0) {
 		Button btn_procesar = new Button("PROCESAR");
 		btn_procesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ReproducirSonido("imagenes/sound2.wav");
+				
 				Operaciones obj=new Operaciones();
 				obj.recibo_tamano_criterio_alternativa(array1.size(), array2.size());
 				
@@ -358,10 +358,6 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane.addTab("Tabla C", null, panel_2, null);
 		panel_2.setLayout(null);
 		
-		JLabel lblTablaCriterios = new JLabel("Tabla Criterios");
-		lblTablaCriterios.setBounds(302, 11, 69, 14);
-		panel_2.add(lblTablaCriterios);
-		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(203, 39, 550, 200);
 		panel_2.add(scrollPane);
@@ -383,6 +379,11 @@ public void actionPerformed(ActionEvent arg0) {
 		button_2.setBackground(Color.BLUE);
 		button_2.setBounds(316, 295, 107, 44);
 		panel_2.add(button_2);
+		
+		JLabel lblMatrizDeAlternativas = new JLabel("MATRIZ DE ALTERNATIVAS");
+		lblMatrizDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblMatrizDeAlternativas.setBounds(328, 0, 311, 31);
+		panel_2.add(lblMatrizDeAlternativas);
 		 
 		
 		JPanel panel_3 = new JPanel();
@@ -552,7 +553,7 @@ public void actionPerformed(ActionEvent arg0) {
 		}
 	  
 	  public void guardar_array(){
-			
+		  ReproducirSonido("imagenes/sound2.wav");
 			for (int i = 0; i < table.getColumnCount(); i++) {
 				for (int j = 0; j < table.getRowCount(); j++) {
 					lista_tabla.add(String.valueOf(table.getValueAt(i, j)));
@@ -646,4 +647,16 @@ for(int s=0;s<vector.length;s++){
 	return resp;
 }
 
+		
+		// METODO SONIDO
+		 public void ReproducirSonido(String nombreSonido){
+		       try {
+		        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
+		        Clip clip = AudioSystem.getClip();
+		        clip.open(audioInputStream);
+		        clip.start();
+		       } catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+		         System.out.println("Error al reproducir el sonido.");
+		       }
+		     }
 }
