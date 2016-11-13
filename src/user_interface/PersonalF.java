@@ -39,8 +39,8 @@ import javax.swing.JTextField;
 public class PersonalF extends JFrame {
 
 	private JPanel contentPane;
-	public JTextField txt_criterios;
-	private JTextField txt_alternativas;
+	public JTextField txt_criterio;
+	private JTextField txt_alternativa;
 	public JTextField txt_alt;
 	public String titColumna[];
 
@@ -261,21 +261,21 @@ public class PersonalF extends JFrame {
 		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		panel.add(lblEscribaLaAlternativa);
 		
-<<<<<<< HEAD
+
 		txt_alternativa = new JTextField();
 		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		txt_alternativa.setEditable(true);
 		txt_alternativa.setColumns(10);
 		txt_alternativa.setBounds(95, 148, 148, 20);
 		panel.add(txt_alternativa);
-=======
-		txt_criterios = new JTextField();
-		txt_criterios.setBounds(156, 248, 148, 20);
-		txt_criterios.setFont(new Font("Times New Roman", Font.ITALIC, 13));
-		txt_criterios.setEditable(true);
-		txt_criterios.setColumns(10);
-		panel.add(txt_criterios);
->>>>>>> 907eddbf500e0b24693766355837aeb545f91564
+
+		txt_criterio = new JTextField();
+		txt_criterio.setBounds(156, 248, 148, 20);
+		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_criterio.setEditable(true);
+		txt_criterio.setColumns(10);
+		panel.add(txt_criterio);
+
 		
 		Button btn_anadir_crite = new Button("A\u00D1ADIR");
 		btn_anadir_crite.setBounds(252, 280, 70, 22);
@@ -284,23 +284,23 @@ public class PersonalF extends JFrame {
 				
 				
 		            ReproducirSonido("imagenes/sound.wav");
-		            if(!txt_criterios.getText().equals("")){
-				String alternativa = txt_criterios.getText();
+		            if(!txt_criterio.getText().equals("")){
+				String alternativa = txt_criterio.getText();
 				array1.add(alternativa);
 				
 				for(int x=0;x<array1.size();x++) {
 					  System.out.println(array1.get(x));
 					}
 						
-				txt_criterios.setText("");
-				txt_criterios.requestFocus();
+				txt_criterio.setText("");
+				txt_criterio.requestFocus();
 							
 				System.out.println("Paso");
 					
 				}else{
 					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
 			         
-					txt_criterios.requestFocus();
+					txt_criterio.requestFocus();
 					System.out.println("no valido ... esta vacio");
 				}
 			}
@@ -310,11 +310,11 @@ public class PersonalF extends JFrame {
 		btn_anadir_crite.setBackground(Color.BLACK);
 		panel.add(btn_anadir_crite);
 		
-		txt_alternativas = new JTextField();
-		txt_alternativas.setBounds(156, 71, 148, 20);
-		txt_alternativas.setFont(new Font("Times New Roman", Font.ITALIC, 13));
-		txt_alternativas.setColumns(10);
-		txt_alternativas.addKeyListener(new KeyAdapter() {
+		txt_alternativa = new JTextField();
+		txt_alternativa.setBounds(156, 71, 148, 20);
+		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_alternativa.setColumns(10);
+		txt_alternativa.addKeyListener(new KeyAdapter() {
 			@Override
 				 public void keyTyped(KeyEvent ke) { 
 		             char c=ke.getKeyChar(); 
@@ -326,7 +326,7 @@ public class PersonalF extends JFrame {
 		          } 
 		        } 
 					});
-		panel.add(txt_alternativas);
+		panel.add(txt_alternativa);
 		
 		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
 		lblEscribaElCriterio.setBounds(24, 243, 140, 31);
@@ -344,19 +344,19 @@ public class PersonalF extends JFrame {
 public void actionPerformed(ActionEvent arg0) {
 				
 				ReproducirSonido("imagenes/sound.wav");
-				if(!txt_alternativas.getText().equals("")){
-				String criterio = txt_alternativas.getText();
+				if(!txt_alternativa.getText().equals("")){
+				String criterio = txt_alternativa.getText();
 				array2.add(criterio);
 				
 				for(int x=0;x<array2.size();x++) {
 					  System.out.println(array2.get(x));
 					}
 						
-				txt_alternativas.setText("");
-				txt_alternativas.requestFocus();
+				txt_alternativa.setText("");
+				txt_alternativa.requestFocus();
 				}else{
 					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-					txt_alternativas.requestFocus();
+					txt_alternativa.requestFocus();
 				}
 			}
 		});
