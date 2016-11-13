@@ -18,7 +18,7 @@ public class Operaciones{
 			{2.0, 	1.0, 		4.0},
 			{0.33, 0.25, 	1.0}
 			};
-	
+	double[] vector_suma_criterios=new double[Criterio_size];	
 	
 	public void recibo_tamano_criterio_alternativa(int a,int b){
 		Criterio_size=a;
@@ -62,7 +62,12 @@ public class Operaciones{
 	}//fin metodo matriz principal
 	
 	public void suma_filas(){
-		
+		//debo recibir aqui la matriz
+		for (int i = 0; i < A.length; i++) {
+			for (int j = 0; j < A[i].length; j++) {
+				vector_suma_criterios[i]+=A[i][j];
+			}
+		}
 	}
 	
 	public static void main(String[] args){
