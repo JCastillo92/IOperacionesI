@@ -15,6 +15,7 @@ public class Operaciones{
 	//las ALTERNATIVAS son N y van en una matriz de NxN pero se las realiza C veces de acorde a los Criterios
 	
 	double[][] multiplicacion_criterios=null;
+	double[] vector_filas=null;
 	
 	//double[][] A= new double[Criterio_size][Criterio_size];
 	//borrar todo el double de aqui abajo
@@ -74,7 +75,7 @@ public class Operaciones{
 		suma_filas(multiplicacion_criterios);
 	}//fin metodo matriz principal
 	
-	public void suma_filas(double[][] suma_filas){
+	public double[] suma_filas(double[][] suma_filas){
 		//debo recibir aqui la matriz
 		double[] vector_suma_filas=new double[Alternativas_size];
 		for (int i = 0; i < suma_filas.length; i++) {
@@ -83,33 +84,21 @@ public class Operaciones{
 				acumula_suma+=suma_filas[i][j];
 			}
 			vector_suma_filas[i]=acumula_suma;
-		}
+		}//fin for
 		
 		
 		System.out.println("suma FILAS de la matriz cuadrada principal");
 		for (int i = 0; i < vector_suma_filas.length; i++) {
 			System.out.println(vector_suma_filas[i]);
 		}
-		
-		
-		
+		return vector_suma_filas;
 	}
 
 	
 	public DefaultTableModel recibirmodelo(){
 		return mod;
 	}
-	/*
-	public String[][] recibirmodelo(){
-		String[][] aa=new String[Criterio_size][Criterio_size];
-		for (int i = 0; i < aa.length; i++) {
-			for (int j = 0; j < aa[i].length; j++) {
-				aa[i][j]=""+multiplicacion_criterios[i][j];
-			}
-		}
-		return aa;
-	}
-	*/
+
 	
 	
 	
