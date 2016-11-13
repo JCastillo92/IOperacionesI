@@ -127,20 +127,6 @@ public class Operaciones{
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args){
 		Operaciones obj=new Operaciones();
 		obj.matriz_principal();
