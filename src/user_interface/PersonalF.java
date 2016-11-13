@@ -484,6 +484,7 @@ public void actionPerformed(ActionEvent arg0) {
 				 scrollPane_5.setViewportView(table_k6);
 				 
 				 JButton button_3 = new JButton("");
+				
 				 button_3.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
 				 button_3.setBounds(365, 122, 75, 78);
 				 panel_3.add(button_3);
@@ -494,11 +495,39 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_4.setLayout(null);
 		
 		scrollPane_6 = new JScrollPane();
-		scrollPane_6.setBounds(55, 31, 524, 220);
+		scrollPane_6.setBounds(39, 127, 352, 212);
 		panel_4.add(scrollPane_6);
 		
 		table_5 = new JTable();
 		scrollPane_6.setColumnHeaderView(table_5);
+		
+		JLabel lblMatrizCuadrada = new JLabel("MATRIZ CUADRADA");
+		lblMatrizCuadrada.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblMatrizCuadrada.setBounds(116, 55, 198, 31);
+		panel_4.add(lblMatrizCuadrada);
+		
+		JLabel lblSumaDeFilas = new JLabel("SUMA DE FILAS");
+		lblSumaDeFilas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblSumaDeFilas.setBounds(485, 55, 160, 31);
+		panel_4.add(lblSumaDeFilas);
+		
+		JScrollPane scrollPane_7 = new JScrollPane();
+		scrollPane_7.setBounds(503, 126, 98, 213);
+		panel_4.add(scrollPane_7);
+		
+		JScrollPane scrollPane_8 = new JScrollPane();
+		scrollPane_8.setBounds(673, 127, 98, 213);
+		panel_4.add(scrollPane_8);
+		
+		JLabel lblPonderacin = new JLabel("PONDERACI\u00D3N");
+		lblPonderacin.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblPonderacin.setBounds(655, 55, 148, 31);
+		panel_4.add(lblPonderacin);
+		
+		JButton button_4 = new JButton("");
+		 button_4.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		button_4.setBounds(416, 211, 62, 54);
+		panel_4.add(button_4);
 		
 	
 	}
