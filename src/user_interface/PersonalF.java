@@ -491,9 +491,12 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane.addTab("Matriz Cuadrada", null, panel_4, null);
 		panel_4.setLayout(null);
 		
+		JScrollPane scrollPane_6 = new JScrollPane();
+		scrollPane_6.setBounds(55, 31, 524, 220);
+		panel_4.add(scrollPane_6);
+		
 		table_5 = new JTable();
-		table_5.setBounds(58, 27, 650, 250);
-		panel_4.add(table_5);
+		scrollPane_6.setColumnHeaderView(table_5);
 		
 	
 	}
