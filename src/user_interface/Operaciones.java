@@ -1,7 +1,7 @@
 package user_interface;
 
 public class Operaciones{
-	PersonalF obj =new PersonalF();
+	//PersonalF obj =new PersonalF();
 	//aqui abajo veo el tamano de los criterios y alternativas
 	int Criterio_size, Alternativas_size;
 	//matriz criterio x criterio
@@ -18,14 +18,13 @@ public class Operaciones{
 			{0.33, 0.25, 	1.0}
 			};
 	*/
-	double[] vector_suma_filas=new double[Alternativas_size];
-
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void recibo_tamano_SOLO_criterio(int a,int b){
 		Criterio_size=a;
 		Alternativas_size=b;
 	}
+	double[] vector_suma_filas=null;
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
