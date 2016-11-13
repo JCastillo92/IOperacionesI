@@ -261,21 +261,21 @@ public class PersonalF extends JFrame {
 		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
 		panel.add(lblEscribaLaAlternativa);
 		
-<<<<<<< HEAD
-		txt_alternativa = new JTextField();
-		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
-		txt_alternativa.setEditable(true);
-		txt_alternativa.setColumns(10);
-		txt_alternativa.setBounds(95, 148, 148, 20);
-		panel.add(txt_alternativa);
-=======
+		txt_alternativas = new JTextField();
+		txt_alternativas.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_alternativas.setEditable(true);
+		txt_alternativas.setColumns(10);
+		txt_alternativas.setBounds(95, 148, 148, 20);
+		panel.add(txt_alternativas);
+
+
 		txt_criterios = new JTextField();
 		txt_criterios.setBounds(156, 248, 148, 20);
 		txt_criterios.setFont(new Font("Times New Roman", Font.ITALIC, 13));
 		txt_criterios.setEditable(true);
 		txt_criterios.setColumns(10);
 		panel.add(txt_criterios);
->>>>>>> 907eddbf500e0b24693766355837aeb545f91564
+
 		
 		Button btn_anadir_crite = new Button("A\u00D1ADIR");
 		btn_anadir_crite.setBounds(252, 280, 70, 22);

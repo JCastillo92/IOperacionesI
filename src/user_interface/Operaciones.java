@@ -146,18 +146,5 @@ public class Operaciones{
 				}
 	}
 	
-<<<<<<< HEAD
 
-	
-	
-	public static void main(String[] args){
-		Operaciones obj=new Operaciones();
-<<<<<<< HEAD
-//		obj.matriz_principal();
-=======
-		//obj.matriz_principal();
->>>>>>> 907eddbf500e0b24693766355837aeb545f91564
-	}
-=======
->>>>>>> 80f900c68d042af87e38ce6bf68ee05d4630ecc8
 }
