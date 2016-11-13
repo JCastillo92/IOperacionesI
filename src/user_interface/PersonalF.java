@@ -227,7 +227,7 @@ public class PersonalF extends JFrame {
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
-		btnNewButton.setBounds(702, 35, 105, 72);
+		btnNewButton.setBounds(717, -8, 114, 97);
 		panel_0.add(btnNewButton);
 		
 		
