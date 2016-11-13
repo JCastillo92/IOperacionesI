@@ -250,7 +250,7 @@ public class PersonalF extends JFrame {
 				
 				
 		            ReproducirSonido("imagenes/sound.wav");
-		       
+		            if(!txt_alternativa.getText().equals("")){
 				String alternativa = txt_alternativa.getText();
 				array1.add(alternativa);
 				
@@ -260,6 +260,15 @@ public class PersonalF extends JFrame {
 						
 				txt_alternativa.setText("");
 				txt_alternativa.requestFocus();
+							
+				System.out.println("Paso");
+					
+				}else{
+					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+			         
+					txt_alternativa.requestFocus();
+					System.out.println("no valido ... esta vacio");
+				}
 			}
 		});
 		
@@ -302,7 +311,7 @@ public class PersonalF extends JFrame {
 public void actionPerformed(ActionEvent arg0) {
 				
 				ReproducirSonido("imagenes/sound.wav");
-    
+				if(!txt_criterio.getText().equals("")){
 				String criterio = txt_criterio.getText();
 				array2.add(criterio);
 				
@@ -312,6 +321,10 @@ public void actionPerformed(ActionEvent arg0) {
 						
 				txt_criterio.setText("");
 				txt_criterio.requestFocus();
+				}else{
+					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+					txt_criterio.requestFocus();
+				}
 			}
 		});
 		btn_anadir_cri.setForeground(Color.WHITE);
