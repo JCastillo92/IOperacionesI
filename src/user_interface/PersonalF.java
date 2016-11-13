@@ -345,7 +345,7 @@ public void actionPerformed(ActionEvent arg0) {
 				    CargaDatos2();
 				    crearTabla();
 				 crearTabla2();
-				 de_array_a_tabla();
+				// de_array_a_tabla();
 				 
 			}
 			
@@ -366,6 +366,7 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(203, 39, 550, 200);
+		scrollPane.setBackground(Color.DARK_GRAY);
 		panel_2.add(scrollPane);
 		
 		
@@ -378,7 +379,7 @@ public void actionPerformed(ActionEvent arg0) {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				guardar_array();
-				de_array_a_tabla();
+				//de_array_a_tabla();
 			}
 		});
 		button_2.setForeground(Color.WHITE);
