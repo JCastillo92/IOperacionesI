@@ -3646,9 +3646,20 @@ public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
 			}
 			break;
 		}
+		stringPonderaciones= new String[array1.size()][array1.size()];
+		
 		for (int i = 0; i < lista_ponderaciones.size(); i++) {
 			System.out.print(lista_ponderaciones.get(i)+" ");
 		}
+		
+		int recorredor02 = 0;
+		for (int i = 0; i < array1.size(); i++) {
+			for (int j = 0; j < array1.size(); j++) {
+				stringPonderaciones[i][j]=lista_ponderaciones.get(recorredor02);
+				recorredor02++;
+			}
+		}
+		
 	}
 
 }
