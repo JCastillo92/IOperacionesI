@@ -3811,8 +3811,38 @@ public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
 			}
 			System.out.println();
 		}
+		array_tablasolucion();
+		//de_matriz_a_tabla2();
 		Solucion_final(stringPonderaciones);
 	
+	}
+	
+	public void array_tablasolucion(){
+		int mirecorredor=0;
+		for (int i = 0; i < tableUltima1.getColumnCount(); i++) {
+			for (int j = 0; j < tableUltima1.getRowCount(); j++) {
+				tableUltima1.setValueAt(lista_ponderaciones.get(mirecorredor), j, i);
+				mirecorredor++;
+			}
+		}
+	}
+	//NO HACER CASO A ESTOS 2 METODOS DE MOMENTOS
+	public void de_matriz_a_tabla(){
+		
+		for (int i = 0; i < tableUltima1.getRowCount(); i++) {
+			for (int j = 0; j < tableUltima1.getColumnCount(); j++) {
+				tableUltima1.setValueAt(stringPonderaciones[i][j], j, i);
+			}
+		}
+	}
+	
+	public void de_matriz_a_tabla2(){
+		
+		for (int i = 0; i < tableUltima1.getColumnCount(); i++) {
+			for (int j = 0; j < tableUltima1.getRowCount(); j++) {
+				tableUltima1.setValueAt(stringPonderaciones[i][j], j, i);
+			}
+		}
 	}
 
 }
