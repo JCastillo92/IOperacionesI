@@ -534,7 +534,6 @@ public void actionPerformed(ActionEvent arg0) {
 										   
 										   crearTabla12_B();
 										   
-										   crearTabla41();
 										   CreaColumnas11();
 										   CargaDatos11();
 									    
@@ -1644,20 +1643,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 			}
 	  
-	  public void crearTabla41(){ 
-
-			table_31 = new JTable(datoColumna11,titColumna11);
-				
-			 table_31.setShowHorizontalLines( true );
-			    table_31.setRowSelectionAllowed( true );
-			    table_31.setColumnSelectionAllowed( true );
-			    
-			    scrollPane_b4.setViewportView(table_31);
-				
-			
-					
-			}
-	  
+	  	  
 
 	  
 	
