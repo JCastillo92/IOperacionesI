@@ -263,7 +263,6 @@ public class PersonalF extends JFrame {
 	private JButton button_16;
 	private JButton button_17;
 	private JLabel label;
-<<<<<<< HEAD
 	private JLabel label_1;
 	private JLabel label_2;
 	private JButton button_20;
@@ -287,7 +286,6 @@ public class PersonalF extends JFrame {
 	private JLabel label_14;
 	private JButton button_27;
 	private JButton button_25;
-=======
 	private JScrollPane scrollPane_b9;
 	private JScrollPane scrollPane_b10;
 	private JButton button_12;
@@ -307,8 +305,15 @@ public class PersonalF extends JFrame {
 	private JTable table_b16;
 	private JTable table_b18;
 	private JTable table_b19;
+	private JLabel label_15;
+	private JLabel label_16;
+	private JLabel label_17;
+	private JButton button_29;
+	private JButton button_28;
+	private JButton button_30;
+	private JLabel label_18;
+	private JLabel label_19;
 
->>>>>>> 525d4c992dfdbdfe34d2f2068d4be7faffdb245c
 
 	/**
 	 * Launch the application.
@@ -889,23 +894,6 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
 		panel_5.setLayout(null);
 		
-<<<<<<< HEAD
-=======
-		JButton button_10 = new JButton("");
-		button_10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_10.setBounds(270, 240, 75, 78);
-		 button_10.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
-		panel_5.add(button_10);
-		
-		JButton button_11 = new JButton("");
-		button_11.setBounds(703, 82, 75, 78);
-		button_11.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
-		panel_5.add(button_11);
-		
->>>>>>> 525d4c992dfdbdfe34d2f2068d4be7faffdb245c
 		
 		
 		 scrollPane_k9 = new JScrollPane();
@@ -1063,27 +1051,27 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_6.setLayout(null);
 		
 		scrollPane_b9 = new JScrollPane();
-		scrollPane_b9.setBounds(26, 26, 78, 149);
+		scrollPane_b9.setBounds(10, 63, 78, 149);
 		panel_6.add(scrollPane_b9);
 		
 		table_b10 = new JTable();
 		scrollPane_b9.setViewportView(table_b10);
 		
 		scrollPane_b10 = new JScrollPane();
-		scrollPane_b10.setBounds(132, 26, 257, 149);
+		scrollPane_b10.setBounds(98, 63, 257, 149);
 		panel_6.add(scrollPane_b10);
 		
 		table_b11 = new JTable();
 		scrollPane_b10.setViewportView(table_b11);
 		
 		scrollPane_b13 = new JScrollPane();
-		scrollPane_b13.setBounds(450, 26, 49, 149);
+		scrollPane_b13.setBounds(438, 63, 49, 149);
 		panel_6.add(scrollPane_b13);
 		
 		table_b13 = new JTable();
 		scrollPane_b13.setViewportView(table_b13);
 		
-		button_12 = new JButton("=");
+		button_12 = new JButton("");
 		button_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				guardar_arrayb1();
@@ -1097,50 +1085,91 @@ public void actionPerformed(ActionEvent arg0) {
 				  cuadradab();
 			}
 		});
-		button_12.setBounds(371, 82, 89, 23);
+		button_12.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		button_12.setBounds(365, 119, 55, 39);
 		panel_6.add(button_12);
 		
 		scrollPane_b14 = new JScrollPane();
-		scrollPane_b14.setBounds(525, 26, 257, 149);
+		scrollPane_b14.setBounds(497, 63, 257, 149);
 		panel_6.add(scrollPane_b14);
 		
 		table_b14 = new JTable();
 		scrollPane_b14.setViewportView(table_b14);
 		
 		scrollPane_b17 = new JScrollPane();
-		scrollPane_b17.setBounds(46, 220, 384, 186);
+		scrollPane_b17.setBounds(179, 291, 384, 186);
 		panel_6.add(scrollPane_b17);
 		
 		table_b17 = new JTable();
 		scrollPane_b17.setViewportView(table_b17);
 		
 		scrollPane_b18 = new JScrollPane();
-		scrollPane_b18.setBounds(543, 220, 107, 186);
+		scrollPane_b18.setBounds(669, 291, 107, 186);
 		panel_6.add(scrollPane_b18);
 		
 		table_b18 = new JTable();
 		scrollPane_b18.setViewportView(table_b18);
 		
 		scrollPane_b19 = new JScrollPane();
-		scrollPane_b19.setBounds(723, 220, 107, 186);
+		scrollPane_b19.setBounds(856, 291, 107, 186);
 		panel_6.add(scrollPane_b19);
 		
 		table_b19 = new JTable();
 		scrollPane_b19.setViewportView(table_b19);
 		
 		scrollPane_b15 = new JScrollPane();
-		scrollPane_b15.setBounds(804, 26, 49, 149);
+		scrollPane_b15.setBounds(824, 63, 49, 149);
 		panel_6.add(scrollPane_b15);
 		
 		table_b15 = new JTable();
 		scrollPane_b15.setViewportView(table_b15);
 		
 		scrollPane_b16 = new JScrollPane();
-		scrollPane_b16.setBounds(883, 26, 257, 149);
+		scrollPane_b16.setBounds(883, 63, 257, 149);
 		panel_6.add(scrollPane_b16);
 		
 		table_b16 = new JTable();
 		scrollPane_b16.setViewportView(table_b16);
+		
+		label_15 = new JLabel("Evaluaci\u00F3n alternativas:");
+		label_15.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_15.setBounds(108, 15, 189, 45);
+		panel_6.add(label_15);
+		
+		label_16 = new JLabel("Obtenci\u00F3n Matriz Cuadrada:");
+		label_16.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_16.setBounds(227, 239, 249, 45);
+		panel_6.add(label_16);
+		
+		label_17 = new JLabel("Suma filas:");
+		label_17.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_17.setBounds(669, 232, 107, 45);
+		panel_6.add(label_17);
+		
+		button_29 = new JButton("");
+		button_29.setBounds(588, 357, 49, 45);
+		button_29.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		panel_6.add(button_29);
+		
+		button_28 = new JButton("");
+		button_28.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
+		button_28.setBounds(764, 119, 49, 45);
+		panel_6.add(button_28);
+		
+		button_30 = new JButton("");
+		button_30.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		button_30.setBounds(786, 357, 49, 45);
+		panel_6.add(button_30);
+		
+		label_18 = new JLabel("Ponderaci\u00F3n:");
+		label_18.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_18.setBounds(849, 232, 107, 45);
+		panel_6.add(label_18);
+		
+		label_19 = new JLabel("Pasar a n\u00FAmeros reales:");
+		label_19.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_19.setBounds(712, 11, 189, 45);
+		panel_6.add(label_19);
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
