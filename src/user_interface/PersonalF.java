@@ -110,6 +110,9 @@ public class PersonalF extends JFrame {
 	private String[][] matriz={};
 	private DefaultTableModel mod7=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel mod8=new DefaultTableModel(matriz,vector);
+
+	private DefaultTableModel modk1=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel modk2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_7;
 	private JTable table_8;
 	private JScrollPane scrollPane_8;
@@ -146,6 +149,10 @@ public class PersonalF extends JFrame {
 	private JTable table_31;
 	private JButton IGUAL;
 	private JButton MARY;
+	private JScrollPane scrollPane_k18;
+	private JScrollPane scrollPane_k19;
+	private JTable table_k18;
+	private JTable table_k19;
 
 
 
@@ -338,174 +345,174 @@ public class PersonalF extends JFrame {
 		lblEscribaLaAlternativa.setBounds(10, 66, 189, 45);
 		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
 		panel.add(lblEscribaLaAlternativa);
-
-		txt_criterio = new JTextField();
-		txt_criterio.setBounds(196, 283, 212, 45);
-		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 25));
-		txt_criterio.setEditable(true);
-		txt_criterio.setColumns(10);
-		panel.add(txt_criterio);
-
 		
-		Button btn_anadir_crite = new Button("A\u00D1ADIR");
-		btn_anadir_crite.setFont(new Font("Dialog", Font.PLAIN, 25));
-		btn_anadir_crite.setBounds(268, 350, 140, 45);
-		btn_anadir_crite.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+				txt_criterio = new JTextField();
+				txt_criterio.setBounds(196, 283, 212, 45);
+				txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+				txt_criterio.setEditable(true);
+				txt_criterio.setColumns(10);
+				panel.add(txt_criterio);
 				
-				
-		            ReproducirSonido("imagenes/sound.wav");
-		            if(!txt_criterio.getText().equals("")){
-				String alternativa = txt_criterio.getText();
-				array1.add(alternativa);
-				
-				for(int x=0;x<array1.size();x++) {
-					  System.out.println(array1.get(x));
-					}
 						
-				txt_criterio.setText("");
-				txt_criterio.requestFocus();
-							
-				System.out.println("Paso");
-					
-				}else{
-					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-			         
-					txt_criterio.requestFocus();
-					System.out.println("no valido ... esta vacio");
-				}
-			}
-		});
-		
-		btn_anadir_crite.setForeground(Color.WHITE);
-		btn_anadir_crite.setBackground(Color.BLACK);
-		panel.add(btn_anadir_crite);
-		
-		txt_alternativa = new JTextField();
-		txt_alternativa.setBounds(209, 66, 199, 45);
-		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 25));
-		txt_alternativa.setColumns(10);
-		txt_alternativa.addKeyListener(new KeyAdapter() {
-			@Override
-				 public void keyTyped(KeyEvent ke) { 
-		             char c=ke.getKeyChar(); 
-		          if(Character.isDigit(c)) { 
-		              getToolkit().beep(); 
-		              ke.consume(); 
-		              //Error.setText("Ingresa Solo Letras"); 
-		             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-		          } 
-		        } 
-					});
-		panel.add(txt_alternativa);
-		
-		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
-		lblEscribaElCriterio.setBounds(10, 283, 176, 45);
-		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
-		panel.add(lblEscribaElCriterio);
-		
-		JLabel lblIngresoDeCriterio = new JLabel("INGRESO DE CRITERIO");
-		lblIngresoDeCriterio.setBounds(118, 239, 311, 31);
-		lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-		panel.add(lblIngresoDeCriterio);
-		
-		Button btn_anadir_alter = new Button("A\u00D1ADIR");
-		btn_anadir_alter.setFont(new Font("Dialog", Font.PLAIN, 25));
-		btn_anadir_alter.setBounds(268, 130, 140, 45);
-		btn_anadir_alter.addActionListener(new ActionListener() {
+						Button btn_anadir_crite = new Button("A\u00D1ADIR");
+						btn_anadir_crite.setFont(new Font("Dialog", Font.PLAIN, 25));
+						btn_anadir_crite.setBounds(268, 350, 140, 45);
+						btn_anadir_crite.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								
+								
+						            ReproducirSonido("imagenes/sound.wav");
+						            if(!txt_criterio.getText().equals("")){
+								String alternativa = txt_criterio.getText();
+								array1.add(alternativa);
+								
+								for(int x=0;x<array1.size();x++) {
+									  System.out.println(array1.get(x));
+									}
+										
+								txt_criterio.setText("");
+								txt_criterio.requestFocus();
+											
+								System.out.println("Paso");
+									
+								}else{
+									JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+							         
+									txt_criterio.requestFocus();
+									System.out.println("no valido ... esta vacio");
+								}
+							}
+						});
+						
+						btn_anadir_crite.setForeground(Color.WHITE);
+						btn_anadir_crite.setBackground(Color.BLACK);
+						panel.add(btn_anadir_crite);
+						
+						txt_alternativa = new JTextField();
+						txt_alternativa.setBounds(209, 66, 199, 45);
+						txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 25));
+						txt_alternativa.setColumns(10);
+						txt_alternativa.addKeyListener(new KeyAdapter() {
+							@Override
+								 public void keyTyped(KeyEvent ke) { 
+						             char c=ke.getKeyChar(); 
+						          if(Character.isDigit(c)) { 
+						              getToolkit().beep(); 
+						              ke.consume(); 
+						              //Error.setText("Ingresa Solo Letras"); 
+						             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+						          } 
+						        } 
+									});
+						panel.add(txt_alternativa);
+						
+						JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
+						lblEscribaElCriterio.setBounds(10, 283, 176, 45);
+						lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+						panel.add(lblEscribaElCriterio);
+						
+						JLabel lblIngresoDeCriterio = new JLabel("INGRESO DE CRITERIO");
+						lblIngresoDeCriterio.setBounds(118, 239, 311, 31);
+						lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+						panel.add(lblIngresoDeCriterio);
+						
+						Button btn_anadir_alter = new Button("A\u00D1ADIR");
+						btn_anadir_alter.setFont(new Font("Dialog", Font.PLAIN, 25));
+						btn_anadir_alter.setBounds(268, 130, 140, 45);
+						btn_anadir_alter.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
-				
-				ReproducirSonido("imagenes/sound.wav");
-				if(!txt_alternativa.getText().equals("")){
-				String criterio = txt_alternativa.getText();
-				array2.add(criterio);
-				
-				for(int x=0;x<array2.size();x++) {
-					  System.out.println(array2.get(x));
-					}
+								
+								ReproducirSonido("imagenes/sound.wav");
+								if(!txt_alternativa.getText().equals("")){
+								String criterio = txt_alternativa.getText();
+								array2.add(criterio);
+								
+								for(int x=0;x<array2.size();x++) {
+									  System.out.println(array2.get(x));
+									}
+										
+								txt_alternativa.setText("");
+								txt_alternativa.requestFocus();
+								}else{
+									JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
+									txt_alternativa.requestFocus();
+								}
+							}
+						});
+						btn_anadir_alter.setForeground(Color.WHITE);
+						btn_anadir_alter.setBackground(Color.BLACK);
+						panel.add(btn_anadir_alter);
 						
-				txt_alternativa.setText("");
-				txt_alternativa.requestFocus();
-				}else{
-					JOptionPane.showMessageDialog(null, "Caja de texto vacia!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
-					txt_alternativa.requestFocus();
-				}
-			}
-		});
-		btn_anadir_alter.setForeground(Color.WHITE);
-		btn_anadir_alter.setBackground(Color.BLACK);
-		panel.add(btn_anadir_alter);
-		
-		JButton button_1 = new JButton("");
-		button_1.setBounds(753, 130, 353, 318);
-		button_1.setBackground(new Color(224, 255, 255));
-		
-			
-		button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
-		panel.add(button_1);
-		
-		Button btn_procesar = new Button("PROCESAR");
-		btn_procesar.setFont(new Font("Dialog", Font.PLAIN, 30));
-		btn_procesar.setBounds(444, 449, 229, 54);
-		btn_procesar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ReproducirSonido("imagenes/sound2.wav");
-				
-				
-				
-				System.out.println(array1.size());
-				//JHON TOTAL ALTERNATIVAS
-				 total_alternativas = array1.size();
-				 controlTabedPanes();//FIN
-				
-				CreaColumnas();
-				    CargaDatos();
-				    
-				    CreaColumnas2();
-				    CargaDatos2();
-				    crearTabla();
-				 crearTabla2();
-				
-				 CargaDatos3();
-				   CreaColumnas3();
-				   CargaDatos4();
-				   CreaColumnas4();
-				
-				    crearTabla9();
+						JButton button_1 = new JButton("");
+						button_1.setBounds(753, 130, 353, 318);
+						button_1.setBackground(new Color(224, 255, 255));
+						
+							
+						button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
+						panel.add(button_1);
+						
+						Button btn_procesar = new Button("PROCESAR");
+						btn_procesar.setFont(new Font("Dialog", Font.PLAIN, 30));
+						btn_procesar.setBounds(444, 449, 229, 54);
+						btn_procesar.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								ReproducirSonido("imagenes/sound2.wav");
+								
+								
+								
+								System.out.println(array1.size());
+								//JHON TOTAL ALTERNATIVAS
+								 total_alternativas = array1.size();
+								 controlTabedPanes();//FIN
+								
+								CreaColumnas();
+								    CargaDatos();
+								    
+								    CreaColumnas2();
+								    CargaDatos2();
+								    crearTabla();
+								 crearTabla2();
+								
+								 CargaDatos3();
+								   CreaColumnas3();
+								   CargaDatos4();
+								   CreaColumnas4();
+								
+								    crearTabla9();
 
 
-				    crearTabla11();
-								 
+								    crearTabla11();
+												 
 
-					    
-					 CargaDatos4();
-					   CreaColumnas4();
-					    crearTabla11();
-					    
-					    CargaDatos31();
-						   CreaColumnas31();
-						   crearTabla91();
-						   
-						   
-						   CargaDatos5();
-						   CreaColumnas5();
-						   crearTabla12();  
-						   
-						   crearTabla12_B();
-						   
-						   crearTabla41();
-						   CreaColumnas11();
-						   CargaDatos11();
-					    
-					 
+									    
+									 CargaDatos4();
+									   CreaColumnas4();
+									    crearTabla11();
+									    
+									    CargaDatos31();
+										   CreaColumnas31();
+										   crearTabla91();
+										   
+										   
+										   CargaDatos5();
+										   CreaColumnas5();
+										   crearTabla12();  
+										   
+										   crearTabla12_B();
+										   
+										   crearTabla41();
+										   CreaColumnas11();
+										   CargaDatos11();
+									    
+									 
 
-			}
-			
-			
-		});
-		btn_procesar.setForeground(Color.WHITE);
-		btn_procesar.setBackground(new Color(0, 0, 255));
-		panel.add(btn_procesar);
+							}
+							
+							
+						});
+						btn_procesar.setForeground(Color.WHITE);
+						btn_procesar.setBackground(new Color(0, 0, 255));
+						panel.add(btn_procesar);
 		
 		
 		
@@ -517,52 +524,52 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(304, 68, 510, 274);
 		scrollPane.setBackground(new Color(224, 255, 255));
+		
+				panel_2.add(scrollPane);
+				
+				
+				
+				scrollPane_1 = new JScrollPane();
+				scrollPane_1.setBounds(123, 68, 137, 274);
+				panel_2.add(scrollPane_1);
+				
+				Button button_2 = new Button("GUARDAR");
+				button_2.setBounds(481, 447, 192, 69);
+				button_2.setFont(new Font("Dialog", Font.PLAIN, 25));
+				button_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						guardar_array();
 
-		panel_2.add(scrollPane);
-		
-		
-		
-		scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(123, 68, 137, 274);
-		panel_2.add(scrollPane_1);
-		
-		Button button_2 = new Button("GUARDAR");
-		button_2.setBounds(481, 447, 192, 69);
-		button_2.setFont(new Font("Dialog", Font.PLAIN, 25));
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				guardar_array();
+					CargaDatos1();
+					CreaColumnas1();
+					crearTabla3();
+					
+					crearTabla4();
+				crearTabla5();
+				
+				crearTabla6();
+				//	de_array_a_tabla();
+				
+				//CONTROL TABBEDPANE SEGUN ALTERNATIVAS
+				
 
-			CargaDatos1();
-			CreaColumnas1();
-			crearTabla3();
-			
-			crearTabla4();
-		crearTabla5();
-		
-		crearTabla6();
-		//	de_array_a_tabla();
-		
-		//CONTROL TABBEDPANE SEGUN ALTERNATIVAS
-		
-
-			}
-		});
-		button_2.setForeground(Color.WHITE);
-		button_2.setBackground(Color.BLUE);
-		panel_2.add(button_2);
-		
-		JLabel lblMatrizDeAlternativas = new JLabel("MATRIZ DE CRITERIOS");
-		lblMatrizDeAlternativas.setBounds(420, 26, 311, 31);
-		lblMatrizDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 41));
-		panel_2.add(lblMatrizDeAlternativas);
-		
-		JButton button_5 = new JButton("");
-		button_5.setBackground(new Color(224, 255, 255));
-		
+					}
+				});
+				button_2.setForeground(Color.WHITE);
+				button_2.setBackground(Color.BLUE);
+				panel_2.add(button_2);
+				
+				JLabel lblMatrizDeAlternativas = new JLabel("MATRIZ DE CRITERIOS");
+				lblMatrizDeAlternativas.setBounds(420, 26, 311, 31);
+				lblMatrizDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 41));
+				panel_2.add(lblMatrizDeAlternativas);
+				
+				JButton button_5 = new JButton("");
+				button_5.setBackground(new Color(224, 255, 255));
+				
 	button_5.setIcon(new ImageIcon(".\\imagenes\\op.png"));
-		button_5.setBounds(870, 380, 311, 247);
-		panel_2.add(button_5);
+	button_5.setBounds(870, 380, 311, 247);
+	panel_2.add(button_5);
 		
 		
 		JPanel panel_3 = new JPanel();
@@ -608,10 +615,10 @@ public void actionPerformed(ActionEvent arg0) {
 				 scrollPane_5.setViewportView(table_k6);
 				 
 				 JButton button_3 = new JButton("");
-				
-				 button_3.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
-				 button_3.setBounds(482, 346, 75, 78);
-				 panel_3.add(button_3);
+				 
+				  button_3.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
+				  button_3.setBounds(482, 346, 75, 78);
+				  panel_3.add(button_3);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(220, 220, 220));
@@ -640,12 +647,6 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_4.add(scrollPane_7);
 		
 		table_7 = new JTable();
-		table_7.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-			}
-		));
 		scrollPane_7.setColumnHeaderView(table_7);
 		
 		scrollPane_8 = new JScrollPane();
@@ -661,7 +662,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_4.add(lblPonderacin);
 		
 		JButton button_4 = new JButton("");
-		 button_4.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		button_4.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
 		button_4.setBounds(476, 406, 62, 54);
 		panel_4.add(button_4);
 		
@@ -696,7 +697,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.add(button_10);
 		
 		JButton button_11 = new JButton("");
-		button_11.setBounds(643, 154, 75, 78);
+		button_11.setBounds(703, 82, 75, 78);
 		button_11.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
 		panel_5.add(button_11);
 		
@@ -760,6 +761,11 @@ public void actionPerformed(ActionEvent arg0) {
 				  crearTablak14();
 
 				  crearTablak16();
+				  
+				  cuadrada();
+				  
+				  
+				  
 			}
 		});
 		
@@ -772,6 +778,20 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		table_k17 = new JTable();
 		scrollPane_k17.setViewportView(table_k17);
+		
+		scrollPane_k18 = new JScrollPane();
+		scrollPane_k18.setBounds(527, 205, 107, 186);
+		panel_5.add(scrollPane_k18);
+		
+		table_k18 = new JTable();
+		scrollPane_k18.setViewportView(table_k18);
+		
+		scrollPane_k19 = new JScrollPane();
+		scrollPane_k19.setBounds(707, 205, 107, 186);
+		panel_5.add(scrollPane_k19);
+		
+		table_k19 = new JTable();
+		scrollPane_k19.setViewportView(table_k19);
 		panel_7 = new JPanel();
 		panel_7.setBackground(new Color(240, 248, 255));
 		panel_7.setVisible(false);
@@ -1048,6 +1068,12 @@ public void actionPerformed(ActionEvent arg0) {
 	      }
 	    }
 	  }
+	  
+	  
+	  
+	  
+	  
+	  
 	
 	  //alternativassss 
 	  public void crearTabla11(){ 
@@ -1235,6 +1261,37 @@ public void actionPerformed(ActionEvent arg0) {
 			
 		}
 	  
+	  
+
+
+	  public void cuadrada(){
+		
+		  Operaciones obj=new Operaciones();
+			obj.matriz_principal(valore_real1(lista_tabla1,table_k16.getColumnCount(), table_k16.getRowCount()),table_k16.getColumnCount(), table_k16.getRowCount());
+			table_k17.setModel(obj.recibirmodelo());
+			ponderacion_k(obj.suma_filas());
+			
+		  
+		  
+	  }
+	 
+	  
+	  public void ponderacion_k(double[] A){
+			for (int i = 0; i < A.length; i++) {
+				String vectnew[]={""+A[i]};
+				modk1.addRow(vectnew);
+			}
+			table_k18.setModel(modk1);
+			
+			
+			double [] B=ponderacion(A, A.length);
+			for (int i = 0; i < B.length; i++) {
+				String vectnew[]={""+B[i]};
+				modk2.addRow(vectnew);
+			}
+			table_k19.setModel(modk2);
+					
+		}
 	  
 	  
 	  
@@ -1596,7 +1653,7 @@ public double[][] valore_real1(ArrayList<String> nu, int filas,int columnas){
 			double m[][]=new double[filas][columnas];
 			double n1,n2;
 
-			for(int p=0;p<lista_tabla.size();p++){
+			for(int p=0;p<nu.size();p++){
 				c = nu.get(p).toCharArray();
 				n1=Double.parseDouble(String.valueOf(c[0]));
 				n2=Double.parseDouble(String.valueOf(c[2]));
