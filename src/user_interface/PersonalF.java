@@ -3646,7 +3646,7 @@ public void CreaColumnas5_b() {
 
 
 
-public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
+public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
    //aqui tengo los valores de la ponderacion de CRITERIOS o la ponderacion de la matriz cuadrada.
 	for (int j = 0; j < table_8.getRowCount(); j++) {
 		vector_AR_ponderacion.add(Double.parseDouble((String) (table_8.getValueAt(j,0))));	
@@ -3669,11 +3669,14 @@ public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
 			for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
 				double acum=0;
 				for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
-					acum=acum+Matriz_Alt_Crite[i][j]*vector_AR_ponderacion.get(j);
+					acum=acum+Double.parseDouble(Matriz_Alt_Crite[i][j])*vector_AR_ponderacion.get(j);
 				}
 				respuesta_tamanoALT.add(acum);
 			}
 			
+			System.out.println("-----------------------------------");
+			System.out.println("-----------------------------------");
+			System.out.println("SOLUCION FINAL");
 			for (int i = 0; i < respuesta_tamanoALT.size(); i++) {
 				System.out.println(respuesta_tamanoALT.get(i));
 			}
@@ -3808,7 +3811,8 @@ public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
 			}
 			System.out.println();
 		}
-		
+		Solucion_final(stringPonderaciones);
+	
 	}
 
 }
