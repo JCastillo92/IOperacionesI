@@ -49,7 +49,9 @@ public class Operaciones{
 			  for (int y=0; y < multiplicacion_criterios[x].length; y++){
 			    for (int z=0; z<col_m1; z++) {
 			    	if(x!=y){
-			    		multiplicacion_criterios [x][y] += A[x][z]*A[z][y];	
+			    		multiplicacion_criterios [x][y] += Math.rint(
+			    				(A[x][z]*A[z][y])*100
+			    						)/100;	
 			    	}else{
 			    		multiplicacion_criterios [x][y] += Math.round(A[x][z]*A[z][y]);
 			    	}
