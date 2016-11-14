@@ -956,12 +956,7 @@ public void actionPerformed(ActionEvent arg0) {
 			table_b2.setShowHorizontalLines( true );
 			table_b2.setRowSelectionAllowed( true );
 			table_b2.setColumnSelectionAllowed( true );
-			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			    //table.setSelectionForeground( Color.white );
-			    //table.setSelectionBackground( Color.WHITE );
-			    // Incorporamos la tabla a un panel que incorpora ya una barra
-			    // de desplazamiento, para que la visibilidad de la tabla sea
-			    // automática
+			   
 			    
 			scrollPane_b2.setViewportView(table_b2);
 			
@@ -1053,7 +1048,7 @@ public void actionPerformed(ActionEvent arg0) {
 			    // Incorporamos la tabla a un panel que incorpora ya una barra
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
-			 scrollPane_b1.setViewportView(table_k10);
+			 scrollPane_b1.setViewportView(table_b1);
 			}
 	  
 	  
