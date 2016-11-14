@@ -153,6 +153,25 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_k19;
 	private JTable table_k18;
 	private JTable table_k19;
+	private JScrollPane scrollPane_20j;
+	private JScrollPane scrollPane_21j;
+	private JScrollPane scrollPane_22j;
+	private JScrollPane scrollPane_23j;
+	private JScrollPane scrollPane_24j;
+	private JScrollPane scrollPane_25j;
+	private JScrollPane scrollPane_26j;
+	private JScrollPane scrollPane_27j;
+	private JScrollPane scrollPane_28j;
+	private JButton button_20j;
+	private JTable table_20j;
+	private JTable table_21j;
+	private JTable table_22j;
+	private JTable table_23j;
+	private JTable table_24j;
+	private JTable table_25j;
+	private JTable table_26j;
+	private JTable table_27j;
+	private JTable table_28j;
 
 
 
@@ -825,6 +844,73 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
+		
+		scrollPane_20j = new JScrollPane();
+		scrollPane_20j.setBounds(10, 11, 78, 149);
+		panel_7.add(scrollPane_20j);
+		
+		table_20j = new JTable();
+		scrollPane_20j.setColumnHeaderView(table_20j);
+		
+		scrollPane_21j = new JScrollPane();
+		scrollPane_21j.setBounds(116, 11, 257, 149);
+		panel_7.add(scrollPane_21j);
+		
+		table_21j = new JTable();
+		scrollPane_21j.setColumnHeaderView(table_21j);
+		
+		scrollPane_22j = new JScrollPane();
+		scrollPane_22j.setBounds(399, 11, 49, 149);
+		panel_7.add(scrollPane_22j);
+		
+		table_22j = new JTable();
+		scrollPane_22j.setColumnHeaderView(table_22j);
+		
+		scrollPane_23j = new JScrollPane();
+		scrollPane_23j.setBounds(463, 11, 257, 149);
+		panel_7.add(scrollPane_23j);
+		
+		table_23j = new JTable();
+		scrollPane_23j.setColumnHeaderView(table_23j);
+		
+		scrollPane_24j = new JScrollPane();
+		scrollPane_24j.setBounds(788, 11, 49, 149);
+		panel_7.add(scrollPane_24j);
+		
+		table_24j = new JTable();
+		scrollPane_24j.setColumnHeaderView(table_24j);
+		
+		scrollPane_25j = new JScrollPane();
+		scrollPane_25j.setBounds(867, 11, 257, 149);
+		panel_7.add(scrollPane_25j);
+		
+		table_25j = new JTable();
+		scrollPane_25j.setColumnHeaderView(table_25j);
+		
+		scrollPane_26j = new JScrollPane();
+		scrollPane_26j.setBounds(28, 205, 384, 186);
+		panel_7.add(scrollPane_26j);
+		
+		table_26j = new JTable();
+		scrollPane_26j.setColumnHeaderView(table_26j);
+		
+		scrollPane_27j = new JScrollPane();
+		scrollPane_27j.setBounds(527, 205, 107, 186);
+		panel_7.add(scrollPane_27j);
+		
+		table_27j = new JTable();
+		scrollPane_27j.setColumnHeaderView(table_27j);
+		
+		scrollPane_28j = new JScrollPane();
+		scrollPane_28j.setBounds(707, 205, 107, 186);
+		panel_7.add(scrollPane_28j);
+		
+		table_28j = new JTable();
+		scrollPane_28j.setColumnHeaderView(table_28j);
+		
+		button_20j = new JButton("=");
+		button_20j.setBounds(323, 70, 89, 23);
+		panel_7.add(button_20j);
 		
 		panel_8 = new JPanel();
 		panel_8.setBackground(new Color(240, 248, 255));
