@@ -138,6 +138,8 @@ public class PersonalF extends JFrame {
 	private String[][] matriz={};
 	private DefaultTableModel mod7=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel mod8=new DefaultTableModel(matriz,vector);
+	
+	private DefaultTableModel modfin=new DefaultTableModel(matriz,vector);
 
 	private DefaultTableModel modk1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modk2=new DefaultTableModel(matriz,vector);
@@ -330,6 +332,8 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_ultima2;
 	private JTable tableUltima1;
 	private JTable tableUltima2;
+	private JScrollPane scrollPane_9;
+	private JTable table_fin;
 
 
 	/**
@@ -1667,6 +1671,13 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		tableUltima1 = new JTable();
 		scrollPane_ultima2.setColumnHeaderView(tableUltima1);
+		
+		scrollPane_9 = new JScrollPane();
+		scrollPane_9.setBounds(944, 357, 130, 221);
+		panel_15.add(scrollPane_9);
+		
+		table_fin = new JTable();
+		scrollPane_9.setColumnHeaderView(table_fin);
 	}
 	public void CreaColumnas() {
 		 int arr = array1.size(); 
@@ -3679,8 +3690,11 @@ public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
 			System.out.println("-----------------------------------");
 			System.out.println("SOLUCION FINAL");
 			for (int i = 0; i < respuesta_tamanoALT.size(); i++) {
+				Double vecnew[]={respuesta_tamanoALT.get(i)};
+				modfin.addRow(vecnew);
 				System.out.println(respuesta_tamanoALT.get(i));
 			}
+			table_fin.setModel(modfin);
 			return respuesta_tamanoALT;
 }
 
