@@ -153,6 +153,8 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_k19;
 	private JTable table_k18;
 	private JTable table_k19;
+	
+	//VARIABLES JHON
 	private JScrollPane scrollPane_jh9;
 	private JScrollPane scrollPane_jh10;
 	private JScrollPane scrollPane_jh11;
@@ -165,7 +167,14 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_jh15;
 	private JScrollPane scrollPane_jh16;
 	private JScrollPane scrollPane_jh17;
+	private JTable table_j10;
+	private JTable table_j11;
 
+	private JTable table_j13;
+	private JTable table_j14;
+	private JTable table_j15;
+	private JTable table_j16;
+	private JTable table_j17;
 
 
 	/**
@@ -494,7 +503,8 @@ public void actionPerformed(ActionEvent arg0) {
 
 
 								    crearTabla11();
-												 
+									//METODOS JHONSIN
+								    crearTablajh11();
 
 									    
 									 CargaDatos4();
@@ -1831,4 +1841,20 @@ public void recibo_vec_suma(double[] A){
 				 
 			}
 		 }
+		 
+		  public void crearTablajh11(){ 
+			  System.out.println("Entro a tablajh11");
+				table_j10 = new JTable(datoColumna4,titColumna4);
+				 table_j10.setShowHorizontalLines( true );
+				    table_j10.setRowSelectionAllowed( true );
+				    table_j10.setColumnSelectionAllowed( true );
+				    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+				    table_j10.setSelectionForeground( Color.white );
+				    table_j10.setSelectionBackground( Color.WHITE );
+				    table_j10.setEnabled(false);
+				    // Incorporamos la tabla a un panel que incorpora ya una barra
+				    // de desplazamiento, para que la visibilidad de la tabla sea
+				    // automática
+				scrollPane_jh9.setViewportView(table_j10);
+				}
 }
