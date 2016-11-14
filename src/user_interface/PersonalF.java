@@ -274,6 +274,14 @@ public class PersonalF extends JFrame {
 	private JButton button_21;
 	private JLabel label_8;
 	private JLabel label_9;
+	private JLabel label_10;
+	private JLabel label_11;
+	private JLabel label_12;
+	private JLabel label_13;
+	private JButton button_26;
+	private JLabel label_14;
+	private JButton button_27;
+	private JButton button_25;
 
 	/**
 	 * Launch the application.
@@ -1073,69 +1081,69 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_7.setLayout(null);
 		
 		scrollPane_20j = new JScrollPane();
-		scrollPane_20j.setBounds(10, 11, 78, 149);
+		scrollPane_20j.setBounds(10, 61, 78, 149);
 		panel_7.add(scrollPane_20j);
 		
 		table_20j = new JTable();
 		scrollPane_20j.setColumnHeaderView(table_20j);
 		
 		scrollPane_21j = new JScrollPane();
-		scrollPane_21j.setBounds(116, 11, 257, 149);
+		scrollPane_21j.setBounds(98, 61, 257, 149);
 		panel_7.add(scrollPane_21j);
 		
 		table_21j = new JTable();
 		scrollPane_21j.setColumnHeaderView(table_21j);
 		
 		scrollPane_22j = new JScrollPane();
-		scrollPane_22j.setBounds(399, 11, 49, 149);
+		scrollPane_22j.setBounds(422, 61, 49, 149);
 		panel_7.add(scrollPane_22j);
 		
 		table_22j = new JTable();
 		scrollPane_22j.setColumnHeaderView(table_22j);
 		
 		scrollPane_23j = new JScrollPane();
-		scrollPane_23j.setBounds(463, 11, 257, 149);
+		scrollPane_23j.setBounds(487, 61, 257, 149);
 		panel_7.add(scrollPane_23j);
 		
 		table_23j = new JTable();
 		scrollPane_23j.setColumnHeaderView(table_23j);
 		
 		scrollPane_24j = new JScrollPane();
-		scrollPane_24j.setBounds(788, 11, 49, 149);
+		scrollPane_24j.setBounds(824, 61, 49, 149);
 		panel_7.add(scrollPane_24j);
 		
 		table_24j = new JTable();
 		scrollPane_24j.setColumnHeaderView(table_24j);
 		
 		scrollPane_25j = new JScrollPane();
-		scrollPane_25j.setBounds(867, 11, 257, 149);
+		scrollPane_25j.setBounds(883, 61, 257, 149);
 		panel_7.add(scrollPane_25j);
 		
 		table_25j = new JTable();
 		scrollPane_25j.setColumnHeaderView(table_25j);
 		
 		scrollPane_26j = new JScrollPane();
-		scrollPane_26j.setBounds(28, 205, 384, 186);
+		scrollPane_26j.setBounds(116, 291, 384, 186);
 		panel_7.add(scrollPane_26j);
 		
 		table_26j = new JTable();
 		scrollPane_26j.setColumnHeaderView(table_26j);
 		
 		scrollPane_27j = new JScrollPane();
-		scrollPane_27j.setBounds(527, 205, 107, 186);
+		scrollPane_27j.setBounds(615, 291, 107, 186);
 		panel_7.add(scrollPane_27j);
 		
 		table_27j = new JTable();
 		scrollPane_27j.setColumnHeaderView(table_27j);
 		
 		scrollPane_28j = new JScrollPane();
-		scrollPane_28j.setBounds(707, 205, 107, 186);
+		scrollPane_28j.setBounds(795, 291, 107, 186);
 		panel_7.add(scrollPane_28j);
 		
 		table_28j = new JTable();
 		scrollPane_28j.setColumnHeaderView(table_28j);
 		
-		button_20j = new JButton("=");
+		button_20j = new JButton("");
 		button_20j.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				guardar_array1ja();
@@ -1148,8 +1156,49 @@ public void actionPerformed(ActionEvent arg0) {
 				cuadradaja();
 			}
 		});
-		button_20j.setBounds(323, 70, 89, 23);
+		button_20j.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		button_20j.setBounds(365, 115, 47, 36);
 		panel_7.add(button_20j);
+		
+		label_10 = new JLabel("Evaluaci\u00F3n alternativas:");
+		label_10.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_10.setBounds(63, 11, 189, 45);
+		panel_7.add(label_10);
+		
+		label_11 = new JLabel("Pasar a n\u00FAmeros reales:");
+		label_11.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_11.setBounds(658, 11, 189, 45);
+		panel_7.add(label_11);
+		
+		label_12 = new JLabel("Obtenci\u00F3n Matriz Cuadrada:");
+		label_12.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_12.setBounds(173, 239, 249, 45);
+		panel_7.add(label_12);
+		
+		label_13 = new JLabel("Suma filas:");
+		label_13.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_13.setBounds(615, 232, 107, 45);
+		panel_7.add(label_13);
+		
+		button_26 = new JButton("");
+		button_26.setBounds(754, 121, 49, 45);
+		button_26.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
+		panel_7.add(button_26);
+		
+		label_14 = new JLabel("Ponderaci\u00F3n:");
+		label_14.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		label_14.setBounds(795, 232, 107, 45);
+		panel_7.add(label_14);
+		
+		button_27 = new JButton("");
+		button_27.setBounds(732, 357, 49, 45);
+		button_27.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		panel_7.add(button_27);
+		
+		button_25 = new JButton("");
+		button_25.setBounds(526, 357, 49, 45);
+		button_25.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		panel_7.add(button_25);
 		
 		panel_10 = new JPanel();
 		panel_10.setBackground(new Color(240, 248, 255));
