@@ -72,16 +72,16 @@ public class Operaciones{
 			System.out.println();
 		}
 		
-		suma_filas(multiplicacion_criterios);
+//		suma_filas(multiplicacion_criterios);
 	}//fin metodo matriz principal
 	
-	public double[] suma_filas(double[][] suma_filas){
+	public double[] suma_filas(){
 		//debo recibir aqui la matriz
 		double[] vector_suma_filas=new double[Alternativas_size];
-		for (int i = 0; i < suma_filas.length; i++) {
+		for (int i = 0; i < multiplicacion_criterios.length; i++) {
 			double acumula_suma=0;
-			for (int j = 0; j < suma_filas[i].length; j++) {
-				acumula_suma+=suma_filas[i][j];
+			for (int j = 0; j < multiplicacion_criterios[i].length; j++) {
+				acumula_suma+=multiplicacion_criterios[i][j];
 			}
 			vector_suma_filas[i]=acumula_suma;
 		}//fin for

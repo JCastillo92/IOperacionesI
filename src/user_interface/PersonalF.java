@@ -74,6 +74,14 @@ public class PersonalF extends JFrame {
 	private JTable table_k6;
 	private JTable table_5;
 	private JScrollPane scrollPane_6;
+	private JTable table_7;
+	private String[] vector={""};
+	private String[][] matriz={};
+	private DefaultTableModel mod7=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel mod8=new DefaultTableModel(matriz,vector);
+	private JScrollPane scrollPane_7;
+	private JTable table_8;
+	private JScrollPane scrollPane_8;
 
 	/**
 	 * Launch the application.
@@ -511,13 +519,25 @@ public void actionPerformed(ActionEvent arg0) {
 		lblSumaDeFilas.setBounds(485, 55, 160, 31);
 		panel_4.add(lblSumaDeFilas);
 		
-		JScrollPane scrollPane_7 = new JScrollPane();
+		scrollPane_7 = new JScrollPane();
 		scrollPane_7.setBounds(503, 126, 98, 213);
 		panel_4.add(scrollPane_7);
 		
-		JScrollPane scrollPane_8 = new JScrollPane();
+		table_7 = new JTable();
+		table_7.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+			}
+		));
+		scrollPane_7.setColumnHeaderView(table_7);
+		
+		scrollPane_8 = new JScrollPane();
 		scrollPane_8.setBounds(673, 127, 98, 213);
 		panel_4.add(scrollPane_8);
+		
+		table_8 = new JTable();
+		scrollPane_8.setColumnHeaderView(table_8);
 		
 		JLabel lblPonderacin = new JLabel("PONDERACI\u00D3N");
 		lblPonderacin.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
@@ -657,6 +677,20 @@ public void actionPerformed(ActionEvent arg0) {
 			    table_5.setRowSelectionAllowed( true );
 			    table_5.setColumnSelectionAllowed( true );
 				scrollPane_6.setViewportView(table_5);
+							int micorredor=0;
+							for(int y=0;y<datoColumna1.length;y++){
+								  for(int W=0;W<datoColumna1.length;W++){
+									  datoColumna1[y][W]=String.valueOf(valor().get(micorredor));
+									  micorredor++;
+								  }  
+							  }
+			}
+	  public void crearTabla_7j(){ 
+			table_7 = new JTable(datoColumna1,titColumna);
+			 table_7.setShowHorizontalLines( true );
+			    table_7.setRowSelectionAllowed( true );
+			    table_7.setColumnSelectionAllowed( true );
+				scrollPane_7.setViewportView(table_7);
 							int micorredor=0;
 							for(int y=0;y<datoColumna1.length;y++){
 								  for(int W=0;W<datoColumna1.length;W++){
@@ -813,6 +847,8 @@ public void actionPerformed(ActionEvent arg0) {
 			Operaciones obj=new Operaciones();
 			obj.matriz_principal(valore_real1(table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
 			table_5.setModel(obj.recibirmodelo());
+			recibo_vec_suma(obj.suma_filas());
+
 		}
 	  
 		//USAR ESTE METODO PARA LAS OTRAS MATRICES DE ARRAY A TABLA
@@ -889,22 +925,34 @@ public double [] ponderacion(double [] vector,int lon){
 	double [] resp =new double[lon];
 	
 	for(int w=0;w<vector.length;w++){
-		
 		acum=acum+vector[w];	
-		
 	}
 	
 for(int s=0;s<vector.length;s++){
-
-	
 	d=Double.parseDouble(String.valueOf(vector[s]));
-
 	resp[s]=(d/acum);	
 	}
-
-	
 	return resp;
 }
+
+public void recibo_vec_suma(double[] A){
+	for (int i = 0; i < A.length; i++) {
+		String vectnew[]={""+A[i]};
+		mod7.addRow(vectnew);
+	}
+	table_7.setModel(mod7);
+	
+	
+	double [] B=ponderacion(A, A.length);
+	for (int i = 0; i < B.length; i++) {
+		String vectnew[]={""+B[i]};
+		mod8.addRow(vectnew);
+	}
+	table_8.setModel(mod8);
+			
+}
+
+
 
 		// METODO SONIDO
 		 public void ReproducirSonido(String nombreSonido){
