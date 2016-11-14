@@ -108,6 +108,10 @@ public class PersonalF extends JFrame {
 
 	private ArrayList<String> lista_tabla1;
 	private ArrayList<String> lista_tabla1m;
+	private ArrayList<String> lista_ponderaciones;
+	private ArrayList<Double> lista_doble_ponderacion;
+	
+	private ArrayList<Double> vector_AR_ponderacion;
 
 	private ArrayList<String> lista_tabla1b;
 	private ArrayList<String> lista_tabla2;//Jhon
@@ -181,6 +185,9 @@ public class PersonalF extends JFrame {
 	private JTable table_k19;
 
 	//VARIABLES JHON
+	private double[][] MatPonderaciones;
+	private String[][] stringPonderaciones;
+	
 	private DefaultTableModel modjh1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modjh2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_20j;
@@ -363,6 +370,10 @@ public class PersonalF extends JFrame {
 		
 		lista_tabla2 = new ArrayList<String>(); // JHON
 		lista_tabla3 = new ArrayList<String>(); // JAIRO
+		lista_ponderaciones = new ArrayList<String>();;
+		lista_doble_ponderacion = new ArrayList<Double>();
+		vector_AR_ponderacion= new ArrayList<Double>();
+		
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
@@ -1606,6 +1617,7 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
+				leerArrayPonderacion(array1.size());
 			}
 		});
 		button_7.setForeground(Color.WHITE);
@@ -3634,9 +3646,150 @@ public void CreaColumnas5_b() {
 
 
 
-
+public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
+   //aqui tengo los valores de la ponderacion de CRITERIOS o la ponderacion de la matriz cuadrada.
+	for (int j = 0; j < table_8.getRowCount(); j++) {
+		vector_AR_ponderacion.add(Double.parseDouble((String) (table_8.getValueAt(j,0))));	
+	}
+	ArrayList<Double> respuesta_tamanoALT;
+	respuesta_tamanoALT= new ArrayList<Double>();
+	
+	/*
+			double[][] Matriz_Alt_Crite={
+					{0.11, 	0.37,	 0.20},
+					{0.26, 	0.29,	 0.20},
+					{0.05, 	0.07,	 0.40},
+					{0.58, 	0.26,	 0.20}
+					};
+		*/
+	/*
+			double[] Vector_criterios={0.32, 0.56, 0.12};
+			*/
+			
+			for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
+				double acum=0;
+				for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
+					acum=acum+Matriz_Alt_Crite[i][j]*vector_AR_ponderacion.get(j);
+				}
+				respuesta_tamanoALT.add(acum);
+			}
+			
+			for (int i = 0; i < respuesta_tamanoALT.size(); i++) {
+				System.out.println(respuesta_tamanoALT.get(i));
+			}
+			return respuesta_tamanoALT;
+}
 
 
 ////////////////////////////////////////////////////////////////
+	
+	public void leerArrayPonderacion(int n){
+		System.out.println("----------PONDERACIONES----------------");
+		switch(n){
+		case 1:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 2:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 3:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 4:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_j19.getColumnCount(); i++) {
+				for (int j = 0; j < table_j19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_j19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_j19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 5:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_j19.getColumnCount(); i++) {
+				for (int j = 0; j < table_j19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_j19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_j19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_m19.getColumnCount(); i++) {
+				for (int j = 0; j < table_m19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_m19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_m19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		}
+		for (int i = 0; i < lista_ponderaciones.size(); i++) {
+			System.out.print(lista_ponderaciones.get(i)+" ");
+		}
+	}
 
 }
