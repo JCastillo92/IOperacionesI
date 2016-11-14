@@ -46,16 +46,19 @@ public class PersonalF extends JFrame {
 	public String titColumna[];
 
 	public String titColumna1[];
+	public String titColumna11[];
 	public String titColumna2[];
 
 	public String titColumna3[];
 	public String titColumna31[];
+	
 
 	public String titColumna4[];
 	public String titColumna5[];
 	public String datoColumna2[][];
 	  public String datoColumna[][];
 	  public String datoColumna1[][];
+	  public String datoColumna11[][];
 
 	  public String datoColumna3[][];
 	  public String datoColumna31[][];
@@ -65,6 +68,7 @@ public class PersonalF extends JFrame {
 	 private JTable table_1;
 	 private JTable table_b1;
 	 private JTable table_b2;
+	 private JTable table_b3;
 	public ArrayList<String> array1;
 	public ArrayList<String> array2;
 	public ArrayList<String> numeros1;
@@ -82,6 +86,7 @@ public class PersonalF extends JFrame {
 	private List<String> lista_tabla;
 	private JTable table_2;
 	private JTable table_3;
+	//private JTable table_31;
 	private JTable table_4;
 
 	private JTable table_k5;
@@ -118,6 +123,9 @@ public class PersonalF extends JFrame {
 	private JTable table_k11;
 	private JScrollPane scrollPane_b1;
 	private JScrollPane scrollPane_b2;
+	private JScrollPane scrollPane_b3;
+	private JScrollPane scrollPane_b4;
+	private JTable table_31;
 
 
 	/**
@@ -451,6 +459,12 @@ public void actionPerformed(ActionEvent arg0) {
 						   CargaDatos5();
 						   CreaColumnas5();
 						   crearTabla12();  
+						   
+						   crearTabla12_B();
+						   
+						   crearTabla41();
+						   CreaColumnas11();
+						   CargaDatos11();
 					    
 					 
 			}
@@ -670,11 +684,16 @@ public void actionPerformed(ActionEvent arg0) {
 		table_k11 = new JTable();
 		scrollPane_k10.setViewportView(table_k11);
 		
+		panel_7 = new JPanel();
+		panel_7.setBackground(new Color(240, 248, 255));
+		panel_7.setVisible(false);
+		
 		panel_6 = new JPanel();
 		panel_6.setBackground(new Color(240, 248, 255));
 		panel_6.setVisible(false);
 		panel_6.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 2", null, panel_6, null);
+		tabbedPane_1.setEnabledAt(1, false);
 		panel_6.setLayout(null);
 		
 		scrollPane_b1 = new JScrollPane();
@@ -685,9 +704,16 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_b2.setBounds(109, 11, 304, 156);
 		panel_6.add(scrollPane_b2);
 		
-		panel_7 = new JPanel();
-		panel_7.setBackground(new Color(240, 248, 255));
-		panel_7.setVisible(false);
+		scrollPane_b3 = new JScrollPane();
+		scrollPane_b3.setBounds(477, 11, 76, 156);
+		panel_6.add(scrollPane_b3);
+		
+		scrollPane_b4 = new JScrollPane();
+		scrollPane_b4.setBounds(563, 11, 304, 156);
+		panel_6.add(scrollPane_b4);
+		
+		table_31 = new JTable();
+		scrollPane_b4.setViewportView(table_31);
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
@@ -753,7 +779,6 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		
 		tabbedPane_1.setEnabledAt(0, false);
-		tabbedPane_1.setEnabledAt(1, false);
 		tabbedPane_1.setEnabledAt(2, false);
 		tabbedPane_1.setEnabledAt(3, false);
 		tabbedPane_1.setEnabledAt(4, false);
@@ -802,6 +827,14 @@ public void actionPerformed(ActionEvent arg0) {
 	    
 	    for( int i=0; i < arr; i++ ) {
 	      titColumna[i] = array1.get(i);
+	    }
+	  }
+	public void CreaColumnas11() {
+		 int arr = array1.size(); 
+	    titColumna11 = new String[arr];
+	    
+	    for( int i=0; i < arr; i++ ) {
+	      titColumna11[i] = array1.get(i);
 	    }
 	  }
 	
@@ -880,6 +913,17 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	  
+	  public void CargaDatos11() {
+		  int arr2 = array1.size(); 
+	    datoColumna11 = new String[arr2][arr2];
+	    
+	    for( int iY=0; iY < arr2; iY++ ) {
+	      for( int iX=0; iX < arr2; iX++ ) {
+		datoColumna11[iY][iX] = "";
+	      }
+	    }
+	  }
+	  
 	  public void CargaDatos2() {
 		  int arr2 = array1.size(); 
 	    datoColumna2 = new String[arr2][1];
@@ -922,12 +966,7 @@ public void actionPerformed(ActionEvent arg0) {
 			 table_k11.setShowHorizontalLines( true );
 			    table_k11.setRowSelectionAllowed( true );
 			    table_k11.setColumnSelectionAllowed( true );
-			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			    //table.setSelectionForeground( Color.white );
-			    //table.setSelectionBackground( Color.WHITE );
-			    // Incorporamos la tabla a un panel que incorpora ya una barra
-			    // de desplazamiento, para que la visibilidad de la tabla sea
-			    // automática
+			   
 			    
 			scrollPane_k10.setViewportView(table_k11);
 			
@@ -974,6 +1013,8 @@ public void actionPerformed(ActionEvent arg0) {
 			setear1entabla_b();
 			
 			}
+	  
+	  
 	  
 	  
 	  public void crearTabla(){ 
@@ -1049,6 +1090,23 @@ public void actionPerformed(ActionEvent arg0) {
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
 			 scrollPane_b1.setViewportView(table_b1);
+			 
+			}
+	  
+	  public void crearTabla12_B(){ 
+			table_b3 = new JTable(datoColumna5,titColumna5);
+			table_b3.setShowHorizontalLines( true );
+			table_b3.setRowSelectionAllowed( true );
+			table_b3.setColumnSelectionAllowed( true );
+			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+			table_b3.setSelectionForeground( Color.white );
+			table_b3.setSelectionBackground( Color.WHITE );
+			table_b3.setEnabled(false);
+			    // Incorporamos la tabla a un panel que incorpora ya una barra
+			    // de desplazamiento, para que la visibilidad de la tabla sea
+			    // automática
+			 scrollPane_b3.setViewportView(table_b3);
+			 
 			}
 	  
 	  
@@ -1093,13 +1151,7 @@ public void actionPerformed(ActionEvent arg0) {
 			    table_k6.setRowSelectionAllowed( true );
 			    table_k6.setColumnSelectionAllowed( true );
 			    
-			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			    //table.setSelectionForeground( Color.white );
-			    //table.setSelectionBackground( Color.WHITE );
-			    // Incorporamos la tabla a un panel que incorpora ya una barra
-			    // de desplazamiento, para que la visibilidad de la tabla sea
-			    // automática
-
+			
 				scrollPane_5.setViewportView(table_k6);
 				
 				
@@ -1162,6 +1214,20 @@ public void actionPerformed(ActionEvent arg0) {
 							
 						
 			
+			}
+	  
+	  public void crearTabla41(){ 
+
+			table_31 = new JTable(datoColumna11,titColumna11);
+				
+			 table_31.setShowHorizontalLines( true );
+			    table_31.setRowSelectionAllowed( true );
+			    table_31.setColumnSelectionAllowed( true );
+			    
+			    scrollPane_b4.setViewportView(table_31);
+				
+			
+					
 			}
 	  
 
