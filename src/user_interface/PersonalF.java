@@ -125,7 +125,7 @@ public class PersonalF extends JFrame {
 	private JPanel panel_6;
 	private JPanel panel_7;
 	private JPanel panel_8;
-	private JPanel panel_9;
+	private JPanel panel_m9;
 
 	private JPanel panel_10;
 	private JPanel panel_11;
@@ -196,6 +196,26 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
+	private JScrollPane scrollPane_m9;
+	private JScrollPane scrollPane_m10;
+	private JTable table_m10;
+	private JTable table_m11;
+	private JScrollPane scrollPane_m13;
+	private JScrollPane scrollPane_m14;
+	private JScrollPane scrollPane_m15;
+	private JScrollPane scrollPane_m16;
+	private JScrollPane scrollPane_m19;
+	private JScrollPane scrollPane_m18;
+	private JScrollPane scrollPane_m17;
+	private JButton igual_5;
+	private JTable table_6;
+	private JTable table_m13;
+	private JTable table_m14;
+	private JTable table_m15;
+	private JTable table_m16;
+	private JTable table_m19;
+	private JTable table_m18;
+	private JTable table_m17;
 
 
 
@@ -992,12 +1012,79 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_jh17.setBounds(869, 13, 257, 149);
 		panel_8.add(scrollPane_jh17);
 		
-		panel_9 = new JPanel();
-		panel_9.setBackground(new Color(240, 248, 255));
-		panel_9.setVisible(false);
-		panel_9.setEnabled(false);
-		tabbedPane_1.addTab("Alternativa 5", null, panel_9, null);
-		panel_9.setLayout(null);
+		panel_m9 = new JPanel();
+		panel_m9.setBackground(new Color(240, 248, 255));
+		panel_m9.setVisible(false);
+		panel_m9.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 5", null, panel_m9, null);
+		panel_m9.setLayout(null);
+		
+		scrollPane_m9 = new JScrollPane();
+		scrollPane_m9.setBounds(10, 63, 78, 149);
+		panel_m9.add(scrollPane_m9);
+		
+		table_m10 = new JTable();
+		scrollPane_m9.setViewportView(table_m10);
+		
+		scrollPane_m10 = new JScrollPane();
+		scrollPane_m10.setBounds(116, 63, 257, 149);
+		panel_m9.add(scrollPane_m10);
+		
+		table_m11 = new JTable();
+		scrollPane_m10.setRowHeaderView(table_m11);
+		
+		scrollPane_m13 = new JScrollPane();
+		scrollPane_m13.setBounds(464, 63, 49, 149);
+		panel_m9.add(scrollPane_m13);
+		
+		table_m13 = new JTable();
+		scrollPane_m13.setViewportView(table_m13);
+		
+		scrollPane_m14 = new JScrollPane();
+		scrollPane_m14.setBounds(528, 63, 257, 149);
+		panel_m9.add(scrollPane_m14);
+		
+		table_m14 = new JTable();
+		scrollPane_m14.setViewportView(table_m14);
+		
+		scrollPane_m15 = new JScrollPane();
+		scrollPane_m15.setBounds(795, 63, 49, 149);
+		panel_m9.add(scrollPane_m15);
+		
+		table_m15 = new JTable();
+		scrollPane_m15.setViewportView(table_m15);
+		
+		scrollPane_m16 = new JScrollPane();
+		scrollPane_m16.setBounds(866, 63, 257, 149);
+		panel_m9.add(scrollPane_m16);
+		
+		table_m16 = new JTable();
+		scrollPane_m16.setViewportView(table_m16);
+		
+		scrollPane_m19 = new JScrollPane();
+		scrollPane_m19.setBounds(772, 257, 107, 186);
+		panel_m9.add(scrollPane_m19);
+		
+		table_m19 = new JTable();
+		scrollPane_m19.setViewportView(table_m19);
+		
+		scrollPane_m18 = new JScrollPane();
+		scrollPane_m18.setBounds(592, 257, 107, 186);
+		panel_m9.add(scrollPane_m18);
+		
+		table_m18 = new JTable();
+		scrollPane_m18.setViewportView(table_m18);
+		
+		scrollPane_m17 = new JScrollPane();
+		scrollPane_m17.setBounds(93, 257, 384, 186);
+		panel_m9.add(scrollPane_m17);
+		
+		table_m17 = new JTable();
+		scrollPane_m17.setViewportView(table_m17);
+		
+		igual_5 = new JButton("=");
+		igual_5.setBounds(388, 122, 49, 23);
+		panel_m9.add(igual_5);
 		
 		panel_10 = new JPanel();
 		panel_10.setBackground(new Color(240, 248, 255));
@@ -1061,6 +1148,10 @@ public void actionPerformed(ActionEvent arg0) {
 		button_7.setBackground(Color.BLUE);
 		button_7.setBounds(548, 557, 192, 69);
 		panel_1.add(button_7);
+		
+		table_6 = new JTable();
+		table_6.setBounds(22, 219, 1, 1);
+		panel_1.add(table_6);
 		
 		JPanel panel_15 = new JPanel();
 		panel_15.setLayout(null);
