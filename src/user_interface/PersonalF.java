@@ -1690,7 +1690,7 @@ public void actionPerformed(ActionEvent arg0) {
 		lblPonderacinCriterios.setBounds(501, 211, 282, 31);
 		panel_15.add(lblPonderacinCriterios);
 		
-		JLabel lblPondracinFinal = new JLabel("PONDRACI\u00D3N FINAL");
+		JLabel lblPondracinFinal = new JLabel("PONDERACI\u00D3N FINAL");
 		lblPondracinFinal.setForeground(Color.RED);
 		lblPondracinFinal.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		lblPondracinFinal.setBounds(820, 211, 198, 31);
