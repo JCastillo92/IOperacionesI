@@ -65,6 +65,10 @@ public class PersonalF extends JFrame {
 	  public String datoColumna31[][];
 	  public String datoColumna4[][];
 
+	  
+	  public String datoColumna3_m[][];
+	  public String datoColumna5_m[][];
+	  public String datoColumna4_m[][];
 	  public String datoColumna5[][];
 	  private JTable table;
 	 private JTable table_1;
@@ -88,6 +92,8 @@ public class PersonalF extends JFrame {
 	private ArrayList<String> lista_tabla;
 
 	private ArrayList<String> lista_tabla1;
+	private ArrayList<String> lista_tabla1m;
+	
 	private JTable table_2;
 	private JTable table_3;
 	//private JTable table_31;
@@ -113,6 +119,9 @@ public class PersonalF extends JFrame {
 
 	private DefaultTableModel modk1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modk2=new DefaultTableModel(matriz,vector);
+
+	private DefaultTableModel modm1=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel modm2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_7;
 	private JTable table_8;
 	private JScrollPane scrollPane_8;
@@ -195,7 +204,7 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
-<<<<<<< HEAD
+
 	private JScrollPane scrollPane_m9;
 	private JScrollPane scrollPane_m10;
 	private JTable table_m10;
@@ -208,7 +217,7 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_m18;
 	private JScrollPane scrollPane_m17;
 	private JButton igual_5;
-	private JTable table_6;
+	private JTable table_66;
 	private JTable table_m13;
 	private JTable table_m14;
 	private JTable table_m15;
@@ -216,10 +225,13 @@ public class PersonalF extends JFrame {
 	private JTable table_m19;
 	private JTable table_m18;
 	private JTable table_m17;
-=======
 	public String titColumnaj3[];
 	public String titColumnaj4[];
 	public String titColumnaj5[];
+
+	public String titColumna3_m[];
+	public String titColumna4_m[];
+	public String titColumna5_m[];
 	public String datoColumnaj3[][];
 	private JTable table_6;
 	private JTable table_9;
@@ -227,7 +239,6 @@ public class PersonalF extends JFrame {
 	private JTable table_11;
 	private JTable table_12;
 	private JTable table_13;
->>>>>>> 5f380f9ed08167fa534f44d082a1977cef404e1f
 
 
 
@@ -264,6 +275,7 @@ public class PersonalF extends JFrame {
 		array2 = new ArrayList<String>();
 		lista_tabla = new ArrayList<String>();
 		lista_tabla1 = new ArrayList<String>();
+		lista_tabla1m = new ArrayList<String>();
 		
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -557,6 +569,27 @@ public void actionPerformed(ActionEvent arg0) {
 
 
 								    crearTabla11();
+								    
+								    
+								    
+								    
+								    ////maryyyyy 
+/*
+								    CargaDatos3_m();
+									CreaColumnas3_m();
+								    crearTabla9m();
+
+								   
+									 CargaDatos4_m();
+									   CreaColumnas4_m();
+									      
+									    crearTabla11m();
+									 
+
+									*/
+									   
+									    ///////////////
+								    
 									//METODOS JHONSIN
 								    CreaColumnasjh3();
 								    CargaDatosjh3();
@@ -583,7 +616,7 @@ public void actionPerformed(ActionEvent arg0) {
 										   CreaColumnas11();
 										   CargaDatos11();
 									    
-									 
+										   
 
 							}
 							
@@ -1138,13 +1171,32 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_m18.setViewportView(table_m18);
 		
 		scrollPane_m17 = new JScrollPane();
-		scrollPane_m17.setBounds(93, 257, 384, 186);
+		scrollPane_m17.setBounds(-90, 223, 384, 186);
 		panel_m9.add(scrollPane_m17);
 		
 		table_m17 = new JTable();
 		scrollPane_m17.setViewportView(table_m17);
 		
 		igual_5 = new JButton("=");
+		/*igual_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guardar_arraym1();
+				 CargaDatos4_m();
+				   CreaColumnas4_m();
+				    crearTabla13m();
+				  
+				    crearTabla15m();
+			
+				CargaDatos3_m();
+				CreaColumnas3_m();
+				  crearTablam14m();
+
+				  crearTablak16m();
+				  
+				  cuadradam();
+				  
+			}
+		});*/
 		igual_5.setBounds(388, 122, 49, 23);
 		panel_m9.add(igual_5);
 		
@@ -1258,17 +1310,7 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	
-	public void CreaColumnas3() {
-		 int arr = array2.size(); 
-	    titColumna3 = new String[arr];
-	    titColumna5 = new String[arr];
-	    
-	    for( int i=0; i < arr; i++ ) {
-	      titColumna3[i] = array2.get(i);
-
-	      titColumna5[i] = array2.get(i);
-	    }
-	  }
+	
 	
 	public void CreaColumnas31() {
 		 int arr = array2.size(); 
@@ -1293,6 +1335,18 @@ public void actionPerformed(ActionEvent arg0) {
 	    
 	    for( int i=0; i < 1; i++ ) {
 	      titColumna2[i] = "Criterios:";
+	    }
+	  }
+	
+	public void CreaColumnas3() {
+		 int arr = array2.size(); 
+	    titColumna3 = new String[arr];
+	    titColumna5 = new String[arr];
+	    
+	    for( int i=0; i < arr; i++ ) {
+	      titColumna3[i] = array2.get(i);
+
+	      titColumna5[i] = array2.get(i);
 	    }
 	  }
 	
@@ -2042,7 +2096,6 @@ public void recibo_vec_suma(double[] A){
 	table_8.setModel(mod8);
 			
 }
-
 
 
 		// METODO SONIDO
