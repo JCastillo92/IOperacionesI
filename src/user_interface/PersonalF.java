@@ -1644,7 +1644,7 @@ public void actionPerformed(ActionEvent arg0) {
 		MARY = new JButton("");
 		MARY.setEnabled(false);
 		MARY.setBackground(new Color(220, 220, 220));
-		MARY.setBounds(869, 49, 295, 170);
+		MARY.setBounds(909, 0, 295, 170);
 		
 		MARY.setIcon(new ImageIcon(".\\imagenes\\fin.gif"));
 		panel_15.add(MARY);
@@ -1653,12 +1653,12 @@ public void actionPerformed(ActionEvent arg0) {
 		button_9.setEnabled(false);
 		button_9.setForeground(Color.WHITE);
 		button_9.setBackground(new Color(220, 220, 220));
-		button_9.setBounds(10, 49, 295, 170);
+		button_9.setBounds(0, 0, 295, 170);
 		button_9.setIcon(new ImageIcon(".\\imagenes\\fin.gif"));
 		panel_15.add(button_9);
 		
 		scrollPane_ultima1 = new JScrollPane();
-		scrollPane_ultima1.setBounds(235, 351, 137, 214);
+		scrollPane_ultima1.setBounds(573, 288, 137, 214);
 		panel_15.add(scrollPane_ultima1);
 		
 		tableUltima2 = new JTable();
@@ -1666,18 +1666,35 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		scrollPane_ultima2 = new JScrollPane();
 		scrollPane_ultima2.setBackground(new Color(224, 255, 255));
-		scrollPane_ultima2.setBounds(416, 351, 422, 214);
+		scrollPane_ultima2.setBounds(91, 288, 422, 214);
 		panel_15.add(scrollPane_ultima2);
 		
 		tableUltima1 = new JTable();
 		scrollPane_ultima2.setColumnHeaderView(tableUltima1);
 		
 		scrollPane_9 = new JScrollPane();
-		scrollPane_9.setBounds(944, 357, 130, 221);
+		scrollPane_9.setBounds(858, 288, 130, 221);
 		panel_15.add(scrollPane_9);
 		
 		table_fin = new JTable();
 		scrollPane_9.setColumnHeaderView(table_fin);
+		
+		JLabel lblAlternativasCriterio = new JLabel("ALTERNATIVAS * CRITERIO");
+		lblAlternativasCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblAlternativasCriterio.setBounds(170, 211, 277, 31);
+		panel_15.add(lblAlternativasCriterio);
+		
+		JLabel lblPonderacinCriterios = new JLabel("PONDERACI\u00D3N CRITERIOS");
+		lblPonderacinCriterios.setForeground(Color.BLUE);
+		lblPonderacinCriterios.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblPonderacinCriterios.setBounds(501, 211, 282, 31);
+		panel_15.add(lblPonderacinCriterios);
+		
+		JLabel lblPondracinFinal = new JLabel("PONDRACI\u00D3N FINAL");
+		lblPondracinFinal.setForeground(Color.RED);
+		lblPondracinFinal.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
+		lblPondracinFinal.setBounds(820, 211, 198, 31);
+		panel_15.add(lblPondracinFinal);
 	}
 	public void CreaColumnas() {
 		 int arr = array1.size(); 
@@ -3841,5 +3858,4 @@ public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
 			}
 		}
 	}
-
 }
