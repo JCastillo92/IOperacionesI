@@ -576,7 +576,7 @@ public class PersonalF extends JFrame {
 						txt_alternativa.setBounds(209, 66, 199, 45);
 						txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 25));
 						txt_alternativa.setColumns(10);
-						txt_alternativa.addKeyListener(new KeyAdapter() {
+						/*txt_alternativa.addKeyListener(new KeyAdapter() {
 							@Override
 								 public void keyTyped(KeyEvent ke) { 
 						             char c=ke.getKeyChar(); 
@@ -587,7 +587,7 @@ public class PersonalF extends JFrame {
 						             JOptionPane.showMessageDialog(null, "No puede ingresar Numeros!!!", "Error Datos", JOptionPane.ERROR_MESSAGE); 
 						          } 
 						        } 
-									});
+									});*/
 						panel.add(txt_alternativa);
 						
 						JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
@@ -1780,7 +1780,8 @@ public void actionPerformed(ActionEvent arg0) {
 	  }
 	  public void CargaDatosUlt() {
 		  int arr2 = array1.size(); 
-	    datoColumnaUlt = new String[arr2][arr2];
+		  int arr3 = array2.size();
+	    datoColumnaUlt = new String[arr3][arr2];
 	  }
 	  
 	  public void CargaDatos3() {
