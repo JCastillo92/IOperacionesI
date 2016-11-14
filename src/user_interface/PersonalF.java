@@ -48,24 +48,30 @@ public class PersonalF extends JFrame {
 	public String titColumna1[];
 	public String titColumna11[];
 	public String titColumna2[];
-
 	public String titColumna3[];
+	public String titColumna3j[];//jairo
 	public String titColumna31[];
 	
 
 	public String titColumna4[];
-
+	public String titColumna4j[];//jairo
 	public String titColumna5[];
+	public String titColumna5j[];//jairo
 	public String datoColumna2[][];
 	  public String datoColumna[][];
 	  public String datoColumna1[][];
 	  public String datoColumna11[][];
 
 	  public String datoColumna3[][];
+	  public String datoColumna3j[][];//jairo
 	  public String datoColumna31[][];
 	  public String datoColumna4[][];
 
+	  public String datoColumna4j[][];//jairo
+	  
 	  public String datoColumna5[][];
+	  
+	  public String datoColumna5j[][];//jairo
 	  private JTable table;
 	 private JTable table_1;
 	 private JTable table_b1;
@@ -113,6 +119,10 @@ public class PersonalF extends JFrame {
 
 	private DefaultTableModel modk1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modk2=new DefaultTableModel(matriz,vector);
+	
+	private DefaultTableModel modk1_ja=new DefaultTableModel(matriz,vector);//jairo
+	private DefaultTableModel modk2_ja=new DefaultTableModel(matriz,vector);//jairo
+	
 	private JScrollPane scrollPane_7;
 	private JTable table_8;
 	private JScrollPane scrollPane_8;
@@ -518,8 +528,13 @@ public void actionPerformed(ActionEvent arg0) {
 								
 								 CargaDatos3();
 								   CreaColumnas3();
+								  CargaDatos3j();//jairo
+								  	CreaColumnas3j();//jairo
+								   
 								   CargaDatos4();
+								   CargaDatos4j();//jairo
 								   CreaColumnas4();
+								   CreaColumnas4j();//jairo
 								
 								    crearTabla9();
 
@@ -528,9 +543,24 @@ public void actionPerformed(ActionEvent arg0) {
 									//METODOS JHONSIN
 								    crearTablajh11();
 
-									    
+
+								    
+								    
+								    
+								    
+								    
+								    
+								    //JAIRO AQUI ABAJO
+								    crearTabla11j();//jairo
+								    crearTabla9j();//jairo
+								    
+								    
+								    
+								    
 									 CargaDatos4();
+									 CargaDatos4j();//jairo
 									   CreaColumnas4();
+									   CreaColumnas4j();//jairo
 									    crearTabla11();
 									    
 									    CargaDatos31();
@@ -539,7 +569,9 @@ public void actionPerformed(ActionEvent arg0) {
 										   
 										   
 										   CargaDatos5();
+										   CargaDatos5j();//jairo
 										   CreaColumnas5();
+										   CreaColumnas5j();//jairo
 										   crearTabla12();  
 										   
 										   crearTabla12_B();
@@ -795,18 +827,29 @@ public void actionPerformed(ActionEvent arg0) {
 			public void actionPerformed(ActionEvent e) {
 				guardar_array1();
 				 CargaDatos4();
+				 CargaDatos4j();//jairo
 				   CreaColumnas4();
+				   CreaColumnas4j();//jairo
 				    crearTabla13();
+			    crearTabla13j();//jairo
 				  
 				    crearTabla15();
+				    crearTabla15j();//jairo
 			
 				CargaDatos3();
+					CargaDatos3j();//jairo
 				CreaColumnas3();
+					CreaColumnas3j();//jairo
 				  crearTablak14();
-
+				  
+				  
+				  crearTablak14j();//jairo
 				  crearTablak16();
 				  
+				  crearTablak16j();//jairo
+				  
 				  cuadrada();
+				  cuadrada_ja();//jairo
 				  
 				  
 				  
@@ -1117,6 +1160,17 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	
+	public void CreaColumnas3j() {
+		 int arr = array2.size(); 
+	    titColumna3 = new String[arr];
+	    titColumna5 = new String[arr];
+	    
+	    for( int i=0; i < arr; i++ ) {
+	      titColumna3[i] = array2.get(i);
+
+	      titColumna5[i] = array2.get(i);
+	    }
+	  }
 	public void CreaColumnas31() {
 		 int arr = array2.size(); 
 	    titColumna31 = new String[arr];
@@ -1151,11 +1205,26 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	
+	public void CreaColumnas4j() {//jairo
+	    titColumna4j = new String[1];
+	    
+	    for( int i=0; i < 1; i++ ) {
+	      titColumna4j[i] = "A:";
+	    }
+	  }
 	public void CreaColumnas5() {
 	    titColumna5 = new String[1];
 	    
 	    for( int i=0; i < 1; i++ ) {
 	      titColumna5[i] = "Criterios:";
+	    }
+	  }
+	
+	public void CreaColumnas5j(){//jairo
+	    titColumna5j = new String[1];
+	    
+	    for( int i=0; i < 1; i++ ) {
+	      titColumna5j[i] = "Criterios:";
 	    }
 	  }
 	  // Creamos los datos para cada uno de los elementos de la tabla
@@ -1169,6 +1238,13 @@ public void actionPerformed(ActionEvent arg0) {
 
 	    datoColumna5 = new String[arr2][arr2];
 	  }
+	  public void CargaDatos3j() {//jairo
+		  int arr2 = array2.size(); 
+	    datoColumna3j = new String[arr2][arr2];
+
+	    datoColumna5j = new String[arr2][arr2];
+	  }
+	  
 	  public void CargaDatos31() {
 		  int arr2 = array2.size(); 
 	    datoColumna31 = new String[arr2][arr2];
@@ -1217,6 +1293,17 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	  
+	  public void CargaDatos4j() {//jairo
+		  int arr2 = array2.size(); 
+	    datoColumna4j = new String[arr2][1];
+	   
+	    for( int iY=0; iY < arr2; iY++ ) {
+	      for( int iX=0; iX < 1; iX++ ) {
+		datoColumna4j[iY][iX] = array2.get(iY);
+	      }
+	    }
+	  }
+	  
 	  public void CargaDatos5() {
 		  int arr2 = array2.size(); 
 	    datoColumna5 = new String[arr2][1];
@@ -1228,6 +1315,16 @@ public void actionPerformed(ActionEvent arg0) {
 	    }
 	  }
 	  
+	  public void CargaDatos5j() {
+		  int arr2 = array2.size(); 
+	    datoColumna5j = new String[arr2][1];
+	   
+	    for( int iY=0; iY < arr2; iY++ ) {
+	      for( int iX=0; iX < 1; iX++ ) {
+		datoColumna5j[iY][iX] = array2.get(iY);
+	      }
+	    }
+	  }
 	  
 	  
 	  
@@ -1249,6 +1346,7 @@ public void actionPerformed(ActionEvent arg0) {
 			    // automática
 			scrollPane_k9.setViewportView(table_k10);
 			}
+	  
 	
 	  public void crearTabla9(){ 
 			table_k11 = new JTable(datoColumna3,titColumna3){
@@ -1458,12 +1556,8 @@ public void actionPerformed(ActionEvent arg0) {
 	  //alternativas
 	  
 	  
-	  
-	  
-	  
-	  
 
-	  
+
 	  
 	  
 	  
