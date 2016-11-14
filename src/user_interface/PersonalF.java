@@ -74,6 +74,7 @@ public class PersonalF extends JFrame {
 	private JTable table_k6;
 	private JTable table_5;
 	private JScrollPane scrollPane_6;
+
 	private JTable table_7;
 	private String[] vector={""};
 	private String[][] matriz={};
@@ -82,6 +83,15 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_7;
 	private JTable table_8;
 	private JScrollPane scrollPane_8;
+
+	private int total_alternativas;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	private JPanel panel_7;
+	private JPanel panel_8;
+	private JPanel panel_9;
+	private JTabbedPane tabbedPane_1;
+
 
 	/**
 	 * Launch the application.
@@ -384,6 +394,9 @@ public void actionPerformed(ActionEvent arg0) {
 				
 				
 				System.out.println(array1.size());
+				//JHON TOTAL ALTERNATIVAS
+				 total_alternativas = array1.size();
+				 controlTabedPanes();//FIN
 				
 				CreaColumnas();
 				    CargaDatos();
@@ -392,6 +405,8 @@ public void actionPerformed(ActionEvent arg0) {
 				    CargaDatos2();
 				    crearTabla();
 				 crearTabla2();
+				 
+				 
 			}
 			
 			
@@ -435,6 +450,9 @@ public void actionPerformed(ActionEvent arg0) {
 		crearTabla_5j();//jairo
 		crearTabla6();
 		//	de_array_a_tabla();
+		
+		//CONTROL TABBEDPANE SEGUN ALTERNATIVAS
+		
 
 			}
 		});
@@ -549,6 +567,51 @@ public void actionPerformed(ActionEvent arg0) {
 		button_4.setBounds(416, 211, 62, 54);
 		panel_4.add(button_4);
 		
+		JPanel panel_1 = new JPanel();
+		tabbedPane.addTab("Alternativas", null, panel_1, null);
+		panel_1.setLayout(null);
+		
+		tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_1.setBounds(12, 36, 775, 296);
+		panel_1.add(tabbedPane_1);
+		
+		panel_5 = new JPanel();
+		panel_5.setVisible(false);
+		panel_5.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
+		panel_5.setLayout(null);
+		
+		panel_6 = new JPanel();
+		panel_6.setVisible(false);
+		panel_6.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 2", null, panel_6, null);
+		panel_6.setLayout(null);
+		
+		panel_7 = new JPanel();
+		panel_7.setVisible(false);
+		panel_7.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
+		panel_7.setLayout(null);
+		
+		panel_8 = new JPanel();
+		panel_8.setVisible(false);
+		panel_8.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 4", null, panel_8, null);
+		panel_8.setLayout(null);
+		
+		panel_9 = new JPanel();
+		panel_9.setVisible(false);
+		panel_9.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 5", null, panel_9, null);
+		panel_9.setLayout(null);
+		
+		
+		//TABBEDPANES
+		tabbedPane_1.setEnabledAt(0, false);
+		tabbedPane_1.setEnabledAt(1, false);
+		tabbedPane_1.setEnabledAt(2, false);
+		tabbedPane_1.setEnabledAt(3, false);
+		tabbedPane_1.setEnabledAt(4, false);
 	
 	}
 	public void CreaColumnas() {
@@ -965,4 +1028,36 @@ public void recibo_vec_suma(double[] A){
 		         System.out.println("Error al reproducir el sonido.");
 		       }
 		     }
+		 
+		 public void controlTabedPanes(){
+			 
+			 for (int i = 0; i < total_alternativas; i++) {
+				
+				 switch(i){
+				 case 0:
+					 tabbedPane_1.setEnabledAt(0, true);
+					 tabbedPane_1.setTitleAt(0, array1.get(0));
+					 break;
+				 case 1:
+					 tabbedPane_1.setEnabledAt(1, true);
+					 tabbedPane_1.setTitleAt(1, array1.get(1));
+					 break;
+				 case 2:
+					 tabbedPane_1.setEnabledAt(2, true);
+					 tabbedPane_1.setTitleAt(2, array1.get(2));
+					 break;
+				 case 3:
+					 tabbedPane_1.setEnabledAt(3, true);
+					 tabbedPane_1.setTitleAt(3, array1.get(3));
+					 break;
+				 case 4:
+					 tabbedPane_1.setEnabledAt(4, true);
+					 tabbedPane_1.setTitleAt(4, array1.get(4));
+					 break;
+				 default:
+						 break;
+				 }
+				 
+			}
+		 }
 }
