@@ -146,7 +146,6 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_b2;
 	private JScrollPane scrollPane_b3;
 	private JScrollPane scrollPane_b4;
-	private JTable table_31;
 	private JButton IGUAL;
 	private JButton MARY;
 	private JScrollPane scrollPane_k18;
@@ -196,6 +195,12 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
+	private JTable table_6;
+	private JTable table_9;
+	private JTable table_10;
+	private JTable table_11;
+	private JTable table_12;
+	private JTable table_13;
 
 
 
@@ -544,7 +549,7 @@ public void actionPerformed(ActionEvent arg0) {
 										   
 										   crearTabla12_B();
 										   
-										   crearTabla41();
+										 
 										   CreaColumnas11();
 										   CargaDatos11();
 									    
@@ -817,7 +822,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.add(IGUAL);
 		
 		JScrollPane scrollPane_k17 = new JScrollPane();
-		scrollPane_k17.setBounds(28, 205, 384, 186);
+		scrollPane_k17.setBounds(30, 205, 384, 186);
 		panel_5.add(scrollPane_k17);
 		
 		table_k17 = new JTable();
@@ -864,8 +869,55 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_b4.setBounds(563, 11, 304, 156);
 		panel_6.add(scrollPane_b4);
 		
-		table_31 = new JTable();
-		scrollPane_b4.setViewportView(table_31);
+		table_6 = new JTable();
+		scrollPane_b4.setRowHeaderView(table_6);
+		
+		JButton button_12 = new JButton("=");
+		button_12.setBounds(390, 65, 89, 23);
+		panel_6.add(button_12);
+		
+		JScrollPane scrollPane_9 = new JScrollPane();
+		scrollPane_9.setBounds(877, 11, 49, 149);
+		panel_6.add(scrollPane_9);
+		
+		table_9 = new JTable();
+		scrollPane_9.setViewportView(table_9);
+		
+		JScrollPane scrollPane_10 = new JScrollPane();
+		scrollPane_10.setBounds(936, 11, 257, 149);
+		panel_6.add(scrollPane_10);
+		
+		table_10 = new JTable();
+		scrollPane_10.setViewportView(table_10);
+		
+		JScrollPane scrollPane_11 = new JScrollPane();
+		scrollPane_11.setBounds(130, 205, 384, 186);
+		panel_6.add(scrollPane_11);
+		
+		table_11 = new JTable();
+		scrollPane_11.setViewportView(table_11);
+		
+		JScrollPane scrollPane_12 = new JScrollPane();
+		scrollPane_12.setBounds(627, 205, 107, 186);
+		panel_6.add(scrollPane_12);
+		
+		table_12 = new JTable();
+		scrollPane_12.setViewportView(table_12);
+		
+		JScrollPane scrollPane_13 = new JScrollPane();
+		scrollPane_13.setBounds(807, 205, 107, 186);
+		panel_6.add(scrollPane_13);
+		
+		table_13 = new JTable();
+		scrollPane_13.setViewportView(table_13);
+		
+		JButton button_13 = new JButton("");
+		button_13.setBounds(944, 170, 75, 78);
+		panel_6.add(button_13);
+		
+		JButton button_14 = new JButton("");
+		button_14.setBounds(370, 240, 75, 78);
+		panel_6.add(button_14);
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
@@ -1300,7 +1352,7 @@ public void actionPerformed(ActionEvent arg0) {
 					int tam_col=table_b2.getColumnCount();
 					int tam_fil=table_b2.getRowCount();
 					//System.out.println(tam_col+" "+tam_fil);
-					cambiar_celdask3(tam_col, tam_fil);
+					cambiar_celdasb1(tam_col, tam_fil);
 				}
 				
 			});
@@ -1403,6 +1455,26 @@ public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Valor "+valor_cambiado);
 				valor_alterado=invertirString(valor_cambiado);
 				table_k11.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			
+		}
+	  
+	  public void cambiar_celdasb1(int columnas, int filas){
+			String valor_alterado;
+			int columna_seleccionada=table_b2.getSelectedColumn();
+			int fila_seleccionada=table_b2.getSelectedRow();
+			System.out.println(columna_seleccionada+" "+fila_seleccionada);
+			try {
+				//table_1.getModel().addTableModelListener(table_1);
+				table_b2.getCellEditor().stopCellEditing();
+				String valor_cambiado = String.valueOf(table_b2.getModel().getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				//String valor_cambiado = String.valueOf(table_1.getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				System.out.println("Valor "+valor_cambiado);
+				valor_alterado=invertirString(valor_cambiado);
+				table_b2.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -1654,20 +1726,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 			}
 	  
-	  public void crearTabla41(){ 
-
-			table_31 = new JTable(datoColumna11,titColumna11);
-				
-			 table_31.setShowHorizontalLines( true );
-			    table_31.setRowSelectionAllowed( true );
-			    table_31.setColumnSelectionAllowed( true );
-			    
-			    scrollPane_b4.setViewportView(table_31);
-				
-			
-					
-			}
-	  
+	
 
 	  
 	
