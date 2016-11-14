@@ -1520,14 +1520,17 @@ public void actionPerformed(ActionEvent arg0) {
 
 	  public void guardar_array(){
 		  ReproducirSonido("imagenes/sound2.wav");
-			for (int i = 0; i < table.getColumnCount(); i++) {
+		  for (int i = 0; i < table.getColumnCount(); i++) {
 				for (int j = 0; j < table.getRowCount(); j++) {
 					lista_tabla.add(String.valueOf(table.getValueAt(i, j)));
 					System.out.print(String.valueOf(table.getValueAt(i, j))+" ");
 				}
 				System.out.println();
 			}
-
+			Operaciones obj=new Operaciones();
+			obj.matriz_principal(valore_real1(lista_tabla,table.getColumnCount(), table.getRowCount()),table.getColumnCount(), table.getRowCount());
+			table_5.setModel(obj.recibirmodelo());
+			recibo_vec_suma(obj.suma_filas());
 			
 		}
 	  public void guardar_array1(){
