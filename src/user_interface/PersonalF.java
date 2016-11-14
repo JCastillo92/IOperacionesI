@@ -35,6 +35,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 public class PersonalF extends JFrame {
 
@@ -90,6 +91,11 @@ public class PersonalF extends JFrame {
 	private JPanel panel_7;
 	private JPanel panel_8;
 	private JPanel panel_9;
+	private JPanel panel_10;
+	private JPanel panel_11;
+	private JPanel panel_12;
+	private JPanel panel_13;
+	private JPanel panel_14;
 	private JTabbedPane tabbedPane_1;
 
 
@@ -114,7 +120,7 @@ public class PersonalF extends JFrame {
 	 */
 	public PersonalF() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 942, 504);
+		setBounds(100, 100, 1239, 715);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -127,7 +133,10 @@ public class PersonalF extends JFrame {
 		lista_tabla = new ArrayList<String>();
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(47, 52, 836, 392);
+		tabbedPane.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		tabbedPane.setForeground(new Color(75, 0, 130));
+		tabbedPane.setBackground(UIManager.getColor("Button.background"));
+		tabbedPane.setBounds(10, 11, 1209, 666);
 		contentPane.add(tabbedPane);
 		JPanel panel_0 = new JPanel();
 		panel_0.setBackground(new Color(220, 220, 220));
@@ -135,134 +144,134 @@ public class PersonalF extends JFrame {
 		panel_0.setLayout(null);
 		
 		JLabel lblIngenieriaDeSistemas = new JLabel("INGENIERIA DE SISTEMAS");
-		lblIngenieriaDeSistemas.setBounds(275, 35, 256, 29);
+		lblIngenieriaDeSistemas.setBounds(336, 42, 397, 50);
 		lblIngenieriaDeSistemas.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblIngenieriaDeSistemas.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
+		lblIngenieriaDeSistemas.setFont(new Font("Dialog", Font.PLAIN, 25));
 		panel_0.add(lblIngenieriaDeSistemas);
 		
 		
 		
 		JLabel lblUniversidadPolitcnicaSalesiana = new JLabel("UNIVERSIDAD POLIT\u00C9CNICA SALESIANA");
-		lblUniversidadPolitcnicaSalesiana.setBounds(106, 11, 601, 35);
+		lblUniversidadPolitcnicaSalesiana.setBounds(134, 11, 828, 35);
 		lblUniversidadPolitcnicaSalesiana.setForeground(Color.BLACK);
-		lblUniversidadPolitcnicaSalesiana.setFont(new Font("Dialog", Font.PLAIN, 27));
+		lblUniversidadPolitcnicaSalesiana.setFont(new Font("Dialog", Font.BOLD | Font.ITALIC, 40));
 		lblUniversidadPolitcnicaSalesiana.setBackground(Color.LIGHT_GRAY);
 		panel_0.add(lblUniversidadPolitcnicaSalesiana);
 		
 		JLabel lblInvestigacinDeOperaciones = new JLabel("INVESTIGACI\u00D3N DE OPERACIONES");
 		lblInvestigacinDeOperaciones.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblInvestigacinDeOperaciones.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblInvestigacinDeOperaciones.setBounds(275, 73, 256, 16);
+		lblInvestigacinDeOperaciones.setFont(new Font("Dialog", Font.PLAIN, 25));
+		lblInvestigacinDeOperaciones.setBounds(275, 103, 458, 35);
 		panel_0.add(lblInvestigacinDeOperaciones);
 		
 		JLabel lblIntegrantesKarenAchig = new JLabel("Integrantes: ");
 		lblIntegrantesKarenAchig.setForeground(Color.DARK_GRAY);
 		lblIntegrantesKarenAchig.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblIntegrantesKarenAchig.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblIntegrantesKarenAchig.setBounds(33, 100, 126, 16);
+		lblIntegrantesKarenAchig.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 23));
+		lblIntegrantesKarenAchig.setBounds(21, 186, 152, 35);
 		panel_0.add(lblIntegrantesKarenAchig);
 		
 		JLabel lblKarenAchig = new JLabel("Karen Achig");
 		lblKarenAchig.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblKarenAchig.setForeground(Color.BLACK);
 		lblKarenAchig.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblKarenAchig.setBounds(125, 127, 126, 16);
+		lblKarenAchig.setBounds(149, 240, 126, 16);
 		panel_0.add(lblKarenAchig);
 		
 		JLabel lblJhonCastillo = new JLabel("Jhon Castillo");
 		lblJhonCastillo.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblJhonCastillo.setForeground(Color.BLACK);
 		lblJhonCastillo.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblJhonCastillo.setBounds(125, 150, 126, 16);
+		lblJhonCastillo.setBounds(149, 283, 126, 16);
 		panel_0.add(lblJhonCastillo);
 		
 		JLabel lblJairoFlores = new JLabel("Jairo Flores");
 		lblJairoFlores.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblJairoFlores.setForeground(Color.BLACK);
 		lblJairoFlores.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblJairoFlores.setBounds(125, 177, 126, 16);
+		lblJairoFlores.setBounds(149, 328, 126, 16);
 		panel_0.add(lblJairoFlores);
 		
 		JLabel lblBryanTorres = new JLabel("Bryan Torres");
 		lblBryanTorres.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblBryanTorres.setForeground(Color.BLACK);
 		lblBryanTorres.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblBryanTorres.setBounds(125, 204, 126, 16);
+		lblBryanTorres.setBounds(149, 375, 126, 16);
 		panel_0.add(lblBryanTorres);
 		
 		JLabel lblMarilZambonino = new JLabel("Maril\u00FA Zambonino");
 		lblMarilZambonino.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblMarilZambonino.setForeground(Color.BLACK);
 		lblMarilZambonino.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblMarilZambonino.setBounds(125, 231, 126, 16);
+		lblMarilZambonino.setBounds(149, 416, 126, 16);
 		panel_0.add(lblMarilZambonino);
 		
 		JLabel lblNivel = new JLabel("Nivel:");
 		lblNivel.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNivel.setForeground(Color.DARK_GRAY);
-		lblNivel.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblNivel.setBounds(33, 272, 126, 16);
+		lblNivel.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 23));
+		lblNivel.setBounds(21, 458, 75, 40);
 		panel_0.add(lblNivel);
 		
 		JLabel lblno = new JLabel("9no");
 		lblno.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblno.setForeground(Color.BLACK);
-		lblno.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblno.setBounds(79, 273, 126, 16);
+		lblno.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 23));
+		lblno.setBounds(106, 467, 126, 31);
 		panel_0.add(lblno);
 		
 		JLabel lblIngWalterGaibor = new JLabel("Ing. Walter Gaibor");
 		lblIngWalterGaibor.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblIngWalterGaibor.setForeground(Color.BLACK);
-		lblIngWalterGaibor.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
-		lblIngWalterGaibor.setBounds(33, 308, 126, 16);
+		lblIngWalterGaibor.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 23));
+		lblIngWalterGaibor.setBounds(96, 555, 258, 27);
 		panel_0.add(lblIngWalterGaibor);
-
-		JButton btnPDF = new JButton("");
-		btnPDF.setIcon(new ImageIcon(".\\imagenes\\logo.png")); 
-			btnPDF.setBounds(21, 11, 75, 78);
-		panel_0.add(btnPDF);
 		
-		JButton button = new JButton("");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+				JButton btnPDF = new JButton("");
+				btnPDF.setIcon(new ImageIcon(".\\imagenes\\logo.png")); 
+				btnPDF.setBounds(21, 11, 103, 102);
+				panel_0.add(btnPDF);
 				
-			
-			}
-		});
-		button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
-		button.setBounds(363, 124, 240, 229);
-		panel_0.add(button);
-		
-		JLabel lblAnalytic = new JLabel("ANALYTIC");
-		lblAnalytic.setForeground(SystemColor.activeCaption);
-		lblAnalytic.setFont(new Font("Dialog", Font.PLAIN, 27));
-		lblAnalytic.setBackground(Color.LIGHT_GRAY);
-		lblAnalytic.setBounds(613, 134, 132, 35);
-		panel_0.add(lblAnalytic);
-		
-		JLabel lblHierarchy = new JLabel("HIERARCHY");
-		lblHierarchy.setForeground(new Color(255, 160, 122));
-		lblHierarchy.setFont(new Font("Dialog", Font.PLAIN, 27));
-		lblHierarchy.setBackground(Color.LIGHT_GRAY);
-		lblHierarchy.setBounds(623, 177, 188, 43);
-		panel_0.add(lblHierarchy);
-		
-		JLabel lblProcess = new JLabel("PROCESS");
-		lblProcess.setForeground(new Color(144, 238, 144));
-		lblProcess.setFont(new Font("Dialog", Font.PLAIN, 27));
-		lblProcess.setBackground(Color.LIGHT_GRAY);
-		lblProcess.setBounds(651, 231, 170, 43);
-		panel_0.add(lblProcess);
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
-		btnNewButton.setBounds(717, -8, 114, 97);
-		panel_0.add(btnNewButton);
+				JButton button = new JButton("");
+				button.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						
+					
+					}
+				});
+				button.setIcon(new ImageIcon(".\\imagenes\\principal.jpg"));
+				button.setBounds(383, 270, 404, 319);
+				panel_0.add(button);
+				
+				JLabel lblAnalytic = new JLabel("ANALYTIC");
+				lblAnalytic.setForeground(SystemColor.activeCaption);
+				lblAnalytic.setFont(new Font("Dialog", Font.PLAIN, 59));
+				lblAnalytic.setBackground(Color.LIGHT_GRAY);
+				lblAnalytic.setBounds(797, 292, 329, 50);
+				panel_0.add(lblAnalytic);
+				
+				JLabel lblHierarchy = new JLabel("HIERARCHY");
+				lblHierarchy.setForeground(new Color(255, 160, 122));
+				lblHierarchy.setFont(new Font("Dialog", Font.PLAIN, 59));
+				lblHierarchy.setBackground(Color.LIGHT_GRAY);
+				lblHierarchy.setBounds(846, 377, 348, 57);
+				panel_0.add(lblHierarchy);
+				
+				JLabel lblProcess = new JLabel("PROCESS");
+				lblProcess.setForeground(new Color(144, 238, 144));
+				lblProcess.setFont(new Font("Dialog", Font.PLAIN, 59));
+				lblProcess.setBackground(Color.LIGHT_GRAY);
+				lblProcess.setBounds(890, 467, 304, 57);
+				panel_0.add(lblProcess);
+				
+				JButton btnNewButton = new JButton("");
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+					}
+				});
+				btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
+				btnNewButton.setBounds(944, 11, 250, 170);
+				panel_0.add(btnNewButton);
 		
 		
 		JPanel panel = new JPanel();
@@ -276,20 +285,21 @@ public class PersonalF extends JFrame {
 		panel.add(lblIngresoDeAlternativas);
 		
 		JLabel lblEscribaLaAlternativa = new JLabel("Escriba la alternativa:");
-		lblEscribaLaAlternativa.setBounds(24, 66, 140, 31);
-		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
+		lblEscribaLaAlternativa.setBounds(10, 66, 189, 45);
+		lblEscribaLaAlternativa.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
 		panel.add(lblEscribaLaAlternativa);
 
 		txt_criterio = new JTextField();
-		txt_criterio.setBounds(156, 248, 148, 20);
-		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_criterio.setBounds(196, 283, 212, 45);
+		txt_criterio.setFont(new Font("Times New Roman", Font.ITALIC, 25));
 		txt_criterio.setEditable(true);
 		txt_criterio.setColumns(10);
 		panel.add(txt_criterio);
 
 		
 		Button btn_anadir_crite = new Button("A\u00D1ADIR");
-		btn_anadir_crite.setBounds(252, 280, 70, 22);
+		btn_anadir_crite.setFont(new Font("Dialog", Font.PLAIN, 25));
+		btn_anadir_crite.setBounds(268, 350, 140, 45);
 		btn_anadir_crite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -322,8 +332,8 @@ public class PersonalF extends JFrame {
 		panel.add(btn_anadir_crite);
 		
 		txt_alternativa = new JTextField();
-		txt_alternativa.setBounds(156, 71, 148, 20);
-		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 13));
+		txt_alternativa.setBounds(209, 66, 199, 45);
+		txt_alternativa.setFont(new Font("Times New Roman", Font.ITALIC, 25));
 		txt_alternativa.setColumns(10);
 		txt_alternativa.addKeyListener(new KeyAdapter() {
 			@Override
@@ -340,17 +350,18 @@ public class PersonalF extends JFrame {
 		panel.add(txt_alternativa);
 		
 		JLabel lblEscribaElCriterio = new JLabel("Escriba el criterio:");
-		lblEscribaElCriterio.setBounds(24, 243, 140, 31);
-		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 13));
+		lblEscribaElCriterio.setBounds(10, 283, 176, 45);
+		lblEscribaElCriterio.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 18));
 		panel.add(lblEscribaElCriterio);
 		
 		JLabel lblIngresoDeCriterio = new JLabel("INGRESO DE CRITERIO");
-		lblIngresoDeCriterio.setBounds(118, 201, 311, 31);
+		lblIngresoDeCriterio.setBounds(118, 239, 311, 31);
 		lblIngresoDeCriterio.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
 		panel.add(lblIngresoDeCriterio);
 		
 		Button btn_anadir_alter = new Button("A\u00D1ADIR");
-		btn_anadir_alter.setBounds(252, 97, 70, 22);
+		btn_anadir_alter.setFont(new Font("Dialog", Font.PLAIN, 25));
+		btn_anadir_alter.setBounds(268, 130, 140, 45);
 		btn_anadir_alter.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent arg0) {
 				
@@ -376,17 +387,16 @@ public void actionPerformed(ActionEvent arg0) {
 		panel.add(btn_anadir_alter);
 		
 		JButton button_1 = new JButton("");
-		button_1.setBounds(493, 71, 258, 242);
+		button_1.setBounds(753, 130, 353, 318);
 		button_1.setBackground(new Color(224, 255, 255));
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
+			
 		button_1.setIcon(new ImageIcon(".\\imagenes\\INFORMA.png"));
 		panel.add(button_1);
 		
 		Button btn_procesar = new Button("PROCESAR");
-		btn_procesar.setBounds(362, 310, 107, 44);
+		btn_procesar.setFont(new Font("Dialog", Font.PLAIN, 30));
+		btn_procesar.setBounds(444, 449, 229, 54);
 		btn_procesar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ReproducirSonido("imagenes/sound2.wav");
@@ -423,20 +433,20 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_2.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-
-		scrollPane.setBounds(194, 39, 550, 200);
-		scrollPane.setBounds(203, 39, 550, 200);
-		scrollPane.setBackground(Color.DARK_GRAY);
+		scrollPane.setBounds(304, 68, 510, 274);
+		scrollPane.setBackground(new Color(224, 255, 255));
 
 		panel_2.add(scrollPane);
 		
 		
 		
 		scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(10, 39, 163, 200);
+		scrollPane_1.setBounds(123, 68, 137, 274);
 		panel_2.add(scrollPane_1);
 		
 		Button button_2 = new Button("GUARDAR");
+		button_2.setBounds(481, 447, 192, 69);
+		button_2.setFont(new Font("Dialog", Font.PLAIN, 25));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				guardar_array();
@@ -458,13 +468,19 @@ public void actionPerformed(ActionEvent arg0) {
 		});
 		button_2.setForeground(Color.WHITE);
 		button_2.setBackground(Color.BLUE);
-		button_2.setBounds(316, 295, 107, 44);
 		panel_2.add(button_2);
 		
 		JLabel lblMatrizDeAlternativas = new JLabel("MATRIZ DE CRITERIOS");
-		lblMatrizDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-		lblMatrizDeAlternativas.setBounds(328, 0, 311, 31);
+		lblMatrizDeAlternativas.setBounds(420, 26, 311, 31);
+		lblMatrizDeAlternativas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 41));
 		panel_2.add(lblMatrizDeAlternativas);
+		
+		JButton button_5 = new JButton("");
+		button_5.setBackground(new Color(224, 255, 255));
+		
+	button_5.setIcon(new ImageIcon(".\\imagenes\\op.png"));
+		button_5.setBounds(870, 380, 311, 247);
+		panel_2.add(button_5);
 		
 		
 		JPanel panel_3 = new JPanel();
@@ -477,33 +493,33 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_3.add(table_2);
 		
 				scrollPane_2 = new JScrollPane();
-				scrollPane_2.setBounds(36, 82, 40, 171);
+				scrollPane_2.setBounds(128, 245, 40, 268);
 				panel_3.add(scrollPane_2);
 				
 				table_4 = new JTable();
 				scrollPane_2.setViewportView(table_4);
 				
 				scrollPane_3 = new JScrollPane();
-				scrollPane_3.setBounds(86, 82, 261, 167);
+				scrollPane_3.setBounds(178, 245, 261, 268);
 				panel_3.add(scrollPane_3);
 				
 				table_3 = new JTable();
 				scrollPane_3.setColumnHeaderView(table_3);
 				
 				JLabel lblMatricesParaObtener = new JLabel("MATRICES PARA OBTENER LA MATRIZ CUADRADA");
-				lblMatricesParaObtener.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-				lblMatricesParaObtener.setBounds(183, 11, 484, 31);
+				lblMatricesParaObtener.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 50));
+				lblMatricesParaObtener.setBounds(165, 130, 718, 55);
 				panel_3.add(lblMatricesParaObtener);
 				
 				scrollPane_4 = new JScrollPane();
-				scrollPane_4.setBounds(462, 82, 40, 171);
+				scrollPane_4.setBounds(587, 245, 40, 268);
 				panel_3.add(scrollPane_4);
 				
 				table_k5 = new JTable();
 				scrollPane_4.setViewportView(table_k5);
 				
 				 scrollPane_5 = new JScrollPane();
-				 scrollPane_5.setBounds(523, 82, 261, 167);
+				 scrollPane_5.setBounds(671, 245, 261, 268);
 				 panel_3.add(scrollPane_5);
 				 
 				 table_k6 = new JTable();
@@ -512,7 +528,7 @@ public void actionPerformed(ActionEvent arg0) {
 				 JButton button_3 = new JButton("");
 				
 				 button_3.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
-				 button_3.setBounds(365, 122, 75, 78);
+				 button_3.setBounds(482, 346, 75, 78);
 				 panel_3.add(button_3);
 		
 		JPanel panel_4 = new JPanel();
@@ -521,7 +537,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_4.setLayout(null);
 		
 		scrollPane_6 = new JScrollPane();
-		scrollPane_6.setBounds(39, 127, 352, 212);
+		scrollPane_6.setBounds(41, 300, 406, 256);
 		panel_4.add(scrollPane_6);
 		
 		table_5 = new JTable();
@@ -529,16 +545,16 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		JLabel lblMatrizCuadrada = new JLabel("MATRIZ CUADRADA");
 		lblMatrizCuadrada.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-		lblMatrizCuadrada.setBounds(116, 55, 198, 31);
+		lblMatrizCuadrada.setBounds(118, 228, 198, 31);
 		panel_4.add(lblMatrizCuadrada);
 		
 		JLabel lblSumaDeFilas = new JLabel("SUMA DE FILAS");
 		lblSumaDeFilas.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-		lblSumaDeFilas.setBounds(485, 55, 160, 31);
+		lblSumaDeFilas.setBounds(568, 234, 160, 31);
 		panel_4.add(lblSumaDeFilas);
 		
 		scrollPane_7 = new JScrollPane();
-		scrollPane_7.setBounds(503, 126, 98, 213);
+		scrollPane_7.setBounds(601, 305, 114, 251);
 		panel_4.add(scrollPane_7);
 		
 		table_7 = new JTable();
@@ -551,7 +567,7 @@ public void actionPerformed(ActionEvent arg0) {
 		scrollPane_7.setColumnHeaderView(table_7);
 		
 		scrollPane_8 = new JScrollPane();
-		scrollPane_8.setBounds(673, 127, 98, 213);
+		scrollPane_8.setBounds(814, 299, 167, 257);
 		panel_4.add(scrollPane_8);
 		
 		table_8 = new JTable();
@@ -559,60 +575,136 @@ public void actionPerformed(ActionEvent arg0) {
 		
 		JLabel lblPonderacin = new JLabel("PONDERACI\u00D3N");
 		lblPonderacin.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 34));
-		lblPonderacin.setBounds(655, 55, 148, 31);
+		lblPonderacin.setBounds(821, 234, 148, 31);
 		panel_4.add(lblPonderacin);
 		
 		JButton button_4 = new JButton("");
 		 button_4.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
-		button_4.setBounds(416, 211, 62, 54);
+		button_4.setBounds(476, 406, 62, 54);
 		panel_4.add(button_4);
 		
+		JButton button_6 = new JButton("");
+		button_6.setBackground(new Color(224, 255, 255));
+		button_6.setIcon(new ImageIcon(".\\imagenes\\op2.png"));
+		button_6.setBounds(948, 0, 246, 187);
+		panel_4.add(button_6);
+		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(192, 192, 192));
 		tabbedPane.addTab("Alternativas", null, panel_1, null);
 		panel_1.setLayout(null);
 		
 		tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_1.setBounds(12, 36, 775, 296);
+		tabbedPane_1.setBackground(UIManager.getColor("Button.background"));
+		tabbedPane_1.setForeground(new Color(255, 99, 71));
+		tabbedPane_1.setFont(new Font("Traditional Arabic", Font.BOLD | Font.ITALIC, 16));
+		tabbedPane_1.setBounds(22, 11, 1155, 528);
 		panel_1.add(tabbedPane_1);
 		
-		panel_5 = new JPanel();
-		panel_5.setVisible(false);
-		panel_5.setEnabled(false);
-		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
-		panel_5.setLayout(null);
-		
 		panel_6 = new JPanel();
+		panel_6.setBackground(new Color(240, 248, 255));
 		panel_6.setVisible(false);
 		panel_6.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 2", null, panel_6, null);
 		panel_6.setLayout(null);
 		
 		panel_7 = new JPanel();
+		panel_7.setBackground(new Color(240, 248, 255));
 		panel_7.setVisible(false);
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
 		
 		panel_8 = new JPanel();
+		panel_8.setBackground(new Color(240, 248, 255));
 		panel_8.setVisible(false);
 		panel_8.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 4", null, panel_8, null);
 		panel_8.setLayout(null);
 		
 		panel_9 = new JPanel();
+		panel_9.setBackground(new Color(240, 248, 255));
 		panel_9.setVisible(false);
 		panel_9.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 5", null, panel_9, null);
 		panel_9.setLayout(null);
 		
+		panel_10 = new JPanel();
+		panel_10.setBackground(new Color(240, 248, 255));
+		panel_10.setVisible(false);
+		panel_10.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 6", null, panel_10, null);
+		panel_10.setLayout(null);
+		
+		
+
+		panel_11 = new JPanel();
+		panel_11.setBackground(new Color(240, 248, 255));
+		panel_11.setVisible(false);
+		panel_11.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 7", null, panel_11, null);
+		panel_11.setLayout(null);
+		
+		panel_12 = new JPanel();
+		panel_12.setBackground(new Color(240, 248, 255));
+		panel_12.setVisible(false);
+		
+		panel_5 = new JPanel();
+		panel_5.setBackground(new Color(240, 248, 255));
+		panel_5.setVisible(false);
+		panel_5.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
+		
 		
 		//TABBEDPANES
+		tabbedPane_1.setEnabledAt(6, false);
+		panel_5.setLayout(null);
+		panel_12.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 8", null, panel_12, null);
+		panel_12.setLayout(null);
+		
+		panel_13 = new JPanel();
+		panel_13.setBackground(new Color(240, 248, 255));
+		panel_13.setVisible(false);
+		panel_13.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 9", null, panel_13, null);
+		panel_13.setLayout(null);
+		
+		
+		panel_14 = new JPanel();
+		panel_14.setBackground(new Color(240, 248, 255));
+		panel_14.setVisible(false);
+		panel_14.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa N...", null, panel_14, null);
+		panel_14.setLayout(null);
+		
+		
 		tabbedPane_1.setEnabledAt(0, false);
 		tabbedPane_1.setEnabledAt(1, false);
 		tabbedPane_1.setEnabledAt(2, false);
 		tabbedPane_1.setEnabledAt(3, false);
 		tabbedPane_1.setEnabledAt(4, false);
-	
+		tabbedPane_1.setEnabledAt(5, false);
+		tabbedPane_1.setEnabledAt(7, false);
+		tabbedPane_1.setEnabledAt(8, false);
+		tabbedPane_1.setEnabledAt(9, false);
+		
+		Button button_7 = new Button("PROCESAR");
+		button_7.setForeground(Color.WHITE);
+		button_7.setFont(new Font("Dialog", Font.PLAIN, 25));
+		button_7.setBackground(Color.BLUE);
+		button_7.setBounds(548, 557, 192, 69);
+		panel_1.add(button_7);
+		
+		JPanel panel_15 = new JPanel();
+		panel_15.setLayout(null);
+		panel_15.setBackground(new Color(220, 220, 220));
+		tabbedPane.addTab("Resultado", null, panel_15, null);
+		
+		JLabel lblResultados = new JLabel("RESULTADOS OBTENIDOS");
+		lblResultados.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 55));
+		lblResultados.setBounds(391, 53, 441, 48);
+		panel_15.add(lblResultados);
 	}
 	public void CreaColumnas() {
 		 int arr = array1.size(); 
@@ -1053,6 +1145,28 @@ public void recibo_vec_suma(double[] A){
 				 case 4:
 					 tabbedPane_1.setEnabledAt(4, true);
 					 tabbedPane_1.setTitleAt(4, array1.get(4));
+					 break;
+				 case 5:
+					 tabbedPane_1.setEnabledAt(5, true);
+					 tabbedPane_1.setTitleAt(5, array1.get(5));
+					 break;
+				 case 6:
+					 tabbedPane_1.setEnabledAt(6, true);
+					 tabbedPane_1.setTitleAt(6, array1.get(6));
+					 break;
+				 case 7:
+					 tabbedPane_1.setEnabledAt(7, true);
+					 tabbedPane_1.setTitleAt(7, array1.get(7));
+					 break;
+					 
+				 case 8:
+					 tabbedPane_1.setEnabledAt(8, true);
+					 tabbedPane_1.setTitleAt(8, array1.get(8));
+					 break;
+					 
+				 case 9:
+					 tabbedPane_1.setEnabledAt(9, true);
+					 tabbedPane_1.setTitleAt(9, array1.get(9));
 					 break;
 				 default:
 						 break;
