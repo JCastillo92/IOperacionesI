@@ -102,24 +102,21 @@ public class Operaciones{
 	}
 
 	
-	
-	
-	
-	
-	
-	
-	public void Solucion_final(){
+	public double[] Solucion_final(double[][] Matriz_Alt_Crite,double[] Vector_criterios){
 		//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
 		
 		//MATRIZ FINAL FxC AxC
+		/*
 				double[][] Matriz_Alt_Crite={
 						{0.11, 	0.37,	 0.20},
 						{0.26, 	0.29,	 0.20},
 						{0.05, 	0.07,	 0.40},
 						{0.58, 	0.26,	 0.20}
 						};
-				
+			*/
+		/*
 				double[] Vector_criterios={0.32, 0.56, 0.12};
+				*/
 				
 				//borrar donde esta el 4 poner el tamano de ALTERNATIAS
 				double[] Vector_respuesta_tamanoALT=new double[4];
@@ -135,6 +132,6 @@ public class Operaciones{
 				for (int i = 0; i < Vector_respuesta_tamanoALT.length; i++) {
 					System.out.println(Vector_respuesta_tamanoALT[i]);
 				}
+				return Vector_respuesta_tamanoALT;
 	}
-	
 }
