@@ -196,7 +196,6 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
-<<<<<<< HEAD
 	private JScrollPane scrollPane_m9;
 	private JScrollPane scrollPane_m10;
 	private JTable table_m10;
@@ -217,21 +216,17 @@ public class PersonalF extends JFrame {
 	private JTable table_m19;
 	private JTable table_m18;
 	private JTable table_m17;
-=======
 	public String titColumnaj3[];
 	public String titColumnaj4[];
 	public String titColumnaj5[];
 	public String datoColumnaj3[][];
 	public String datoColumnaj4[][];
 	public String datoColumnaj5[][];
-	private JTable table_6;
 	private JTable table_9;
 	private JTable table_10;
 	private JTable table_11;
 	private JTable table_12;
 	private JTable table_13;
->>>>>>> 5f380f9ed08167fa534f44d082a1977cef404e1f
-
 
 
 	/**
