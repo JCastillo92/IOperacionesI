@@ -478,7 +478,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 			crearTabla4();
 		crearTabla5();
-		crearTabla_5j();//jairo
+		
 		crearTabla6();
 		//	de_array_a_tabla();
 		
@@ -948,20 +948,7 @@ public void actionPerformed(ActionEvent arg0) {
 			    // automática
 			scrollPane_4.setViewportView(table_k5);
 			}
-	  public void crearTabla_5j(){ 
-			table_5 = new JTable(datoColumna1,titColumna);
-			 table_5.setShowHorizontalLines( true );
-			    table_5.setRowSelectionAllowed( true );
-			    table_5.setColumnSelectionAllowed( true );
-				scrollPane_6.setViewportView(table_5);
-							int micorredor=0;
-							for(int y=0;y<datoColumna1.length;y++){
-								  for(int W=0;W<datoColumna1.length;W++){
-									  datoColumna1[y][W]=String.valueOf(valor().get(micorredor));
-									  micorredor++;
-								  }  
-							  }
-			}
+	  
 	  public void crearTabla_7j(){ 
 			table_7 = new JTable(datoColumna1,titColumna);
 			 table_7.setShowHorizontalLines( true );
