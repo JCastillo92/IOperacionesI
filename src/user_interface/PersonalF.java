@@ -104,6 +104,8 @@ public class PersonalF extends JFrame {
 	private ArrayList<String> lista_tabla1m;
 	private ArrayList<String> lista_ponderaciones;
 	private ArrayList<Double> lista_doble_ponderacion;
+	
+	private ArrayList<Double> vector_AR_ponderacion;
 
 	private ArrayList<String> lista_tabla1b;
 	private ArrayList<String> lista_tabla2;//Jhon
@@ -360,6 +362,7 @@ public class PersonalF extends JFrame {
 		lista_tabla3 = new ArrayList<String>(); // JAIRO
 		lista_ponderaciones = new ArrayList<String>();;
 		lista_doble_ponderacion = new ArrayList<Double>();
+		vector_AR_ponderacion= new ArrayList<Double>();
 		
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -3502,10 +3505,14 @@ public void CreaColumnas5_b() {
 
 
 
-public double[] Solucion_final(double[][] Matriz_Alt_Crite,double[] Vector_criterios){
-	//aqui ARRIBA debo recibir armada la matriz AxC o FILASxCOLUMNAS
+public ArrayList<Double> Solucion_final(double[][] Matriz_Alt_Crite){
+   //aqui tengo los valores de la ponderacion de CRITERIOS o la ponderacion de la matriz cuadrada.
+	for (int j = 0; j < table_8.getRowCount(); j++) {
+		vector_AR_ponderacion.add(Double.parseDouble((String) (table_8.getValueAt(j,0))));	
+	}
+	ArrayList<Double> respuesta_tamanoALT;
+	respuesta_tamanoALT= new ArrayList<Double>();
 	
-	//MATRIZ FINAL FxC AxC
 	/*
 			double[][] Matriz_Alt_Crite={
 					{0.11, 	0.37,	 0.20},
@@ -3518,21 +3525,18 @@ public double[] Solucion_final(double[][] Matriz_Alt_Crite,double[] Vector_crite
 			double[] Vector_criterios={0.32, 0.56, 0.12};
 			*/
 			
-			//borrar donde esta el 4 poner el tamano de ALTERNATIAS
-			double[] Vector_respuesta_tamanoALT=new double[4];
-			
 			for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
 				double acum=0;
 				for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
-					acum=acum+Matriz_Alt_Crite[i][j]*Vector_criterios[j];
+					acum=acum+Matriz_Alt_Crite[i][j]*vector_AR_ponderacion.get(j);
 				}
-				Vector_respuesta_tamanoALT[i]=acum;
+				respuesta_tamanoALT.add(acum);
 			}
 			
-			for (int i = 0; i < Vector_respuesta_tamanoALT.length; i++) {
-				System.out.println(Vector_respuesta_tamanoALT[i]);
+			for (int i = 0; i < respuesta_tamanoALT.size(); i++) {
+				System.out.println(respuesta_tamanoALT.get(i));
 			}
-			return Vector_respuesta_tamanoALT;
+			return respuesta_tamanoALT;
 }
 
 
