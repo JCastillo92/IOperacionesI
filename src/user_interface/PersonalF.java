@@ -52,7 +52,12 @@ public class PersonalF extends JFrame {
 	public String titColumna3j[];//jairo
 	public String titColumna31[];
 	
+	public String datoColumnaUlt[][];
+	public String titColumnaUlt[];
 
+	public String datoColumnaUlt2[][];
+	public String titColumnaUlt2[];
+	
 	public String titColumna4[];
 	public String titColumna4j[];//jairo
 	public String titColumna5[];
@@ -81,6 +86,7 @@ public class PersonalF extends JFrame {
 	  public String datoColumna5j[][];//jairo
 	  private JTable table;
 	 private JTable table_1;
+	 
 	 private JTable table_b1;
 	 private JTable table_b2;
 	 private JTable table_b3;
@@ -313,6 +319,10 @@ public class PersonalF extends JFrame {
 	private JButton button_30;
 	private JLabel label_18;
 	private JLabel label_19;
+	private JScrollPane scrollPane_ultima1;
+	private JScrollPane scrollPane_ultima2;
+	private JTable tableUltima1;
+	private JTable tableUltima2;
 
 
 	/**
@@ -707,6 +717,15 @@ public void actionPerformed(ActionEvent arg0) {
 											
 											   
 											    ///////////////
+											    
+											    CargaDatosUlt2();
+											    CargaDatosUlt();
+											    CreaColumnasUlt2();
+											    CreaColumnasUlt();
+											    
+											    crearTablaUltimaFilas();
+											    crearTablaUltimaColumnas();
+											    
 										    
 
 							}
@@ -1583,6 +1602,12 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.setEnabledAt(9, false);
 		
 		Button button_7 = new Button("PROCESAR");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+		});
 		button_7.setForeground(Color.WHITE);
 		button_7.setFont(new Font("Dialog", Font.PLAIN, 25));
 		button_7.setBackground(Color.BLUE);
@@ -1615,6 +1640,21 @@ public void actionPerformed(ActionEvent arg0) {
 		button_9.setBounds(10, 49, 295, 170);
 		button_9.setIcon(new ImageIcon(".\\imagenes\\fin.gif"));
 		panel_15.add(button_9);
+		
+		scrollPane_ultima1 = new JScrollPane();
+		scrollPane_ultima1.setBounds(235, 351, 137, 214);
+		panel_15.add(scrollPane_ultima1);
+		
+		tableUltima2 = new JTable();
+		scrollPane_ultima1.setViewportView(tableUltima2);
+		
+		scrollPane_ultima2 = new JScrollPane();
+		scrollPane_ultima2.setBackground(new Color(224, 255, 255));
+		scrollPane_ultima2.setBounds(416, 351, 422, 214);
+		panel_15.add(scrollPane_ultima2);
+		
+		tableUltima1 = new JTable();
+		scrollPane_ultima2.setColumnHeaderView(tableUltima1);
 	}
 	public void CreaColumnas() {
 		 int arr = array1.size(); 
@@ -1624,6 +1664,22 @@ public void actionPerformed(ActionEvent arg0) {
 	      titColumna[i] = array1.get(i);
 	    }
 	  }
+	
+	public void CreaColumnasUlt() {
+		 int arr = array1.size(); 
+	    titColumnaUlt = new String[arr];
+	    
+	    for( int i=0; i < arr; i++ ) {
+	      titColumnaUlt[i] = array1.get(i);
+	    }
+	  }
+	
+	//bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+	
+	
+	 
+	 ////////////////////////////////
+	 
 	public void CreaColumnas11() {
 		 int arr = array1.size(); 
 	    titColumna11 = new String[arr];
@@ -1659,6 +1715,14 @@ public void actionPerformed(ActionEvent arg0) {
 	    
 	    for( int i=0; i < 1; i++ ) {
 	      titColumna2[i] = "Criterios:";
+	    }
+	  }
+	
+	public void CreaColumnasUlt2() {
+	    titColumnaUlt2 = new String[1];
+	    
+	    for( int i=0; i < 1; i++ ) {
+	      titColumnaUlt2[i] = "Criterios:";
 	    }
 	  }
 	
@@ -1702,6 +1766,11 @@ public void actionPerformed(ActionEvent arg0) {
 		  int arr2 = array1.size(); 
 	    datoColumna = new String[arr2][arr2];
 	  }
+	  public void CargaDatosUlt() {
+		  int arr2 = array1.size(); 
+	    datoColumnaUlt = new String[arr2][arr2];
+	  }
+	  
 	  public void CargaDatos3() {
 		  int arr2 = array2.size(); 
 	    datoColumna3 = new String[arr2][arr2];
@@ -1825,6 +1894,20 @@ public void actionPerformed(ActionEvent arg0) {
 	      }
 	    }
 	  }
+	  
+	  public void CargaDatosUlt2() {
+		  int arr2 = array2.size(); 
+	    datoColumnaUlt2 = new String[arr2][1];
+	    
+	    for( int iY=0; iY < arr2; iY++ ) {
+	      for( int iX=0; iX < 1; iX++ ) {
+		datoColumnaUlt2[iY][iX] = array2.get(iY);
+	      }
+	    }
+	  }
+	  
+	  
+	  
 	  public void CargaDatos4() {
 		  int arr2 = array2.size(); 
 	    datoColumna4 = new String[arr2][1];
@@ -2132,6 +2215,50 @@ public void actionPerformed(ActionEvent arg0) {
 			}
 	  
 	   
+	  public void crearTablaUltimaColumnas(){ 
+			tableUltima1 = new JTable(datoColumnaUlt,titColumnaUlt){
+				public boolean isCellEditable(int row, int column){
+				    if(row ==column ) return false;
+				    return true;
+				  }
+			};
+			tableUltima1.setShowHorizontalLines( true );
+			tableUltima1.setRowSelectionAllowed( true );
+			tableUltima1.setColumnSelectionAllowed( true );
+			   
+			    
+			    scrollPane_ultima2.setViewportView(tableUltima1);
+			
+			//LISTENER TABLA
+			    tableUltima1.addKeyListener(new KeyAdapter() {
+				@Override
+				public void keyReleased(KeyEvent e) {
+					int tam_col=tableUltima1.getColumnCount();
+					int tam_fil=tableUltima1.getRowCount();
+					//System.out.println(tam_col+" "+tam_fil);
+					cambiar_celdasUlt(tam_col, tam_fil);
+				}
+				
+			});
+			setear1entabla();
+			
+			}
+	  
+	  
+	  public void crearTablaUltimaFilas(){ 
+		  tableUltima2 = new JTable(datoColumnaUlt2,titColumnaUlt2);
+		  tableUltima2.setShowHorizontalLines( true );
+		  tableUltima2.setRowSelectionAllowed( true );
+		  tableUltima2.setColumnSelectionAllowed( true );
+			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+		  tableUltima2.setSelectionForeground( Color.white );
+		  tableUltima2.setSelectionBackground( Color.WHITE );
+		  tableUltima2.setEnabled(false);
+			    // Incorporamos la tabla a un panel que incorpora ya una barra
+			    // de desplazamiento, para que la visibilidad de la tabla sea
+			    // automática
+			    scrollPane_ultima1.setViewportView(tableUltima2);
+			}
 	  
 	
 	  
@@ -2269,6 +2396,26 @@ public void actionPerformed(ActionEvent arg0) {
 		}
 	  
 	  
+	  public void cambiar_celdasUlt(int columnas, int filas){
+			String valor_alterado;
+			int columna_seleccionada=tableUltima1.getSelectedColumn();
+			int fila_seleccionada=tableUltima1.getSelectedRow();
+			System.out.println(columna_seleccionada+" "+fila_seleccionada);
+			try {
+				//table_1.getModel().addTableModelListener(table_1);
+				tableUltima1.getCellEditor().stopCellEditing();
+				String valor_cambiado = String.valueOf(tableUltima1.getModel().getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				//String valor_cambiado = String.valueOf(table_1.getValueAt(fila_seleccionada, columna_seleccionada)) ;
+				System.out.println("Valor "+valor_cambiado);
+				valor_alterado=invertirString(valor_cambiado);
+				tableUltima1.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			
+		}
+	  
 	  public String invertirString(String valor_tabla){
 			String valor_invertido="";
 			int posicionslash;
@@ -2296,9 +2443,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 		}
 	  
-
-
-	  
+  
 
 	  public void guardar_array(){
 		  ReproducirSonido("imagenes/sound2.wav");
