@@ -196,7 +196,10 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
-
+	public String titColumnaj3[];
+	public String titColumnaj4[];
+	public String titColumnaj5[];
+	public String datoColumnaj3[][];
 
 
 	/**
@@ -526,6 +529,9 @@ public void actionPerformed(ActionEvent arg0) {
 
 								    crearTabla11();
 									//METODOS JHONSIN
+								    CreaColumnasjh3();
+								    CargaDatosjh3();
+								    crearTablajh9();
 								    crearTablajh11();
 
 									    
@@ -1169,6 +1175,26 @@ public void actionPerformed(ActionEvent arg0) {
 
 	    datoColumna5 = new String[arr2][arr2];
 	  }
+	  
+	  //VARIABLES JHON
+	  public void CargaDatosjh3() {
+		  int arr2 = array2.size(); 
+	    datoColumnaj3 = new String[arr2][arr2];
+	    //datoColumnaj5 = new String[arr2][arr2];
+	  }
+	  
+		public void CreaColumnasjh3() {
+			 int arr = array2.size(); 
+		    titColumnaj3 = new String[arr];
+		    titColumnaj5 = new String[arr];
+		    
+		    for( int i=0; i < arr; i++ ) {
+		      titColumnaj3[i] = array2.get(i);
+		      titColumnaj5[i] = array2.get(i);
+		    }
+		  }
+	  //FIN VARIABLES JHON
+	  
 	  public void CargaDatos31() {
 		  int arr2 = array2.size(); 
 	    datoColumna31 = new String[arr2][arr2];
@@ -1946,4 +1972,63 @@ public void recibo_vec_suma(double[] A){
 				    // automática
 				scrollPane_jh9.setViewportView(table_j10);
 				}
+		  
+		  public void crearTablajh9(){ 
+				table_j11 = new JTable(datoColumnaj3,titColumnaj3){
+					public boolean isCellEditable(int row, int column){
+					    if(row ==column ) return false;
+					    return true;
+					  }
+				};
+				 table_j11.setShowHorizontalLines( true );
+				    table_j11.setRowSelectionAllowed( true );
+				    table_j11.setColumnSelectionAllowed( true );
+
+				    
+				scrollPane_jh10.setViewportView(table_j11);
+				
+				//LISTENER TABLA
+				table_j11.addKeyListener(new KeyAdapter() {
+					@Override
+					public void keyReleased(KeyEvent e) {
+						int tam_col=table_j11.getColumnCount();
+						int tam_fil=table_j11.getRowCount();
+						//System.out.println(tam_col+" "+tam_fil);
+						cambiar_celdasjh3(tam_col, tam_fil);
+					}
+					
+				});
+				setear1entabla_jh();
+				
+				}
+		  
+		  public void cambiar_celdasjh3(int columnas, int filas){
+				String valor_alterado;
+				int columna_seleccionada=table_j11.getSelectedColumn();
+				int fila_seleccionada=table_j11.getSelectedRow();
+				System.out.println(columna_seleccionada+" "+fila_seleccionada);
+				try {
+					//table_1.getModel().addTableModelListener(table_1);
+					table_j11.getCellEditor().stopCellEditing();
+					String valor_cambiado = String.valueOf(table_j11.getModel().getValueAt(fila_seleccionada, columna_seleccionada)) ;
+					//String valor_cambiado = String.valueOf(table_1.getValueAt(fila_seleccionada, columna_seleccionada)) ;
+					System.out.println("Valor "+valor_cambiado);
+					valor_alterado=invertirString(valor_cambiado);
+					table_j11.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+			}
+
+		  
+		  public void setear1entabla_jh(){
+				int columna_seleccionada=table_j11.getColumnCount();
+				for (int i = 0; i < columna_seleccionada; i++) {
+					System.out.println(i);
+					table_j11.setValueAt("1/1", i, i);
+				}
+				
+			}
 }
