@@ -1780,7 +1780,8 @@ public void actionPerformed(ActionEvent arg0) {
 	  }
 	  public void CargaDatosUlt() {
 		  int arr2 = array1.size(); 
-	    datoColumnaUlt = new String[arr2][arr2];
+		  int arr3 = array2.size();
+	    datoColumnaUlt = new String[arr3][arr2];
 	  }
 	  
 	  public void CargaDatos3() {
