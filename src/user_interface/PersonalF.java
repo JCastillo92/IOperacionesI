@@ -146,7 +146,25 @@ public class PersonalF extends JFrame {
 	private JTable table_31;
 	private JButton IGUAL;
 	private JButton MARY;
-
+	
+	//CODIGO JHON
+	private JScrollPane scrollPane_jh9;
+	private JScrollPane scrollPane_jh10;
+	private JButton button_jh12;
+	private JScrollPane scrollPane_jh11;
+	private JScrollPane scrollPane_jh12;
+	private JButton button_jh13;
+	private JScrollPane scrollPane_jh13;
+	private JScrollPane scrollPane_jh14;
+	private JScrollPane scrollPane_jh15;
+	private JButton button_jh14;
+	private JTable table_j10;
+	private JTable table_j11;
+	private JTable table_j13;
+	private JTable table_j14;
+	private JTable table_j15;
+	private JTable table_j16;
+	private JTable table_j17;
 
 
 	/**
@@ -475,7 +493,9 @@ public void actionPerformed(ActionEvent arg0) {
 
 
 				    crearTabla11();
-								 
+				    
+				    //METODOS JHON
+					crearTablajh11();			 
 
 					    
 					 CargaDatos4();
@@ -497,7 +517,7 @@ public void actionPerformed(ActionEvent arg0) {
 						   CreaColumnas11();
 						   CargaDatos11();
 					    
-					 
+						   
 
 			}
 			
@@ -812,6 +832,46 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_8.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 4", null, panel_8, null);
 		panel_8.setLayout(null);
+		
+		scrollPane_jh9 = new JScrollPane();
+		scrollPane_jh9.setBounds(12, 13, 78, 149);
+		panel_8.add(scrollPane_jh9);
+		
+		scrollPane_jh10 = new JScrollPane();
+		scrollPane_jh10.setBounds(118, 13, 257, 149);
+		panel_8.add(scrollPane_jh10);
+		
+		button_jh12 = new JButton("=");
+		button_jh12.setBounds(325, 72, 89, 23);
+		panel_8.add(button_jh12);
+		
+		scrollPane_jh11 = new JScrollPane();
+		scrollPane_jh11.setBounds(401, 13, 49, 149);
+		panel_8.add(scrollPane_jh11);
+		
+		scrollPane_jh12 = new JScrollPane();
+		scrollPane_jh12.setBounds(465, 13, 257, 149);
+		panel_8.add(scrollPane_jh12);
+		
+		button_jh13 = new JButton("");
+		button_jh13.setBounds(645, 156, 75, 78);
+		panel_8.add(button_jh13);
+		
+		scrollPane_jh13 = new JScrollPane();
+		scrollPane_jh13.setBounds(790, 13, 49, 149);
+		panel_8.add(scrollPane_jh13);
+		
+		scrollPane_jh14 = new JScrollPane();
+		scrollPane_jh14.setBounds(869, 13, 257, 149);
+		panel_8.add(scrollPane_jh14);
+		
+		scrollPane_jh15 = new JScrollPane();
+		scrollPane_jh15.setBounds(30, 207, 384, 186);
+		panel_8.add(scrollPane_jh15);
+		
+		button_jh14 = new JButton("");
+		button_jh14.setBounds(272, 242, 75, 78);
+		panel_8.add(button_jh14);
 		
 		panel_9 = new JPanel();
 		panel_9.setBackground(new Color(240, 248, 255));
@@ -1714,4 +1774,21 @@ public void recibo_vec_suma(double[] A){
 				 
 			}
 		 }
+		 
+		 //METODOS TABBEDPANE4
+		  public void crearTablajh11(){ 
+			  System.out.println("Entro a tablajh11");
+				table_j10 = new JTable(datoColumna4,titColumna4);
+				 table_j10.setShowHorizontalLines( true );
+				    table_j10.setRowSelectionAllowed( true );
+				    table_j10.setColumnSelectionAllowed( true );
+				    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+				    table_j10.setSelectionForeground( Color.white );
+				    table_j10.setSelectionBackground( Color.WHITE );
+				    table_j10.setEnabled(false);
+				    // Incorporamos la tabla a un panel que incorpora ya una barra
+				    // de desplazamiento, para que la visibilidad de la tabla sea
+				    // automática
+				scrollPane_jh9.setViewportView(table_j10);
+				}
 }
