@@ -69,6 +69,10 @@ public class PersonalF extends JFrame {
 	  public String datoColumna3_m[][];
 	  public String datoColumna5_m[][];
 	  public String datoColumna4_m[][];
+	  
+	  public String datoColumna3_b[][];
+	  public String datoColumna5_b[][];
+	  public String datoColumna4_b[][];
 	  public String datoColumna5[][];
 	  private JTable table;
 	 private JTable table_1;
@@ -93,6 +97,8 @@ public class PersonalF extends JFrame {
 
 	private ArrayList<String> lista_tabla1;
 	private ArrayList<String> lista_tabla1m;
+
+	private ArrayList<String> lista_tabla1b;
 	private ArrayList<String> lista_tabla2;//Jhon
 	private JTable table_2;
 	private JTable table_3;
@@ -122,6 +128,8 @@ public class PersonalF extends JFrame {
 
 	private DefaultTableModel modm1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modm2=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel modb1=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel modb2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_7;
 	private JTable table_8;
 	private JScrollPane scrollPane_8;
@@ -150,11 +158,6 @@ public class PersonalF extends JFrame {
 	private JTable table_k15;
 	private JTable table_k16;
 	private JTable table_k17;
-
-	private JScrollPane scrollPane_b1;
-	private JScrollPane scrollPane_b2;
-	private JScrollPane scrollPane_b3;
-	private JScrollPane scrollPane_b4;
 	private JButton IGUAL;
 	private JButton MARY;
 	private JScrollPane scrollPane_k18;
@@ -229,21 +232,41 @@ public class PersonalF extends JFrame {
 	public String titColumnaj3[];
 	public String titColumnaj4[];
 	public String titColumnaj5[];
+	
 
 	public String titColumna3_m[];
 	public String titColumna4_m[];
 	public String titColumna5_m[];
+	
+
+	public String titColumna3_b[];
+	public String titColumna4_b[];
+	public String titColumna5_b[];
 	public String datoColumnaj3[][];
 	public String datoColumnaj4[][];
 	public String datoColumnaj5[][];
-	private JTable table_9;
-	private JTable table_10;
-	private JTable table_11;
-	private JTable table_12;
-	private JTable table_13;
 	private JScrollPane scrollPane_m10;
 	private JTable table_m11;
 	private JLabel label;
+	private JScrollPane scrollPane_b9;
+	private JScrollPane scrollPane_b10;
+	private JButton button_12;
+	private JScrollPane scrollPane_b13;
+	private JScrollPane scrollPane_b14;
+	private JScrollPane scrollPane_b17;
+	private JScrollPane scrollPane_b18;
+	private JScrollPane scrollPane_b19;
+	private JScrollPane scrollPane_b15;
+	private JScrollPane scrollPane_b16;
+	private JTable table_b10;
+	private JTable table_b11;
+	private JTable table_b13;
+	private JTable table_b17;
+	private JTable table_b14;
+	private JTable table_b15;
+	private JTable table_b16;
+	private JTable table_b18;
+	private JTable table_b19;
 
 
 	/**
@@ -280,6 +303,7 @@ public class PersonalF extends JFrame {
 		lista_tabla = new ArrayList<String>();
 		lista_tabla1 = new ArrayList<String>();
 		lista_tabla1m = new ArrayList<String>();
+		lista_tabla1b = new ArrayList<String>();
 		
 		lista_tabla2 = new ArrayList<String>(); // JHON
 		
@@ -589,17 +613,14 @@ public void actionPerformed(ActionEvent arg0) {
 									 CargaDatos4();
 									   CreaColumnas4();
 									    crearTabla11();
-									    
-									    CargaDatos31();
-										   CreaColumnas31();
-										   crearTabla91();
+									 
+										   
+										 
 										   
 										   
 										   CargaDatos5();
 										   CreaColumnas5();
-										   crearTabla12();  
 										   
-										   crearTabla12_B();
 										   
 										 
 										   CreaColumnas11();
@@ -614,7 +635,14 @@ public void actionPerformed(ActionEvent arg0) {
 										    crearTabla11m();
 										    
 
-										   
+
+											   ////didi
+											   CargaDatos4_b();
+											   CreaColumnas4_b();
+											       CreaColumnas3_b();
+											    CargaDatos3_b();
+											    crearTabla9b();
+											    crearTabla11b();
 											      
 											    
 											 
@@ -810,6 +838,10 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.setLayout(null);
 		
 		JButton button_10 = new JButton("");
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		button_10.setBounds(270, 240, 75, 78);
 		 button_10.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
 		panel_5.add(button_10);
@@ -931,69 +963,85 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.setEnabledAt(1, false);
 		panel_6.setLayout(null);
 		
-		scrollPane_b1 = new JScrollPane();
-		scrollPane_b1.setBounds(10, 11, 76, 156);
-		panel_6.add(scrollPane_b1);
+		scrollPane_b9 = new JScrollPane();
+		scrollPane_b9.setBounds(26, 26, 78, 149);
+		panel_6.add(scrollPane_b9);
 		
-		scrollPane_b2 = new JScrollPane();
-		scrollPane_b2.setBounds(109, 11, 304, 156);
-		panel_6.add(scrollPane_b2);
+		table_b10 = new JTable();
+		scrollPane_b9.setViewportView(table_b10);
 		
-		scrollPane_b3 = new JScrollPane();
-		scrollPane_b3.setBounds(477, 11, 76, 156);
-		panel_6.add(scrollPane_b3);
+		scrollPane_b10 = new JScrollPane();
+		scrollPane_b10.setBounds(132, 26, 257, 149);
+		panel_6.add(scrollPane_b10);
 		
-		scrollPane_b4 = new JScrollPane();
-		scrollPane_b4.setBounds(563, 11, 304, 156);
-		panel_6.add(scrollPane_b4);
+		table_b11 = new JTable();
+		scrollPane_b10.setViewportView(table_b11);
 		
+		scrollPane_b13 = new JScrollPane();
+		scrollPane_b13.setBounds(450, 26, 49, 149);
+		panel_6.add(scrollPane_b13);
 		
-		JButton button_12 = new JButton("=");
-		button_12.setBounds(390, 65, 89, 23);
+		table_b13 = new JTable();
+		scrollPane_b13.setViewportView(table_b13);
+		
+		button_12 = new JButton("=");
+		button_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guardar_arrayb1();
+				 CargaDatos4_b();
+				   CreaColumnas4_b();
+				    crearTabla13b();
+				    crearTablam14b();
+				    crearTabla15b();
+				  crearTablak16b();
+				  
+				  cuadradab();
+			}
+		});
+		button_12.setBounds(371, 82, 89, 23);
 		panel_6.add(button_12);
 		
-		JScrollPane scrollPane_9 = new JScrollPane();
-		scrollPane_9.setBounds(877, 11, 49, 149);
-		panel_6.add(scrollPane_9);
+		scrollPane_b14 = new JScrollPane();
+		scrollPane_b14.setBounds(525, 26, 257, 149);
+		panel_6.add(scrollPane_b14);
 		
-		table_9 = new JTable();
-		scrollPane_9.setViewportView(table_9);
+		table_b14 = new JTable();
+		scrollPane_b14.setViewportView(table_b14);
 		
-		JScrollPane scrollPane_10 = new JScrollPane();
-		scrollPane_10.setBounds(936, 11, 257, 149);
-		panel_6.add(scrollPane_10);
+		scrollPane_b17 = new JScrollPane();
+		scrollPane_b17.setBounds(46, 220, 384, 186);
+		panel_6.add(scrollPane_b17);
 		
-		table_10 = new JTable();
-		scrollPane_10.setViewportView(table_10);
+		table_b17 = new JTable();
+		scrollPane_b17.setViewportView(table_b17);
 		
-		JScrollPane scrollPane_11 = new JScrollPane();
-		scrollPane_11.setBounds(130, 205, 384, 186);
-		panel_6.add(scrollPane_11);
+		scrollPane_b18 = new JScrollPane();
+		scrollPane_b18.setBounds(543, 220, 107, 186);
+		panel_6.add(scrollPane_b18);
 		
-		table_11 = new JTable();
-		scrollPane_11.setViewportView(table_11);
+		table_b18 = new JTable();
+		scrollPane_b18.setViewportView(table_b18);
 		
-		JScrollPane scrollPane_12 = new JScrollPane();
-		scrollPane_12.setBounds(627, 205, 107, 186);
-		panel_6.add(scrollPane_12);
+		scrollPane_b19 = new JScrollPane();
+		scrollPane_b19.setBounds(723, 220, 107, 186);
+		panel_6.add(scrollPane_b19);
 		
-		table_12 = new JTable();
-		scrollPane_12.setViewportView(table_12);
+		table_b19 = new JTable();
+		scrollPane_b19.setViewportView(table_b19);
 		
-		JScrollPane scrollPane_13 = new JScrollPane();
-		scrollPane_13.setBounds(807, 205, 107, 186);
-		panel_6.add(scrollPane_13);
+		scrollPane_b15 = new JScrollPane();
+		scrollPane_b15.setBounds(804, 26, 49, 149);
+		panel_6.add(scrollPane_b15);
 		
-		table_13 = new JTable();
-		scrollPane_13.setViewportView(table_13);
+		table_b15 = new JTable();
+		scrollPane_b15.setViewportView(table_b15);
 		
-		JButton button_13 = new JButton("");
-		button_13.setBounds(944, 170, 75, 78);
-		panel_6.add(button_13);
+		scrollPane_b16 = new JScrollPane();
+		scrollPane_b16.setBounds(883, 26, 257, 149);
+		panel_6.add(scrollPane_b16);
 		
-		JButton button_14 = new JButton("");
-		button_14.setBounds(370, 240, 75, 78);
-		panel_6.add(button_14);
+		table_b16 = new JTable();
+		scrollPane_b16.setViewportView(table_b16);
 		panel_7.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 3", null, panel_7, null);
 		panel_7.setLayout(null);
@@ -1343,15 +1391,7 @@ public void actionPerformed(ActionEvent arg0) {
 	
 	
 	
-	public void CreaColumnas31() {
-		 int arr = array2.size(); 
-	    titColumna31 = new String[arr];
-	    
-	    for( int i=0; i < arr; i++ ) {
-	      titColumna31[i] = array2.get(i);
-	    }
-	  }
-	
+
 	public void CreaColumnas1() {
 		 int arr = array1.size(); 
 		  ArrayList<String> Columna = new ArrayList<String>();
@@ -1446,10 +1486,7 @@ public void actionPerformed(ActionEvent arg0) {
 		  }
 	  //FIN VARIABLES JHON
 	  
-	  public void CargaDatos31() {
-		  int arr2 = array2.size(); 
-	    datoColumna31 = new String[arr2][arr2];
-	  }
+	
 	  
 	  public void CargaDatos1() {
 		  int arr2 = array1.size(); 
@@ -1556,35 +1593,7 @@ public void actionPerformed(ActionEvent arg0) {
 			
 			}
 	  
-	  public void crearTabla91(){ 
-			table_b2 = new JTable(datoColumna31,titColumna31){
-				public boolean isCellEditable(int row, int column){
-				    if(row ==column ) return false;
-				    return true;
-				  }
-			};
-			table_b2.setShowHorizontalLines( true );
-			table_b2.setRowSelectionAllowed( true );
-			table_b2.setColumnSelectionAllowed( true );
-			   
-			    
-			scrollPane_b2.setViewportView(table_b2);
-			
-			//LISTENER TABLA
-			table_b2.addKeyListener(new KeyAdapter() {
-				@Override
-				public void keyReleased(KeyEvent e) {
-					int tam_col=table_b2.getColumnCount();
-					int tam_fil=table_b2.getRowCount();
-					//System.out.println(tam_col+" "+tam_fil);
-					cambiar_celdasb1(tam_col, tam_fil);
-				}
-				
-			});
-			setear1entabla_b();
-			
-			}
-	  
+	
 	  
 	  
 	  
@@ -1812,37 +1821,7 @@ public void actionPerformed(ActionEvent arg0) {
 	  
 	   
 	  
-	  public void crearTabla12(){ 
-			table_b1 = new JTable(datoColumna5,titColumna5);
-			 table_b1.setShowHorizontalLines( true );
-			 table_b1.setRowSelectionAllowed( true );
-			 table_b1.setColumnSelectionAllowed( true );
-			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			 table_b1.setSelectionForeground( Color.white );
-			 table_b1.setSelectionBackground( Color.WHITE );
-			 table_b1.setEnabled(false);
-			    // Incorporamos la tabla a un panel que incorpora ya una barra
-			    // de desplazamiento, para que la visibilidad de la tabla sea
-			    // automática
-			 scrollPane_b1.setViewportView(table_b1);
-			 
-			}
-	  
-	  public void crearTabla12_B(){ 
-			table_b3 = new JTable(datoColumna5,titColumna5);
-			table_b3.setShowHorizontalLines( true );
-			table_b3.setRowSelectionAllowed( true );
-			table_b3.setColumnSelectionAllowed( true );
-			    // Cambiamos el color de la zona seleccionada (rojo/blanco)
-			table_b3.setSelectionForeground( Color.white );
-			table_b3.setSelectionBackground( Color.WHITE );
-			table_b3.setEnabled(false);
-			    // Incorporamos la tabla a un panel que incorpora ya una barra
-			    // de desplazamiento, para que la visibilidad de la tabla sea
-			    // automática
-			 scrollPane_b3.setViewportView(table_b3);
-			 
-			}
+	
 	  
 	  
 	  
@@ -2007,15 +1986,7 @@ public void actionPerformed(ActionEvent arg0) {
 		}
 	  
 
-			  
-	  public void setear1entabla_b(){
-			int columna_seleccionada=table_k11.getColumnCount();
-			for (int i = 0; i < columna_seleccionada; i++) {
-				System.out.println(i);
-				table_b2.setValueAt("1/1", i, i);
-			}
-			
-		}
+
 	  
 
 	  public void guardar_array(){
@@ -2731,5 +2702,301 @@ System.out.println();
 ///////////
 ////
 
+
+////////////////////didi/////////////////////////////////////////
+
+
+
+
+
+//alternativa 55555 
+public void crearTabla11b(){ 
+		table_b10 = new JTable(datoColumna4_b,titColumna4_b);
+		 table_b10.setShowHorizontalLines( true );
+		    table_b10.setRowSelectionAllowed( true );
+		    table_b10.setColumnSelectionAllowed( true );
+		    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+		    table_b10.setSelectionForeground( Color.white );
+		    table_b10.setSelectionBackground( Color.WHITE );
+		    table_b10.setEnabled(false);
+		    // Incorporamos la tabla a un panel que incorpora ya una barra
+		    // de desplazamiento, para que la visibilidad de la tabla sea
+		    // automática
+		scrollPane_b9.setViewportView(table_b10);
+		}
+
+public void crearTabla9b(){ 
+		table_b11 = new JTable(datoColumna3_b,titColumna3_b){
+			public boolean isCellEditable(int row, int column){
+			    if(row ==column ) return false;
+			    return true;
+			  }
+		};
+		 table_b11.setShowHorizontalLines( true );
+		    table_b11.setRowSelectionAllowed( true );
+		    table_b11.setColumnSelectionAllowed( true );
+
+		    
+		scrollPane_b10.setViewportView(table_b11);
+		
+		//LISTENER TABLA
+		table_b11.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				int tam_col=table_b11.getColumnCount();
+				int tam_fil=table_b11.getRowCount();
+				//System.out.println(tam_col+" "+tam_fil);
+				cambiar_celdasb3(tam_col, tam_fil);
+			}
+			
+		});
+		setear1entabla_b();
+		
+		}
+
+
+
+
+
+
+
+public void crearTabla13b(){ 
+		table_b13 = new JTable(datoColumna4_b,titColumna4_b);
+		 table_b13.setShowHorizontalLines( true );
+		    table_b13.setRowSelectionAllowed( true );
+		    table_b13.setColumnSelectionAllowed( true );
+		    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+		    table_b13.setSelectionForeground( Color.white );
+		    table_b13.setSelectionBackground( Color.WHITE );
+		    table_b13.setEnabled(false);
+		    // Incorporamos la tabla a un panel que incorpora ya una barra
+		    // de desplazamiento, para que la visibilidad de la tabla sea
+		    // automática
+		scrollPane_b13.setViewportView(table_b13);
+		}
+
+public void crearTablam14b(){ 
+
+		table_b14 = new JTable(datoColumna5_b,titColumna5_b);
+			
+		 table_b14.setShowHorizontalLines( true );
+		    table_b14.setRowSelectionAllowed( true );
+		    table_b14.setColumnSelectionAllowed( true );
+		    
+		  
+			scrollPane_b14.setViewportView(table_b14);
+			
+			
+						int micorredor=0;
+						
+						for(int y=0;y<datoColumna5_b.length;y++){
+							  for(int W=0;W<datoColumna5_b.length;W++){
+
+								  datoColumna5_b[y][W]=String.valueOf(valor(lista_tabla1b).get(micorredor));
+								  micorredor++;
+							  }   }			}
+
+
+public void crearTabla15b(){ 
+		table_b15 = new JTable(datoColumna4_b,titColumna4_b);
+		 table_b15.setShowHorizontalLines( true );
+		    table_b15.setRowSelectionAllowed( true );
+		    table_b15.setColumnSelectionAllowed( true );
+		    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+		    table_b15.setSelectionForeground( Color.white );
+		    table_b15.setSelectionBackground( Color.WHITE );
+		    table_b15.setEnabled(false);
+		    // Incorporamos la tabla a un panel que incorpora ya una barra
+		    // de desplazamiento, para que la visibilidad de la tabla sea
+		    // automática
+		scrollPane_b15.setViewportView(table_b15);
+		}
+
+
+public void crearTablak16b(){ 
+
+		table_b16 = new JTable(datoColumna5_b,titColumna5_b);
+			
+		 table_b16.setShowHorizontalLines( true );
+		    table_b16.setRowSelectionAllowed( true );
+		    table_b16.setColumnSelectionAllowed( true );
+		    
+		  
+			scrollPane_b16.setViewportView(table_b16);
+			
+			
+						int micorredor=0;
+						
+						for(int y=0;y<datoColumna5_b.length;y++){
+							  for(int W=0;W<datoColumna5_b.length;W++){
+
+								  datoColumna5_b[y][W]=String.valueOf(valor(lista_tabla1b).get(micorredor));
+								  micorredor++;
+							  }  
+						  }	
+		}
+
+
+
+public void cambiar_celdasb3(int columnas, int filas){
+		String valor_alterado;
+		int columna_seleccionada=table_b11.getSelectedColumn();
+		int fila_seleccionada=table_b11.getSelectedRow();
+		System.out.println(columna_seleccionada+" "+fila_seleccionada);
+		try {
+			//table_1.getModel().addTableModelListener(table_1);
+			table_b11.getCellEditor().stopCellEditing();
+			String valor_cambiado = String.valueOf(table_b11.getModel().getValueAt(fila_seleccionada, columna_seleccionada)) ;
+			//String valor_cambiado = String.valueOf(table_1.getValueAt(fila_seleccionada, columna_seleccionada)) ;
+			System.out.println("Valor "+valor_cambiado);
+			valor_alterado=invertirString(valor_cambiado);
+			table_b11.setValueAt(valor_alterado, columna_seleccionada, fila_seleccionada);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+	}
+
+
+public void setear1entabla_b(){
+		int columna_seleccionada=table_b11.getColumnCount();
+		for (int i = 0; i < columna_seleccionada; i++) {
+			System.out.println(i);
+			table_b11.setValueAt("1/1", i, i);
+		}
+		
+	}
+
+
+
+
+public void cuadradab(){
+	
+	  Operaciones obj=new Operaciones();
+		obj.matriz_principal(valore_real1(lista_tabla1b,table_b16.getColumnCount(), table_b16.getRowCount()),table_b16.getColumnCount(), table_b16.getRowCount());
+		table_b17.setModel(obj.recibirmodelo());
+		ponderacion_b(obj.suma_filas());
+		
+	  
+	  
+}
+
+
+public void ponderacion_b(double[] A){
+		for (int i = 0; i < A.length; i++) {
+			String vectnew[]={""+A[i]};
+			modb1.addRow(vectnew);
+		}
+		table_b18.setModel(modb1);
+		
+		
+		double [] B=ponderacion(A, A.length);
+		for (int i = 0; i < B.length; i++) {
+			String vectnew[]={""+B[i]};
+			modb2.addRow(vectnew);
+		}
+		table_b19.setModel(modb2);
+				
+	}
+
+
+
+
+//alternativas
+
+
+public void CargaDatos3_b() {
+	  int arr2 = array2.size(); 
+  datoColumna3_b = new String[arr2][arr2];
+
+  datoColumna5_b = new String[arr2][arr2];
+}
+
+
+
+
+
+public void CargaDatos4_b() {
+	  int arr2 = array2.size(); 
+  datoColumna4_b = new String[arr2][1];
+ 
+  for( int iY=0; iY < arr2; iY++ ) {
+    for( int iX=0; iX < 1; iX++ ) {
+	datoColumna4_b[iY][iX] = array2.get(iY);
+    }
+  }
+}
+
+
+
+public void CargaDatos5_b() {
+	  int arr2 = array2.size(); 
+  datoColumna5_b = new String[arr2][1];
+ 
+  for( int iY=0; iY < arr2; iY++ ) {
+    for( int iX=0; iX < 1; iX++ ) {
+	datoColumna5_b[iY][iX] = array2.get(iY);
+    }
+  }
+}
+
+
+
+
+public void guardar_arrayb1(){
+	  ReproducirSonido("imagenes/sound2.wav");
+		for (int i = 0; i < table_b11.getColumnCount(); i++) {
+			for (int j = 0; j < table_b11.getRowCount(); j++) {
+				lista_tabla1b.add(String.valueOf(table_b11.getValueAt(i, j)));
+				System.out.print(String.valueOf(table_b11.getValueAt(i, j))+" ");
+			}
+			System.out.println();
+		}
+
+
+	}
+
+
+
+
+public void CreaColumnas3_b() {
+	 int arr = array2.size(); 
+  titColumna3_b = new String[arr];
+  titColumna5_b = new String[arr];
+  
+  for( int i=0; i < arr; i++ ) {
+    titColumna3_b[i] = array2.get(i);
+
+    titColumna5_b[i] = array2.get(i);
+  }
+}
+
+public void CreaColumnas4_b() {
+  titColumna4_b = new String[1];
+  
+  for( int i=0; i < 1; i++ ) {
+    titColumna4_b[i] = "A:";
+  }
+}
+
+public void CreaColumnas5_b() {
+  titColumna5_b = new String[1];
+  
+  for( int i=0; i < 1; i++ ) {
+    titColumna5_b[i] = "Criterios:";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////
 
 }
