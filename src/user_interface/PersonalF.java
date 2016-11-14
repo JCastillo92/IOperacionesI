@@ -102,6 +102,8 @@ public class PersonalF extends JFrame {
 
 	private ArrayList<String> lista_tabla1;
 	private ArrayList<String> lista_tabla1m;
+	private ArrayList<String> lista_ponderaciones;
+	private ArrayList<Double> lista_doble_ponderacion;
 
 	private ArrayList<String> lista_tabla1b;
 	private ArrayList<String> lista_tabla2;//Jhon
@@ -175,6 +177,9 @@ public class PersonalF extends JFrame {
 	private JTable table_k19;
 
 	//VARIABLES JHON
+	private double[][] MatPonderaciones;
+	private String[][] stringPonderaciones;
+	
 	private DefaultTableModel modjh1=new DefaultTableModel(matriz,vector);
 	private DefaultTableModel modjh2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_20j;
@@ -353,6 +358,9 @@ public class PersonalF extends JFrame {
 		
 		lista_tabla2 = new ArrayList<String>(); // JHON
 		lista_tabla3 = new ArrayList<String>(); // JAIRO
+		lista_ponderaciones = new ArrayList<String>();;
+		lista_doble_ponderacion = new ArrayList<Double>();
+		
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
@@ -1583,6 +1591,11 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.setEnabledAt(9, false);
 		
 		Button button_7 = new Button("PROCESAR");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				leerArrayPonderacion(array1.size());
+			}
+		});
 		button_7.setForeground(Color.WHITE);
 		button_7.setFont(new Font("Dialog", Font.PLAIN, 25));
 		button_7.setBackground(Color.BLUE);
@@ -3493,5 +3506,114 @@ public void CreaColumnas5_b() {
 
 
 ////////////////////////////////////////////////////////////////
+	
+	public void leerArrayPonderacion(int n){
+		System.out.println("----------PONDERACIONES----------------");
+		switch(n){
+		case 1:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 2:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 3:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 4:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_j19.getColumnCount(); i++) {
+				for (int j = 0; j < table_j19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_j19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_j19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		case 5:
+			for (int i = 0; i < table_k19.getColumnCount(); i++) {
+				for (int j = 0; j < table_k19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_k19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_k19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_b19.getColumnCount(); i++) {
+				for (int j = 0; j < table_b19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_b19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_b19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_28j.getColumnCount(); i++) {
+				for (int j = 0; j < table_28j.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_28j.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_28j.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_j19.getColumnCount(); i++) {
+				for (int j = 0; j < table_j19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_j19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_j19.getValueAt(j, i))));	
+				}
+			}
+			for (int i = 0; i < table_m19.getColumnCount(); i++) {
+				for (int j = 0; j < table_m19.getRowCount(); j++) {
+					lista_ponderaciones.add(String.valueOf(table_m19.getValueAt(j, i)));
+					lista_doble_ponderacion.add(Double.parseDouble((String) (table_m19.getValueAt(j, i))));	
+				}
+			}
+			break;
+		}
+		for (int i = 0; i < lista_ponderaciones.size(); i++) {
+			System.out.print(lista_ponderaciones.get(i)+" ");
+		}
+	}
 
 }
