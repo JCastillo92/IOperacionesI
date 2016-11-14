@@ -155,7 +155,8 @@ public class PersonalF extends JFrame {
 	private JTable table_k19;
 
 	//VARIABLES JHON
-
+	private DefaultTableModel modjh1=new DefaultTableModel(matriz,vector);
+	private DefaultTableModel modjh2=new DefaultTableModel(matriz,vector);
 	private JScrollPane scrollPane_20j;
 	private JScrollPane scrollPane_21j;
 	private JScrollPane scrollPane_22j;
@@ -196,6 +197,8 @@ public class PersonalF extends JFrame {
 	private JTable table_j15;
 	private JTable table_j16;
 	private JTable table_j17;
+	private JTable table_j18;
+	private JTable table_j19;
 	private JScrollPane scrollPane_m9;
 	private JScrollPane scrollPane_m10;
 	private JTable table_m10;
@@ -560,7 +563,7 @@ public void actionPerformed(ActionEvent arg0) {
 								    CargaDatosjh3();
 								    crearTablajh9();
 								    crearTablajh11();
-
+								    //FIN JHON
 									    
 									 CargaDatos4();
 									   CreaColumnas4();
@@ -855,6 +858,7 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.add(scrollPane_k17);
 		
 		table_k17 = new JTable();
+		table_j17 = new JTable(); //JHON
 		scrollPane_k17.setViewportView(table_k17);
 		
 		scrollPane_k18 = new JScrollPane();
@@ -862,6 +866,8 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.add(scrollPane_k18);
 		
 		table_k18 = new JTable();
+		table_j18 = new JTable(); //JHON
+		
 		scrollPane_k18.setViewportView(table_k18);
 		
 		scrollPane_k19 = new JScrollPane();
@@ -869,6 +875,8 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_5.add(scrollPane_k19);
 		
 		table_k19 = new JTable();
+		table_j19 = new JTable(); //JHON
+		
 		scrollPane_k19.setViewportView(table_k19);
 		panel_7 = new JPanel();
 		panel_7.setBackground(new Color(240, 248, 255));
@@ -2261,6 +2269,71 @@ public void recibo_vec_suma(double[] A){
 								}			
 		  }
 
+		  public void crearTablajh15(){ 
+				table_j15 = new JTable(datoColumna4,titColumna4);
+				 table_j15.setShowHorizontalLines( true );
+				    table_j15.setRowSelectionAllowed( true );
+				    table_j15.setColumnSelectionAllowed( true );
+				    // Cambiamos el color de la zona seleccionada (rojo/blanco)
+				    table_j15.setSelectionForeground( Color.white );
+				    table_j15.setSelectionBackground( Color.WHITE );
+				    table_j15.setEnabled(false);
+				    // Incorporamos la tabla a un panel que incorpora ya una barra
+				    // de desplazamiento, para que la visibilidad de la tabla sea
+				    // automática
+				scrollPane_jh16.setViewportView(table_j15);
+				}
+		  
+		  public void crearTablajh16(){ 
+
+				table_j16 = new JTable(datoColumnaj5,titColumnaj5);
+					
+				 table_j16.setShowHorizontalLines( true );
+				    table_j16.setRowSelectionAllowed( true );
+				    table_j16.setColumnSelectionAllowed( true );
+				    
+				  
+					scrollPane_jh17.setViewportView(table_j16);
+					
+					
+								int micorredor=0;
+								
+								for(int y=0;y<datoColumnaj5.length;y++){
+									  for(int W=0;W<datoColumnaj5.length;W++){
+
+										  datoColumnaj5[y][W]=String.valueOf(valor(lista_tabla2).get(micorredor));
+										  micorredor++;
+									  }  
+								  }	
+				}
+		  
+		  public void cuadradajh(){
+				
+			  Operaciones obj=new Operaciones();
+				obj.matriz_principal(valore_real1(lista_tabla2,table_j16.getColumnCount(), table_j16.getRowCount()),table_j16.getColumnCount(), table_j16.getRowCount());
+				table_j17.setModel(obj.recibirmodelo());
+				ponderacion_jh(obj.suma_filas());
+				scrollPane_jh11.setViewportView(table_j17);
+				scrollPane_jh14.setViewportView(table_j18);
+				scrollPane_jh15.setViewportView(table_j19);
+		  }
+		  
+		  public void ponderacion_jh(double[] A){
+				for (int i = 0; i < A.length; i++) {
+					String vectnew[]={""+A[i]};
+					modjh1.addRow(vectnew);
+				}
+				table_j18.setModel(modjh1);
+				
+				
+				double [] B=ponderacion(A, A.length);
+				for (int i = 0; i < B.length; i++) {
+					String vectnew[]={""+B[i]};
+					modjh2.addRow(vectnew);
+				}
+				table_j19.setModel(modjh2);
+						
+			}
 		  
 		  
 		  public void calcular_igual_alt4(){
@@ -2269,6 +2342,9 @@ public void recibo_vec_suma(double[] A){
 			  CreaColumnasjh4();
 			  crearTablajh13();
 			  crearTablajh14();
+			  crearTablajh15();
+			  crearTablajh16();
+			  cuadradajh();
 			  /*
 			   CargaDatos4();
 				   CreaColumnas4();
