@@ -265,10 +265,8 @@ public class PersonalF extends JFrame {
 				panel_0.add(lblProcess);
 				
 				JButton btnNewButton = new JButton("");
-				btnNewButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-					}
-				});
+				
+					
 				btnNewButton.setIcon(new ImageIcon(".\\imagenes\\gif.gif"));
 				btnNewButton.setBounds(944, 11, 250, 170);
 				panel_0.add(btnNewButton);
@@ -601,6 +599,26 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.setBounds(22, 11, 1155, 528);
 		panel_1.add(tabbedPane_1);
 		
+		panel_5 = new JPanel();
+		panel_5.setBackground(new Color(240, 248, 255));
+		panel_5.setVisible(false);
+		panel_5.setEnabled(false);
+		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
+		panel_5.setLayout(null);
+		
+		JButton button_10 = new JButton("");
+		button_10.setBounds(270, 240, 75, 78);
+		 button_10.setIcon(new ImageIcon(".\\imagenes\\igual.png"));
+		panel_5.add(button_10);
+		
+		JButton button_11 = new JButton("");
+		button_11.setBounds(643, 154, 75, 78);
+		button_11.setIcon(new ImageIcon(".\\imagenes\\multi.png"));
+		panel_5.add(button_11);
+		
+		
+		
+		
 		panel_6 = new JPanel();
 		panel_6.setBackground(new Color(240, 248, 255));
 		panel_6.setVisible(false);
@@ -645,20 +663,16 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.addTab("Alternativa 7", null, panel_11, null);
 		panel_11.setLayout(null);
 		
-		panel_12 = new JPanel();
-		panel_12.setBackground(new Color(240, 248, 255));
-		panel_12.setVisible(false);
+	
 		
-		panel_5 = new JPanel();
-		panel_5.setBackground(new Color(240, 248, 255));
-		panel_5.setVisible(false);
-		panel_5.setEnabled(false);
-		tabbedPane_1.addTab("Alternativa 1", null, panel_5, null);
+		
 		
 		
 		//TABBEDPANES
-		tabbedPane_1.setEnabledAt(6, false);
-		panel_5.setLayout(null);
+
+		panel_12 = new JPanel();
+		panel_12.setBackground(new Color(240, 248, 255));
+		panel_12.setVisible(false);
 		panel_12.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 8", null, panel_12, null);
 		panel_12.setLayout(null);
@@ -685,6 +699,7 @@ public void actionPerformed(ActionEvent arg0) {
 		tabbedPane_1.setEnabledAt(3, false);
 		tabbedPane_1.setEnabledAt(4, false);
 		tabbedPane_1.setEnabledAt(5, false);
+		tabbedPane_1.setEnabledAt(6, false);
 		tabbedPane_1.setEnabledAt(7, false);
 		tabbedPane_1.setEnabledAt(8, false);
 		tabbedPane_1.setEnabledAt(9, false);
@@ -705,6 +720,22 @@ public void actionPerformed(ActionEvent arg0) {
 		lblResultados.setFont(new Font("Tw Cen MT Condensed", Font.ITALIC, 55));
 		lblResultados.setBounds(391, 53, 441, 48);
 		panel_15.add(lblResultados);
+		
+		JButton button_8 = new JButton("");
+		button_8.setEnabled(false);
+		button_8.setBackground(new Color(220, 220, 220));
+		button_8.setBounds(869, 49, 295, 170);
+		
+		button_8.setIcon(new ImageIcon(".\\imagenes\\fin.gif"));
+		panel_15.add(button_8);
+		
+		JButton button_9 = new JButton("");
+		button_9.setEnabled(false);
+		button_9.setForeground(Color.WHITE);
+		button_9.setBackground(new Color(220, 220, 220));
+		button_9.setBounds(10, 49, 295, 170);
+		button_9.setIcon(new ImageIcon(".\\imagenes\\fin.gif"));
+		panel_15.add(button_9);
 	}
 	public void CreaColumnas() {
 		 int arr = array1.size(); 
