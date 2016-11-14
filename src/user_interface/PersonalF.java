@@ -153,6 +153,18 @@ public class PersonalF extends JFrame {
 	private JScrollPane scrollPane_k19;
 	private JTable table_k18;
 	private JTable table_k19;
+	private JScrollPane scrollPane_jh9;
+	private JScrollPane scrollPane_jh10;
+	private JScrollPane scrollPane_jh11;
+	private JButton button_jh12;
+	private JButton button_jh13;
+	private JScrollPane scrollPane_jh12;
+	private JScrollPane scrollPane_jh13;
+	private JScrollPane scrollPane_jh14;
+	private JButton button_jh14;
+	private JScrollPane scrollPane_jh15;
+	private JScrollPane scrollPane_jh16;
+	private JScrollPane scrollPane_jh17;
 
 
 
@@ -832,6 +844,54 @@ public void actionPerformed(ActionEvent arg0) {
 		panel_8.setEnabled(false);
 		tabbedPane_1.addTab("Alternativa 4", null, panel_8, null);
 		panel_8.setLayout(null);
+		
+		scrollPane_jh9 = new JScrollPane();
+		scrollPane_jh9.setBounds(12, 13, 78, 149);
+		panel_8.add(scrollPane_jh9);
+		
+		scrollPane_jh10 = new JScrollPane();
+		scrollPane_jh10.setBounds(118, 13, 257, 149);
+		panel_8.add(scrollPane_jh10);
+		
+		scrollPane_jh11 = new JScrollPane();
+		scrollPane_jh11.setBounds(30, 207, 384, 186);
+		panel_8.add(scrollPane_jh11);
+		
+		button_jh12 = new JButton("");
+		button_jh12.setBounds(272, 242, 75, 78);
+		panel_8.add(button_jh12);
+		
+		button_jh13 = new JButton("=");
+		button_jh13.setBounds(325, 72, 89, 23);
+		panel_8.add(button_jh13);
+		
+		scrollPane_jh12 = new JScrollPane();
+		scrollPane_jh12.setBounds(401, 13, 49, 149);
+		panel_8.add(scrollPane_jh12);
+		
+		scrollPane_jh13 = new JScrollPane();
+		scrollPane_jh13.setBounds(465, 13, 257, 149);
+		panel_8.add(scrollPane_jh13);
+		
+		scrollPane_jh14 = new JScrollPane();
+		scrollPane_jh14.setBounds(529, 207, 107, 186);
+		panel_8.add(scrollPane_jh14);
+		
+		button_jh14 = new JButton("");
+		button_jh14.setBounds(705, 84, 75, 78);
+		panel_8.add(button_jh14);
+		
+		scrollPane_jh15 = new JScrollPane();
+		scrollPane_jh15.setBounds(709, 207, 107, 186);
+		panel_8.add(scrollPane_jh15);
+		
+		scrollPane_jh16 = new JScrollPane();
+		scrollPane_jh16.setBounds(790, 13, 49, 149);
+		panel_8.add(scrollPane_jh16);
+		
+		scrollPane_jh17 = new JScrollPane();
+		scrollPane_jh17.setBounds(869, 13, 257, 149);
+		panel_8.add(scrollPane_jh17);
 		
 		panel_9 = new JPanel();
 		panel_9.setBackground(new Color(240, 248, 255));
