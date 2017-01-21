@@ -17,7 +17,7 @@ public class Circulo
     public Circulo(Coordenadas coordenadas){
         // inicializando variables de instancia
         this.coordenadas = coordenadas;
-        color = Color.yellow;
+        color = Color.blue;
         diametro = 10;
         etiqueta = "";
         fuente = null;
@@ -31,7 +31,7 @@ public class Circulo
             ((Graphics2D)g).setStroke(new BasicStroke(getGrosorBorde()));
 
             ((Graphics2D)g).fillOval(coordenadas.get(0)[0],coordenadas.get(0)[1],diametro,diametro);
-            ((Graphics2D)g).setColor(Color.black);
+            ((Graphics2D)g).setColor(Color.green);
             ((Graphics2D)g).drawOval(coordenadas.get(0)[0],coordenadas.get(0)[1],diametro,diametro);
             if(!"".equals(etiqueta)){
                 if(fuente != null){
@@ -54,7 +54,7 @@ public class Circulo
         return color;
     }
     public void setDiametro(int diametro){
-        this.diametro = 20;
+        this.diametro = 25;
     }
     public int getDiametro(){
         return diametro;

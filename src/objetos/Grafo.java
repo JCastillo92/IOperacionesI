@@ -166,12 +166,12 @@ public class Grafo{
     public void reiniciarColores() {
         if(listaNodo != null){
             for(Nodo nodo: listaNodo){
-                nodo.getCirculo().setColor(Color.yellow);
+                nodo.getCirculo().setColor(Color.blue);
             ArrayList<Enlace> la = nodo.getListaNodoAdyacente();
                 if(la != null){
                     for(Enlace enlace:la){
                         if(enlace.getArista().isHabilitado()){
-                            enlace.getArista().getLineaQuebrada().setColor(Color.black);
+                            enlace.getArista().getLineaQuebrada().setColor(Color.green);
                             enlace.getArista().getLineaQuebrada().setGrosorLinea(1);
                         }
                     }
