@@ -52,6 +52,7 @@ public class Disjktra {
                 menor.setMarca(true);
                 listaNodosAdyacentes.remove(menor);
                 llenarConAdyacentes(menor);
+                
             }
         }
     }
