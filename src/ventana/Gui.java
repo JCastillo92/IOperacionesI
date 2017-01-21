@@ -142,7 +142,7 @@ public class Gui extends javax.swing.JFrame {
                 nodoFin = grafo.buscarNodo(x, y);
                 Disjktra disjktra = new Disjktra(grafo);
                 disjktra.ejecutar(nodoInicio);
-                disjktra.marcarRutaCorta(nodoFin, Color.red);
+                disjktra.marcarRutaCorta(nodoFin, Color.blue);
 //                crearArista();            
 //                                
 //                nodoInicio.getCirculo().setColor(Color.yellow);//lo regreso a su color original
@@ -164,7 +164,7 @@ public class Gui extends javax.swing.JFrame {
                 crearArista();      
                 
                                 
-                nodoInicio.getCirculo().setColor(Color.red);//lo regreso a su color original
+                nodoInicio.getCirculo().setColor(Color.blue);//lo regreso a su color original
                 
                 nodoInicio = null;//null para poder crear mas arista
                 nodoFin = null;//null para poder crear mas arista
