@@ -37,7 +37,7 @@ public class Gui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo Caminos Minimos-JcarlosAd7"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo distancia minica DIJKSTR"));
 
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

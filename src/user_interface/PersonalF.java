@@ -2286,7 +2286,7 @@ public void actionPerformed(ActionEvent arg0) {
 			}
 	  
 	  
-	  public void crearTablaUltimaFilas(){ 
+	  public void crearTablaUltimaFilas(){ /*
 		  tableUltima2 = new JTable(datoColumnaUlt2,titColumnaUlt2);
 		  tableUltima2.setShowHorizontalLines( true );
 		  tableUltima2.setRowSelectionAllowed( true );
@@ -2299,6 +2299,7 @@ public void actionPerformed(ActionEvent arg0) {
 			    // de desplazamiento, para que la visibilidad de la tabla sea
 			    // automática
 			    scrollPane_ultima1.setViewportView(tableUltima2);
+			    */
 			}
 	  
 	
@@ -2647,6 +2648,7 @@ public void recibo_vec_suma(double[] A){
 		mod8.addRow(vectnew);
 	}
 	table_8.setModel(mod8);
+	tableUltima2.setModel(mod8);
 			
 }
 
@@ -3694,16 +3696,57 @@ public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
 	/*
 			double[] Vector_criterios={0.32, 0.56, 0.12};
 			*/
-			
+			/*
 			for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
 				double acum=0;
 				for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
 					acum=acum+Double.parseDouble(Matriz_Alt_Crite[i][j])*vector_AR_ponderacion.get(j);
 				}
 				respuesta_tamanoALT.add(acum);
+			}*/
+			for (int i = 0; i < array2.size(); i++) {
+				double acum=0;
+				for (int j = 0; j < array1.size(); j++) {
+					acum=acum+Double.parseDouble(stringPonderaciones[i][j])*vector_AR_ponderacion.get(j);
+				}
+				//respuesta_tamanoALT.add(acum);
 			}
+			System.out.println("-------------------PROBANDO-----------------------------------------------");
+			 /*for (int i = 0; i < Matriz_Alt_Crite.length; i++) {
+				for (int j = 0; j < Matriz_Alt_Crite[i].length; j++) {
+System.out.println(Matriz_Alt_Crite[i][j]);					
+				}
+			}*/
 			
-			System.out.println("-----------------------------------");
+			
+			int cc=tableUltima1.getColumnCount();
+			int fc=tableUltima1.getRowCount();
+			System.out.println("tamano"+cc+""+fc);
+			String[][]ultimaporfin = new String[fc][cc];
+			//tableUltima1.getCellEditor().stopCellEditing();
+			for (int i = 0; i < fc; i++) {
+				for (int j = 0; j < cc; j++) {
+					System.out.println(tableUltima1.getValueAt(i,j));
+					ultimaporfin[i][j] = String.valueOf(tableUltima1.getValueAt(i,j));
+				}
+			}
+			System.out.println("Llego");
+			for (int i = 0; i < array2.size(); i++) {
+				for (int j = 0; j < array1.size(); j++) {
+					System.out.print(ultimaporfin[i][j]+" ");
+				}
+				System.out.println();
+			}	
+			
+			for (int i = 0; i < array2.size(); i++) {
+				double acum=0;
+				for (int j = 0; j < array1.size(); j++) {
+					acum=acum+Double.parseDouble(ultimaporfin[i][j])*vector_AR_ponderacion.get(j);
+				}
+				respuesta_tamanoALT.add(acum);
+			}
+				
+			System.out.println("-----------FIN JHON-------------");
 			System.out.println("-----------------------------------");
 			System.out.println("SOLUCION FINAL");
 			for (int i = 0; i < respuesta_tamanoALT.size(); i++) {
@@ -3822,27 +3865,45 @@ public ArrayList<Double> Solucion_final(String[][] Matriz_Alt_Crite){
 			}
 			break;
 		}
-		stringPonderaciones= new String[array1.size()][array2.size()];
+		stringPonderaciones= new String[array2.size()][array1.size()];
 		
 		for (int i = 0; i < lista_ponderaciones.size(); i++) {
 			System.out.print(lista_ponderaciones.get(i)+" ");
 		}
 		
 		int recorredor02 = 0;
+		//array1 =3 criterios array2 =4  alternativas
+		/*
 		for (int i = 0; i < array1.size(); i++) {
 			for (int j = 0; j < array2.size(); j++) {
+				stringPonderaciones[j][i]=lista_ponderaciones.get(recorredor02);
+				recorredor02++;
+			}
+		}*/
+		//reparando
+		int c=0;
+		for (int i = 0; i < array2.size(); i++) {
+			for (int j = 0; j < array1.size(); j++) {
 				stringPonderaciones[i][j]=lista_ponderaciones.get(recorredor02);
 				recorredor02++;
 			}
 		}
+		
 		System.out.println();
 		System.out.println("Matriz impresa "+array2.size()+" "+array1.size());
-		for (int i = 0; i < array1.size(); i++) {
+		/*for (int i = 0; i < array1.size(); i++) {
 			for (int j = 0; j < array2.size(); j++) {
 				System.out.print(stringPonderaciones[i][j]+" ");
 			}
 			System.out.println();
+		}*/
+		for (int i = 0; i < array2.size(); i++) {
+			for (int j = 0; j < array1.size(); j++) {
+				System.out.print(stringPonderaciones[i][j]+" ");
+			}
+			System.out.println();
 		}
+		
 		array_tablasolucion();
 		//de_matriz_a_tabla2();
 		Solucion_final(stringPonderaciones);
