@@ -16,7 +16,7 @@ public class LineaQuebrada
     public LineaQuebrada(Coordenadas coordenadas){
         // inicializando variables de instancia
         this.coordenadas = coordenadas;
-        grosorLinea = 1f;
+        grosorLinea = 2f;
         color = Color.black;
         mostrarEtiqueta = true;
     }

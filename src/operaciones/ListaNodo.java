@@ -35,11 +35,6 @@ int totalkilometros=0;
             imprimirfin=""+nodo.getDato();
         }
         obj.caminos(imprimircaminos,imprimirinicio,imprimirfin,totalkilometros);
-       
-        //a continuacion reseteo las variables
-        imprimircaminos="";
-        imprimirfin="";
-        totalkilometros=0;
         return aux;
     }
     public boolean isContenido(Nodo nodo){

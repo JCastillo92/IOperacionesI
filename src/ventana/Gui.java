@@ -263,7 +263,7 @@ public class Gui extends javax.swing.JFrame {
             if(dato != null){
                 dato = dato.toUpperCase();//por que lo quiero todo en mayusculas
                 Nodo nodo = new Nodo(dato,c);
-                nodo.getCirculo().setDiametro(12);
+                nodo.getCirculo().setDiametro(20);
                 nodo.getCirculo().setEtiqueta(nodo.getDato()+"");
                 if(grafo.adjuntarNodo(nodo)){
                     nodo.getCirculo().dibujarCirculo(jPanel1.getGraphics());
