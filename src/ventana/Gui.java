@@ -164,7 +164,7 @@ public class Gui extends javax.swing.JFrame {
                 crearArista();      
                 
                                 
-                nodoInicio.getCirculo().setColor(Color.yellow);//lo regreso a su color original
+                nodoInicio.getCirculo().setColor(Color.blue);//lo regreso a su color original
                 
                 nodoInicio = null;//null para poder crear mas arista
                 nodoFin = null;//null para poder crear mas arista

@@ -17,7 +17,7 @@ public class LineaQuebrada
         // inicializando variables de instancia
         this.coordenadas = coordenadas;
         grosorLinea = 1f;
-        color = Color.black;
+        color = Color.green;
         mostrarEtiqueta = true;
     }
     public void dibujarLineaQuebrada(Graphics g){
