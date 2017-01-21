@@ -10,6 +10,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -25,6 +30,42 @@ public class Gui extends javax.swing.JFrame {
      */
     public Gui() {
     	setResizable(false);
+    	
+    	menuBar = new JMenuBar();
+    	setJMenuBar(menuBar);
+    	
+    	mnDirecciones = new JMenu("Direcciones");
+    	menuBar.add(mnDirecciones);
+    	
+    	mntmQuito = new JMenuItem("Quito");
+    	mntmQuito.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			//quito mapa
+    			ImageIcon icon = new ImageIcon(".\\imagenes\\quito.jpg");
+    	        lblHdsah.setIcon(icon);
+    		}
+    	});
+    	mnDirecciones.add(mntmQuito);
+    	
+    	mntmSuperpaco = new JMenuItem("Superpaco");
+    	mntmSuperpaco.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			//superpaco mapa
+    			ImageIcon icon = new ImageIcon(".\\imagenes\\superpaco.jpg");
+    	        lblHdsah.setIcon(icon);
+    		}
+    	});
+    	mnDirecciones.add(mntmSuperpaco);
+    	
+    	mntmFybeca = new JMenuItem("Fybeca");
+    	mntmFybeca.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			//fybeca mapa
+    			ImageIcon icon = new ImageIcon(".\\imagenes\\fybeca.jpg");
+    	        lblHdsah.setIcon(icon);
+    		}
+    	});
+    	mnDirecciones.add(mntmFybeca);
         initComponents();
     }
 
@@ -47,7 +88,7 @@ public class Gui extends javax.swing.JFrame {
         });
         
         lblHdsah = new JLabel("");
-        ImageIcon icon = new ImageIcon(".\\imagenes\\calles.jpg");
+        ImageIcon icon = new ImageIcon(".\\imagenes\\portada.jpg");
         lblHdsah.setIcon(icon);
         
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -276,5 +317,10 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private JLabel lblHdsah;
+    private JMenuBar menuBar;
+    private JMenu mnDirecciones;
+    private JMenuItem mntmQuito;
+    private JMenuItem mntmSuperpaco;
+    private JMenuItem mntmFybeca;
     // End of variables declaration//GEN-END:variables
 }
