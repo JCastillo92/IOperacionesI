@@ -207,8 +207,11 @@ public class Gui extends javax.swing.JFrame {
             }
     }
     
-    public void caminos(String ways){
+    public void caminos(String ways,String inicio, String fin, int totalkilometros){
     	imprimircaminos=imprimircaminos+ways+"\n";
+    	System.out.println("EL NODO INICIAL ES: "+inicio);
+    	System.out.println("EL NODO FINAL ES: "+fin);
+    	System.out.println("TOTAL RECORRIDO: "+totalkilometros);
     }
     
     /**

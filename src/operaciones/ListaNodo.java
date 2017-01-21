@@ -8,6 +8,10 @@ import ventana.Gui;
 
 public class ListaNodo extends ArrayList<Nodo>{
 String imprimircaminos="";
+String imprimirinicio="INICIOJAIRO";
+String imprimirfin="";
+int totalkilometros=0;
+
     public ListaNodo(){
         super();
     }
@@ -19,12 +23,19 @@ String imprimircaminos="";
         aux.setLongitudCamino(9999999);
 
         for(Nodo nodo:this){
+        	if(imprimirinicio.equals("INICIOJAIRO")){
+        		imprimirinicio=""+nodo.getDato();	
+        	}
             if(nodo.getLongitudCamino() < aux.getLongitudCamino()){
                 aux = nodo;                
                 System.out.println(nodo.getLongitudCamino()+"..."+nodo.getDato());
                 imprimircaminos=imprimircaminos+nodo.getLongitudCamino()+""+nodo.getDato()+"\n";
-            }}
-        obj.caminos(imprimircaminos);
+                totalkilometros=nodo.getLongitudCamino();
+            }
+            imprimirfin=""+nodo.getDato();    
+        }
+        
+        obj.caminos(imprimircaminos,imprimirinicio,imprimirfin,totalkilometros);
         return aux;
     }
     public boolean isContenido(Nodo nodo){
