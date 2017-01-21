@@ -1,17 +1,10 @@
-/*
- * Autor: Juan Carlos Arcila Diaz
- * Localidad: Chiclayo-Peru
- * Email:carlos_ad_6@hotmail.com
- * Para Comunidad IncanatoHack.com
- */
-
 package objetos;
 
 public class Arista{
     private int idArista;
     private String nombreArista;
     private int distancia;//Distancia entre dos puntos
-    private LineaQuebrada lineaQuebrada;//Ésta es la via representada graficamente    
+    private LineaQuebrada lineaQuebrada;//Arista es la via representada graficamente    
     private boolean habilitado;
 
     public Arista(){

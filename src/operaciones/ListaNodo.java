@@ -1,9 +1,3 @@
-/*
- * Autor: Juan Carlos Arcila Diaz
- * Localidad: Chiclayo-Peru
- * Email:carlos_ad_6@hotmail.com
- * Para Comunidad IncanatoHack.com
- */
 package operaciones;
 
 import java.util.ArrayList;
@@ -22,8 +16,9 @@ public class ListaNodo extends ArrayList<Nodo>{
             if(nodo.getLongitudCamino() < aux.getLongitudCamino()){
                 aux = nodo;                
             }
+            System.out.println(nodo.getLongitudCamino());
         }
-
+        
         return aux;
     }
     public boolean isContenido(Nodo nodo){

@@ -1,9 +1,3 @@
-/*
- * Autor: Juan Carlos Arcila Diaz
- * Localidad: Chiclayo-Peru
- * Email:carlos_ad_6@hotmail.com
- * Para Comunidad IncanatoHack.com
- */
 package ventana;
 
 import java.awt.Color;
@@ -37,7 +31,7 @@ public class Gui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo distancia minica DIJKSTR"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo distancia minica DIJKSTRA"));
 
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -108,7 +102,7 @@ public class Gui extends javax.swing.JFrame {
         }
     }
     private int ingresarPeso(){
-        String peso = JOptionPane.showInputDialog("Digite la distancia entre puntos");
+        String peso = JOptionPane.showInputDialog("Digite la distancia entre los nodos");
         int intPeso = 0;
         try{
             intPeso = Integer.parseInt(peso);            
@@ -166,7 +160,8 @@ public class Gui extends javax.swing.JFrame {
 //                JOptionPane.showMessageDialog(null,"Seleccione otro nodo para crear una arista");
             }else{//si nodoInicio ya estaba apunto a un nodo, lo preparo para crear arista             
                 nodoFin = grafo.buscarNodo(x, y);                
-                crearArista();            
+                crearArista();      
+                
                                 
                 nodoInicio.getCirculo().setColor(Color.yellow);//lo regreso a su color original
                 
@@ -174,7 +169,7 @@ public class Gui extends javax.swing.JFrame {
                 nodoFin = null;//null para poder crear mas arista
             }
         }else{//Si no he hecho clic sobre un nodo
-            crearNodo(x, y);//creo un nodo apartir de unas coordenadas
+        		crearNodo(x, y);//creo un nodo apartir de unas coordenadas
         }
         }
         dibujarGrafo();
@@ -196,7 +191,7 @@ public class Gui extends javax.swing.JFrame {
     
     private void crearNodo(int x, int y){
         Coordenadas c = new Coordenadas(100000,100000, x, y);
-            String dato = JOptionPane.showInputDialog("Digite un dato o Nombre de la coordenada");
+            String dato = JOptionPane.showInputDialog("Crear nombre de nodo");
             if(dato != null){
                 dato = dato.toUpperCase();//por que lo quiero todo en mayusculas
                 Nodo nodo = new Nodo(dato,c);

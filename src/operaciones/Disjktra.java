@@ -1,10 +1,3 @@
-/*
- * Autor: Juan Carlos Arcila Diaz
- * Localidad: Chiclayo-Peru
- * Email:carlos_ad_6@hotmail.com
- * Para Comunidad IncanatoHack.com
- */
-
 package operaciones;
 
 import java.awt.Color;
