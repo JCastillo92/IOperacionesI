@@ -54,7 +54,7 @@ public class Circulo
         return color;
     }
     public void setDiametro(int diametro){
-        this.diametro = diametro;
+        this.diametro = 20;
     }
     public int getDiametro(){
         return diametro;
