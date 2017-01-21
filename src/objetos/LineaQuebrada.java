@@ -17,7 +17,7 @@ public class LineaQuebrada
         // inicializando variables de instancia
         this.coordenadas = coordenadas;
         grosorLinea = 1f;
-        color = Color.green;
+        color = Color.black;
         mostrarEtiqueta = true;
     }
     public void dibujarLineaQuebrada(Graphics g){
@@ -38,7 +38,7 @@ public class LineaQuebrada
 
             if(mostrarEtiqueta){
                 ((Graphics2D)g).setColor(Color.blue);
-                Font fuente=new Font("Monospaced",Font.BOLD, 12);
+                Font fuente=new Font("Monospaced",Font.BOLD, 20);
                 g.setFont(fuente);
 
                 if(coordenadas.size() == 2){

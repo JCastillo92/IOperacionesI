@@ -38,7 +38,6 @@ int totalkilometros=0;
        
         //a continuacion reseteo las variables
         imprimircaminos="";
-        imprimirinicio="INICIOJAIRO";
         imprimirfin="";
         totalkilometros=0;
         return aux;

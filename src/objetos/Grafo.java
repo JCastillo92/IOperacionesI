@@ -171,7 +171,7 @@ public class Grafo{
                 if(la != null){
                     for(Enlace enlace:la){
                         if(enlace.getArista().isHabilitado()){
-                            enlace.getArista().getLineaQuebrada().setColor(Color.green);
+                            enlace.getArista().getLineaQuebrada().setColor(Color.black);
                             enlace.getArista().getLineaQuebrada().setGrosorLinea(1);
                         }
                     }
