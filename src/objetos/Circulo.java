@@ -31,7 +31,7 @@ public class Circulo
             ((Graphics2D)g).setStroke(new BasicStroke(getGrosorBorde()));
 
             ((Graphics2D)g).fillOval(coordenadas.get(0)[0],coordenadas.get(0)[1],diametro,diametro);
-            ((Graphics2D)g).setColor(Color.green);
+            ((Graphics2D)g).setColor(Color.black);
             ((Graphics2D)g).drawOval(coordenadas.get(0)[0],coordenadas.get(0)[1],diametro,diametro);
             if(!"".equals(etiqueta)){
                 if(fuente != null){
