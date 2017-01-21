@@ -32,10 +32,15 @@ int totalkilometros=0;
                 imprimircaminos=imprimircaminos+nodo.getLongitudCamino()+""+nodo.getDato()+"\n";
                 totalkilometros=nodo.getLongitudCamino();
             }
-            imprimirfin=""+nodo.getDato();    
+            imprimirfin=""+nodo.getDato();
         }
-        
         obj.caminos(imprimircaminos,imprimirinicio,imprimirfin,totalkilometros);
+       
+        //a continuacion reseteo las variables
+        imprimircaminos="";
+        imprimirinicio="INICIOJAIRO";
+        imprimirfin="";
+        totalkilometros=0;
         return aux;
     }
     public boolean isContenido(Nodo nodo){
