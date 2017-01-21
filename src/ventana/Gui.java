@@ -14,6 +14,7 @@ public class Gui extends javax.swing.JFrame {
     Grafo grafo = new Grafo();
     Nodo nodoInicio = null;
     Nodo nodoFin = null;
+    String imprimircaminos;
     /**
      * Creamos el form
      */
@@ -204,6 +205,10 @@ public class Gui extends javax.swing.JFrame {
                 nodoInicio = null;
                 nodoFin = null; 
             }
+    }
+    
+    public void caminos(String ways){
+    	imprimircaminos=imprimircaminos+ways+"\n";
     }
     
     /**
