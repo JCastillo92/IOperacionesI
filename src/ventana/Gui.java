@@ -2,9 +2,12 @@ package ventana;
 
 import java.awt.Color;
 import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+
 import objetos.*;
 import operaciones.Disjktra;
+import operaciones.ListaNodo;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -13,6 +16,7 @@ import javax.swing.GroupLayout;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -25,6 +29,9 @@ public class Gui extends javax.swing.JFrame {
     Nodo nodoInicio = null;
     Nodo nodoFin = null;
     String imprimircaminos;
+    String inicio1;
+    String fin1;
+    int total;
     /**
      * Creamos el form
      */
@@ -168,6 +175,7 @@ public class Gui extends javax.swing.JFrame {
                 }
             }            
         }
+        System.out.println("eeeee");
     }
     private int ingresarPeso(){
         String peso = JOptionPane.showInputDialog("Digite la distancia entre los nodos");
@@ -195,6 +203,8 @@ public class Gui extends javax.swing.JFrame {
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         int x = evt.getX();
         int y = evt.getY();
+        ListaNodo g=new ListaNodo();
+        g.buscarMenor();
         if(evt.isMetaDown()){            
 //            eliminarNodo(x, y);
 //            JOptionPane.showMessageDialog(this,"Clic derecho");
@@ -210,6 +220,8 @@ public class Gui extends javax.swing.JFrame {
                 Disjktra disjktra = new Disjktra(grafo);
                 disjktra.ejecutar(nodoInicio);
                 disjktra.marcarRutaCorta(nodoFin, Color.blue);
+                
+                System.out.println("aaaaaaaaaa"+inicio1);
 //                crearArista();            
 //                                
 //                nodoInicio.getCirculo().setColor(Color.yellow);//lo regreso a su color original
@@ -279,6 +291,10 @@ public class Gui extends javax.swing.JFrame {
     	System.out.println("EL NODO INICIAL ES: "+inicio);
     	System.out.println("EL NODO FINAL ES: "+fin);
     	System.out.println("TOTAL RECORRIDO: "+totalkilometros);
+    	
+    	inicio1=inicio;
+    	fin1=fin;
+    	total=totalkilometros;
     }
     
     /**

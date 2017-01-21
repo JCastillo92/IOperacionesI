@@ -54,7 +54,8 @@ public class Disjktra {
                 llenarConAdyacentes(menor);
                 
             }
-        }
+JOptionPane.showMessageDialog(null,"EL NODO INICIAL ES:"+listaNodosAdyacentes.imprimirinicio+"\n"+"EL NODO FINAL ES:"+listaNodosAdyacentes.imprimirfin+"\n"+"TOTAL RECORRIDO:"+listaNodosAdyacentes.totalkilometros);
+}
     }
     
     private void rutaCorta(Nodo nodoFinal){
