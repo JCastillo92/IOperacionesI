@@ -55,6 +55,16 @@ public class Gui extends javax.swing.JFrame {
     	        lblHdsah.setIcon(icon);
     		}
     	});
+    	
+    	mntmCalles = new JMenuItem("Calles");
+    	mntmCalles.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			//calles mapa
+    			ImageIcon icon = new ImageIcon(".\\imagenes\\calles.jpg");
+    	        lblHdsah.setIcon(icon);
+    		}
+    	});
+    	mnDirecciones.add(mntmCalles);
     	mnDirecciones.add(mntmSuperpaco);
     	
     	mntmFybeca = new JMenuItem("Fybeca");
@@ -79,7 +89,7 @@ public class Gui extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo distancia minica DIJKSTRA"));
+       // jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafo distancia minima DIJKSTRA"));
 
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -322,5 +332,6 @@ public class Gui extends javax.swing.JFrame {
     private JMenuItem mntmQuito;
     private JMenuItem mntmSuperpaco;
     private JMenuItem mntmFybeca;
+    private JMenuItem mntmCalles;
     // End of variables declaration//GEN-END:variables
 }
