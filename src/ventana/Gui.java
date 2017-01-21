@@ -9,6 +9,7 @@ import operaciones.Disjktra;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 /**
  *
@@ -23,6 +24,7 @@ public class Gui extends javax.swing.JFrame {
      * Creamos el form
      */
     public Gui() {
+    	setResizable(false);
         initComponents();
     }
 
@@ -44,23 +46,24 @@ public class Gui extends javax.swing.JFrame {
             }
         });
         
-        label = new JLabel("");
-        ImageIcon icon = new ImageIcon(".\\imagenes\\logo.png");
-        label.setIcon(icon);
+        lblHdsah = new JLabel("");
+        ImageIcon icon = new ImageIcon(".\\imagenes\\calles.jpg");
+        lblHdsah.setIcon(icon);
         
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addComponent(label)
-        			.addContainerGap(583, Short.MAX_VALUE))
+        			.addContainerGap()
+        			.addComponent(lblHdsah, GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addGap(49)
-        			.addComponent(label)
-        			.addContainerGap(354, Short.MAX_VALUE))
+        			.addContainerGap()
+        			.addComponent(lblHdsah, GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         jPanel1.setLayout(jPanel1Layout);
 
@@ -272,6 +275,6 @@ public class Gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private JLabel label;
+    private JLabel lblHdsah;
     // End of variables declaration//GEN-END:variables
 }
