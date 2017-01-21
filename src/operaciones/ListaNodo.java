@@ -1,6 +1,8 @@
 package operaciones;
 
 import java.util.ArrayList;
+
+import objetos.Arista;
 import objetos.Nodo;
 
 public class ListaNodo extends ArrayList<Nodo>{
@@ -10,14 +12,14 @@ public class ListaNodo extends ArrayList<Nodo>{
     }
     public Nodo buscarMenor(){
         Nodo aux = new Nodo();
+        Arista arista = new Arista();
         aux.setLongitudCamino(9999999);
 
         for(Nodo nodo:this){
             if(nodo.getLongitudCamino() < aux.getLongitudCamino()){
                 aux = nodo;                
-            }
-            System.out.println(nodo.getLongitudCamino());
-        }
+                System.out.println(nodo.getLongitudCamino()+""+nodo.getDato());
+            }}
         
         return aux;
     }
