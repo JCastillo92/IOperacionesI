@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 import objetos.*;
 import operaciones.Disjktra;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.GroupLayout.Alignment;
+
 /**
  *
  * @author Jcarlosad7
@@ -39,17 +43,26 @@ public class Gui extends javax.swing.JFrame {
                 jPanel1MouseClicked(evt);
             }
         });
-
+        
+        label = new JLabel("");
+        ImageIcon icon = new ImageIcon(".\\imagenes\\logo.png");
+        label.setIcon(icon);
+        
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 629, Short.MAX_VALUE)
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addComponent(label)
+        			.addContainerGap(583, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel1Layout.createSequentialGroup()
+        			.addGap(49)
+        			.addComponent(label)
+        			.addContainerGap(354, Short.MAX_VALUE))
         );
+        jPanel1.setLayout(jPanel1Layout);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -259,5 +272,6 @@ public class Gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private JLabel label;
     // End of variables declaration//GEN-END:variables
 }
